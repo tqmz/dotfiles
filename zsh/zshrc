@@ -1,6 +1,7 @@
 # ZSH PATHES
 
 # <https://github.com/robbyrussell/oh-my-zsh>
+# <https://github.com/tqmz/oh-my-zsh.git> ##### use this version! ####
 export ZSH=/usr/local/src/oh-my-zsh
 
 export ZSH_CUSTOM=~/.zsh
@@ -83,9 +84,6 @@ zstyle ':completion:*' group-name ''
 export EDITOR="vim"
 export LESS="-R --ignore-case -P ?f%f:stdin.  line %lt–%lb/%L  ?e(END):%PB\%."
 export JAVA_HOME="/usr/lib/jvm/default-java"
-export GRAILS_HOME="/usr/local/lib/grails"
-export GRAILS_OPTS="-server -Xmx1024M -Xms1024M -XX:PermSize=256m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8"
-alias grails=/usr/local/lib/grails/bin/grails
 export PATH="$PATH:/home/t/bin:/home/t/bin-public"
 
 # regular part read out via `manpath`, but MySQL is included anyways already
@@ -115,4 +113,4 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 # load inspector completion
-inspector zsh --bind=inspector --program=inspector | source /dev/stdin
+# inspector zsh --bind=inspector --program=inspector | source /dev/stdin
