@@ -1,0 +1,7 @@
+# MORE
+source $ZSH_PRIVATE/_functions
+
+# `h baz` to print history of baz commands
+h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
+# vim: set ft=zsh:

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=gedit
+Exec=gedit
+MimeType=text/plain
+Icon=exec
+NoDisplay=true

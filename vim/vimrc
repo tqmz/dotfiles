@@ -1,0 +1,377 @@
+" {{{ GENERAL
+
+" Set local mapleader
+let mapleader = "_"
+
+" This setting can be useful for determining how many lines of text you want
+" to
+" yank. It will display the line number column, but lines will be the distance
+" from the current line.
+set relativenumber
+
+" a nice shortcut for ppl with french keyboard layout who don't write french
+" often; use `r` (replace) to type it nonetheless
+map! ç <Esc>
+
+set autochdir                          " always switch to the current file directory
+set nocompatible                       " don't imitate vi bugs and limitiations
+set exrc                               " read .vimrc within every directory
+set secure
+set visualbell                         " ESC in Normal mode: visual bell only
+" }}}
+" {{{ BUNDLES
+" {{{ Vundle
+"---------------------------------------------------------------
+" Vundle init
+filetype off | set rtp+=~/.vim/bundle/vundle/ | call vundle#rc()
+Plugin 'gmarik/vundle'
+"---------------------------------------------------------------
+" Definitions:
+" - Github: user/repo
+" - vim-scripts.org: repo
+" no comments allowed in bundle lines!
+"
+" Commands:
+" :BundleList                          - list configured bundles
+" :BundleInstall                       - install(update) bundles
+" :BundleSearch foo                    - search(or refresh cache first) for foo
+" :BundleClean                         - confirm(or auto-approve) removal of unused bundles
+"
+" Versions:
+" <https://github.com/gmarik/vundle/issues/35>
+" for specifying plugin versions / branches
+"---------------------------------------------------------------
+" }}}
+" {{{ Status
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'dannyob/quickfixstatus'
+" }}}
+" {{{ Files, Buffer
+
+" BufExplorer
+"Plugin 'corntrace/bufexplorer'
+
+" Project
+" allows maintaining custom file trees in left window
+" fork allows custom project files instead of global .vimprojects only
+" <https://github.com/tqmz/project.tar.gz/blob/master/README.md>
+Plugin 'tqmz/project.tar.gz'
+
+Plugin 'scrooloose/nerdtree'
+
+" Command-T:
+" activate via `cd ~/.vim/bundle/command-t && rake make`
+Plugin 'wincent/Command-T'
+" }}}
+" {{{ All Languages
+
+Plugin 'godlygeek/tabular'
+
+Plugin 'scrooloose/syntastic'
+
+" }}}
+" {{{ HTML/ XML, CSS
+
+Plugin 'mattn/emmet-vim'
+
+" }}}
+" {{{ Markdown
+
+" Bundle 'pdc.vim'
+
+" Plugin 'plasticboy/vim-markdown'
+
+Plugin 'gabrielelana/vim-markdown'
+
+" }}}
+" {{{ Textile
+
+Plugin 'timcharper/textile.vim'
+
+" }}}
+" {{{ UML
+
+Plugin 'aklt/plantuml-syntax'
+
+" }}}
+" {{{ Javascript + JSON
+
+Plugin 'vim-json-bundle'
+
+" }}}
+" {{{ PHP
+
+Plugin 'phpfolding.vim'
+
+Plugin 'tqmz/php-doc.vim'
+
+"Plugin 'docteurklein/php-getter-setter.vim'
+
+Plugin 'StanAngeloff/php.vim'
+
+" }}}
+" {{{ Twig
+
+Plugin 'beyondwords/vim-twig'
+
+" }}}
+" {{{ Slides / Presentations
+Plugin 'sotte/presenting.vim'
+" }}}
+" {{{ Colors
+Plugin 'CSApprox'
+Plugin 'Colour-Sampler-Pack'
+Plugin 'Sorcerer'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/Vim-Tomorrow-Theme'
+Plugin 'cloudhead/shady.vim'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'veloce/vim-aldmeris'
+Plugin 'zaki/zazen'
+Plugin 'zenesque.vim'
+" }}}
+" }}}
+" {{{ UI
+set cursorcolumn                       " highlight the current column – disturbs autocompletetion background!
+set cursorline                         " highlight current line
+set guioptions-=T                      " no toolbar (for gvim)
+set laststatus=2                       " always show the status line with file name
+set report=0                           " tell us when anything is changed via :...
+set ruler                              " show statusline with cursor position
+set mouse=a                            " use mouse everywhere – prevents GNOME Ctrl+C, use register + instead: `" +p` / ` " +y`
+set mousehide                          " hide the mouse cursor when typing
+set scrolloff=10                       " Keep 10 lines (top/bottom) for scope
+set shortmess=aOstT                    " shortens messages to avoid
+set showcmd                            " show the command being typed
+set sidescrolloff=10                   " Keep 5 lines at the size
+" }}}
+" {{{ EDITING
+set autoindent                         " use current line for next line's indent level (for pasting from GNOME see :help paste or use " +)
+set expandtab                          " create spaces instead of tabs, use ^V^I for real tabs
+set iskeyword+=_,$,@,%,#               " none of these are word dividers
+set list                               " display tabs as symbols, don't indent
+set listchars=tab:>-,trail:_           " indent tabs displayed as symbols
+set nostartofline                      " remain cursor at postion when scrolling with page up / down
+set shiftwidth=4                       " amount of characters to be represented by tabs
+set showmatch                          " briefly show corresponding brace, parenthese, bracket
+set smartindent                        " guess indention level (badly indents C-Shift-V inserts)
+set softtabstop=4                      " makes the spaces feel like real tabs
+set tabstop=4                          " tab width
+" }}}
+" {{{ SEARCH
+set hls                                " highlight search results (or not)
+nmap <silent> <leader>h :nohls<CR>     " turn off last search's highlighting
+set incsearch                          " search by typing (incremental search)
+set ignorecase                         " case insensitive matching
+set smartcase                          " smart case matching
+set wildignore+=.git,.svn,*.bak,*.jpg,*.gif,*.png,*.pdf
+set wildmenu                           " don't take first cli match (files, commands), let choose / incremental
+set wildmode=list:longest,full         " multiple matches: list all, complete longest, wildmenu with 2nd tab
+" }}}
+" {{{ COLORS
+set t_Co=256
+"set background=dark
+"colo lucius
+set background=light
+" colo solarized
+colo jellybeans
+" required to run solarized in terminal:
+let g:solarized_termcolors=256
+" }}}
+" {{{ FOLDING
+" save folds of a file (created with `zf`)
+" requires existing ~/.vim/view/ directory
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
+" }}}
+" {{{ SYNTAX
+" {{{ Filetype and syntax highlighting
+filetype on        " detect filetypes
+filetype plugin on " guess filetypes
+syn on             " syntax highlighting on
+" }}}
+" {{{ Syntastic
+" :help syntastic-options
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_balloons = 0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=10
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['javascript', 'json', 'php', 'rst', 'yaml', 'css', 'sh'],
+                           \ 'passive_filetypes': ['lua', 'ruby', 'python', 'xml', 'xslt', 'html', 'haml' ] }
+let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_javascript_checker = "jshint"
+" }}}
+" {{{ php.vim
+let php_sql_query          = 1
+let php_html_in_strings    = 1
+let php_parent_error_close = 1
+let php_no_shorttags       = 1
+" }}}
+" {{{ MARKS
+" jump to last position when reopening file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+" }}}
+" }}}
+" {{{ PROJECT      http://www.linupedia.org/opensuse/Vim_Plugins
+nmap <silent> <F2> <Plug>ToggleProject
+let g:proj_window_width = 50
+let g:proj_flags        = "ibmnstgT"
+" }}}
+" {{{ KEY MAPPINGS PHP
+" TODO use syntactic instead
+" use <C-M> to run the script itself only in projects where appropriate!
+":autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
+" :autocmd FileType php map <C-M> :!/usr/bin/php -l %<CR>
+" :autocmd FileType php map <C-L> :!/usr/bin/php -l %<CR>
+" tabs
+:autocmd FileType php set expandtab
+:autocmd FileType php set shiftwidth=4
+:autocmd FileType php set softtabstop=4
+:autocmd FileType php set tabstop=4
+" phpdoc
+let g:pdv_cfg_Type      = "string"
+let g:pdv_cfg_Package   = ""
+let g:pdv_cfg_Package   = ""
+let g:pdv_cfg_Version   = ""
+let g:pdv_cfg_Author    = "Tim Quellmalz <tim.quellmalz@webentwickler.cc>"
+let g:pdv_cfg_Copyright = ""
+let g:pdv_cfg_License   = ""
+" source ~/.vim/php-doc.vim
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+"map <C-p> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
+map <F5> <Esc>:EnableFastPHPFolds<Cr>
+"map <F6> <Esc>:EnablePHPFolds<Cr>
+"map <F7> <Esc>:DisablePHPFolds<Cr>
+" }}}
+" {{{ PHP MANUAL AS HELP FILES TO BE OPENED WITH `K`
+filetype on "Make sure this - or some variation thereof is present in your file
+autocmd FileType php set keywordprg=pman
+" }}}
+" {{{ php-getter-setter.vim settings
+  let b:phpgetset_setterTemplate =
+  \ "\n" .
+  \ "    /**\n" .
+  \ "     * set %varname%\n" .
+  \ "     *\n" .
+  \ "     * @param mixed $%varname%\n" .
+  \ "     */\n" .
+  \ "    public function %funcname%($%varname%)\n" .
+  \ "    {\n" .
+  \ "        $this->%varname% = $%varname%;\n" .
+  \ "\n" .
+  \ "    return $this;\n" .
+  \ "    }"
+  let b:phpgetset_getterTemplate =
+    \ "// test\n" .
+    \ "    /**\n" .
+    \ "     * get %varname%\n" .
+    \ "     *\n" .
+    \ "     * @return %varname%\n" .
+    \ "     */\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
+" }}}
+" {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
+" make pdf (^m)
+:autocmd FileType pdc noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t latex % -o %.pdf<CR>
+:autocmd FileType pdc let b:presenting_slide_separator = '\v(^|\n)\ze#+'
+" :autocmd BufRead,BufNewFile *.md noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
+" :autocmd BufRead,BufNewFile *.mkd noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
+" :autocmd BufRead,BufNewFile *.markdown noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
+
+" YML
+:autocmd FileType yml set expandtab
+:autocmd FileType yml set shiftwidth=2
+:autocmd FileType yml set softtabstop=2
+:autocmd FileType yml set tabstop=2
+" }}}
+" {{{ KEY MAPPINGS MAIL EDITING + QUOTING
+" replaces empty quoted lines and sets markdown file type
+" which is nice for quotations and common text highlighting
+" use `gq` and a movement command (or `V` before) to fix a
+" quoted block
+" set tw=75 or the text width you like from your mail client
+" in Evolution, configure the external editor plugin like this:
+"     gvim -f -c 'set fo=tcrq' -c 'set tw=76'
+noremap <F12> :%s/\(> \)\+$//g<CR>:set ft=pdc<CR>
+" }}}
+" {{{ KEY MAPPINGS GENERAL
+" shortcuts for replacing tabs / removing trailing whitespace
+nmap <silent> <LocalLeader>ct :%s/\t/    /g<CR>:%s/\s\+$//g<CR>
+nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
+" shortcut for pasting from GNOME
+nmap <silent> <leader>p "+p
+nmap <silent> <leader>P "+P
+" }}}
+" {{{ POST WRITES
+" read .vimrc
+" :autocmd BufWritePost ~/.vimrc   so ~/.vimrc
+" }}}
+" {{{ OPEN FILE UNDER CURSOR AS IMAGE
+:nnoremap gO :!feh <cfile> &<CR>
+" }}}
+" {{{ WINDOWS SMART MOVE KEY COMBINATIONS
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+" }}}
+" {{{ XML + HTML
+let g:sparkupExecuteMapping = '<C-e>'   " Mapping used to execute sparkup.
+let g:sparkupNextMapping    = '<C-E>'   " Mapping used to jump to the next empty tag/attribute.
+" }}}
+" {{{ VIM SESSION + INFO (GLOBAL)
+" Save session and viminfo, quit
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+nmap <silent> <F10> :mksession! /home/t/.vim/.vimsession<CR>:wviminfo! /home/t/.vim/.viminfo<CR>:qa!<CR>
+" reload buffers ... and history of commands, searches, ... with <F9>
+" see `:help user-manual`, chapter 21.3
+nmap <silent> <F9> :source /home/t/.vim/.vimsession<CR>:set viminfo=%,'50,<1000,s100,:50,@10,/50,n/home/t/.vim/.viminfo<CR>
+" }}}
+" {{{ GUIOPTIONS (gvim)
+if has("gui_running")
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=e
+    set guioptions-=c
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=b
+    set guioptions-=B
+    set lines=53
+    set columns=143
+    color pyte-improved
+
+    " settings for vim-indent-guides
+    set ts=4 sw=4 et
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+endif
+
+" }}}
+" {{{ NERDTree
+" Map NERDTreeToggle to convenient key
+nmap <leader>n :NERDTreeToggle<cr>
+" }}}
+" vim: fdm=marker fdl=0 sts=2 ai

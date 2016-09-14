@@ -1,0 +1,23 @@
+# ALIASES
+
+# General
+alias AI='aptitude install '
+alias AS='aptitude search '
+alias ack='ack-grep'
+alias bpp="upower -i `upower -e | grep battery` | grep -E 'battery|state|time to empty|percentage|capacity'"
+alias grails=/usr/local/lib/grails/bin/grails
+alias ll='ls -lah '
+alias lf='dpkg --listfiles '
+alias nb='newsbeuter '
+alias SU='sudo su'
+alias tail='colortail '
+alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
+
+# Vim
+alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
+alias viminit='cp ~/notes/lib/.vimrc . && touch .viminfo && touch .vimsession'
+
+# MORE
+source $ZSH_PRIVATE/_aliases
+
+# vim: set ft=zsh:

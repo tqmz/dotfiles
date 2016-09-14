@@ -1,0 +1,10 @@
+*.bak
+*.log
+.*.swo
+.*.swp
+cmus/*-history
+cmus/*.pl
+cmus/cache
+cmus/trackdb.*
+roxterm/Sessions
+vim/bundle

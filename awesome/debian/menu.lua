@@ -1,0 +1,1 @@
+/etc/xdg/awesome/debian/menu.lua

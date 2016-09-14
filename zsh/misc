@@ -1,0 +1,4 @@
+# MORE
+source $ZSH_PRIVATE/_misc
+
+# vim: set ft=zsh:
