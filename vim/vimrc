@@ -23,8 +23,9 @@ set visualbell                         " ESC in Normal mode: visual bell only
 " {{{ Vundle
 "---------------------------------------------------------------
 " Vundle init
-filetype off | set rtp+=~/.vim/bundle/vundle/ | call vundle#rc()
-Plugin 'gmarik/vundle'
+filetype off | set rtp+=~/.vim/bundle/Vundle.vim/ | call vundle#begin()
+"Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 "---------------------------------------------------------------
 " Definitions:
 " - Github: user/repo
@@ -39,8 +40,7 @@ Plugin 'gmarik/vundle'
 "
 " Versions:
 " <https://github.com/gmarik/vundle/issues/35>
-" for specifying plugin versions / branches
-"---------------------------------------------------------------
+" for specifying plugin versions / branches "---------------------------------------------------------------
 " }}}
 " {{{ Status
 Plugin 'Lokaltog/vim-powerline'
@@ -130,6 +130,8 @@ Plugin 'veloce/vim-aldmeris'
 Plugin 'zaki/zazen'
 Plugin 'zenesque.vim'
 " }}}
+call vundle#end()
+filetype plugin indent on " for Vundle, may be commented out
 " }}}
 " {{{ UI
 set cursorcolumn                       " highlight the current column – disturbs autocompletetion background!
