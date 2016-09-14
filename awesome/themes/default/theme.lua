@@ -74,7 +74,7 @@ theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/defau
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
 --theme.wallpaper = "/usr/share/awesome/themes/default/background.png"
-theme.wallpaper = "/home/t/Bilder/Wallpapers/2012/Image-2012-12-24-0091.JPG"
+--theme.wallpaper = "/home/t/Bilder/Wallpapers/2012/Image-2012-12-24-0091.JPG"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
