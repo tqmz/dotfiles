@@ -22,6 +22,7 @@ ln -fsT $DOTFILES/lynxrc .lynxrc
 ln -fsT $DOTFILES/my.cnf .my.cnf
 ln -fsT $DOTFILES/newsbeuter .newsbeuter
 ln -fsT $DOTFILES/pandoc .pandoc
+ln -fsT $DOTFILES/fonts.conf .fonts.conf
 ln -fsT $DOTFILES/synergy.conf .synergy.conf
 ln -fsT $DOTFILES/tigrc .tigrc
 ln -fsT $DOTFILES/urlview .urlview
