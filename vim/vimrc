@@ -23,8 +23,9 @@ set visualbell                         " ESC in Normal mode: visual bell only
 " {{{ Vundle
 "---------------------------------------------------------------
 " Vundle init
-filetype off | set rtp+=~/.vim/bundle/Vundle.vim/ | call vundle#begin()
+filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin()
 "Plugin 'gmarik/vundle'
+" ==> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vim.vundle <==
 Plugin 'VundleVim/Vundle.vim'
 "---------------------------------------------------------------
 " Definitions:
