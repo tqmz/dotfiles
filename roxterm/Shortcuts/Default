@@ -1,4 +1,3 @@
-
 [roxterm shortcuts scheme]
 File/New Window=<Shift><Control>n
 File/New Tab=<Shift><Control>t
@@ -8,6 +7,7 @@ Tabs/Previous Tab=<Control>Page_Up
 Tabs/Next Tab=<Control>Page_Down
 Edit/Copy=<Shift><Control>c
 Edit/Paste=<Shift><Control>v
+View/Show Menubar=F2
 View/Zoom In=<Control>plus
 View/Zoom Out=<Control>minus
 View/Normal Size=<Control>0
@@ -21,3 +21,4 @@ Search/Find Next=<Shift><Control>n
 Search/Find Previous=<Shift><Control>p
 File/New Window With Profile/Default=
 File/New Tab With Profile/Default=
+Preferences/Edit Current Profile=F12
