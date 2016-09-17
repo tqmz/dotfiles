@@ -8,3 +8,4 @@ cmus/cache
 cmus/trackdb.*
 roxterm/Sessions
 vim/bundle
+vim/undo-dir

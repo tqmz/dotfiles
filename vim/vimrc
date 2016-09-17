@@ -350,6 +350,17 @@ nmap <silent> <F10> :mksession! /home/t/.vim/.vimsession<CR>:wviminfo! /home/t/.
 " see `:help user-manual`, chapter 21.3
 nmap <silent> <F9> :source /home/t/.vim/.vimsession<CR>:set viminfo=%,'50,<1000,s100,:50,@10,/50,n/home/t/.vim/.viminfo<CR>
 " }}}
+" {{{ UNDOFILE
+" <http://vi.stackexchange.com/a/53>
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+" }}}
 " {{{ GUIOPTIONS (gvim)
 if has("gui_running")
     set guioptions-=m

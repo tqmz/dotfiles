@@ -95,6 +95,10 @@ ln -fs $DATAFILES/easytagrc
 cd ~/.local/share
 ln -fsT $DATAFILES/newsbeuter newsbeuter
 
+# vim private files
+cd $DOTFILES/vim
+ln -s $DATAFILES/vim/undo-dir
+
 mkdir -p ~/dev/fs/radiorecorder/config
 cd ~/dev/fs/radiorecorder/config
 ln -fs $DATAFILES/radiorecorder/broadcasts
