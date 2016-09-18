@@ -7,5 +7,6 @@ cmus/*.pl
 cmus/cache
 cmus/trackdb.*
 roxterm/Sessions
+tags
 vim/bundle
 vim/undo-dir
