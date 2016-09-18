@@ -1,0 +1,50 @@
+" init project environment variables
+let g:proj_path=expand("`pwd`")
+let g:proj_file=expand(g:proj_path.".vimproject")
+
+" reload .vimrc after changing it
+" autocmd BufWritePost .vimrc so <sfile>
+
+" tags
+exec "set tags=".g:proj_path."tags"
+
+" load default session
+source .vimsession
+
+" preserve buffers ... and history of commands, searches, ...
+" TODO extract viminfo options as own variables ...
+exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
+
+" Save session and viminfo, quit
+exec "nmap <silent> <F10> :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
+setlocal nomodified
+
+" prevent vim from writing newline to last line of file
+" set binary
+" set noeol
+
+" set file formats
+set ff=unix
+
+" tab options for all files
+set expandtab " do use spaces instead of tabs
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" tig integration
+noremap T :!tig status<CR>
+
+" Command-T
+exec "nmap <silent> <leader>g :CommandT " . g:proj_path . "<CR>"
+
+" Spell check
+"setlocal spell spelllang=en_us
+"setlocal spell spelllang=de_de
+"set complete+=kspell
+
+" {{{ COLORSCHEME
+" colo kellys
+colo moria
+" colo bclear
+" }}}
