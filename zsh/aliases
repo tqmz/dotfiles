@@ -15,7 +15,7 @@ alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
 
 # Vim
 alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
-alias viminit='cp ~/notes/lib/.vimrc . && touch .viminfo && touch .vimsession'
+alias viminit='cp ~/notes/lib/.vimrc . && touch .viminfo && touch .vimsession && touch tags'
 
 # MORE
 source $ZSH_PRIVATE/_aliases

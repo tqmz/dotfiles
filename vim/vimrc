@@ -60,6 +60,10 @@ Plugin 'tqmz/project.tar.gz'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'ludovicchabant/vim-gutentags'
+
+Plugin 'majutsushi/tagbar'
+
 " Command-T:
 " activate via `cd ~/.vim/bundle/command-t && rake make`
 Plugin 'wincent/Command-T'
@@ -133,6 +137,10 @@ Plugin 'zenesque.vim'
 " }}}
 call vundle#end()
 filetype plugin indent on " for Vundle, may be commented out
+" }}}
+" {{{ INCLUDES
+runtime! config/*.vim
+runtime! config/plugin/*.vim
 " }}}
 " {{{ UI
 set cursorcolumn                       " highlight the current column – disturbs autocompletetion background!
