@@ -53,6 +53,10 @@ mkdir -p ~/.config/ranger
 cd ~/.config/ranger
 ln -fs $DOTFILES/ranger rc.conf
 
+mkdir -p ~/.config/fontconfig
+cd ~/.config/fontconfig
+ln -fs $DOTFILES/fonts.conf
+
 mkdir -p ~/.local/share
 cd ~/.local/share
 ln -fs $DOTFILES/applications
@@ -101,6 +105,7 @@ ln -fsT $DATAFILES/newsbeuter newsbeuter
 
 # vim private files
 cd $DOTFILES/vim
+mv undo-dir /tmp/
 ln -s $DATAFILES/vim/undo-dir
 
 mkdir -p ~/dev/fs/radiorecorder/config
