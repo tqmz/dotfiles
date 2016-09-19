@@ -6,6 +6,7 @@
 [pack]
     threads = 0
 [alias]
+    aliases = !git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /	/' | sort
     co  = checkout
     com = checkout master
     rom = rebase origin/master
@@ -20,8 +21,22 @@
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 [core]
-    excludesfile = /home/t/datafiles/git/gitignore.global
+    excludesfile = $HOME/datafiles/git/gitignore.global
     fileMode = true
     editor = vim -u NONE
-[diff]
-    tool = meld
+    pager = less -R --chop-long-lines --no-init --quit-if-one-screen
+[merge]
+    tool = vimdiff
+    # show common ancestor in conflict hunks
+    conflictstyle = diff3
+[diff-so-fancy]
+    stripLeadingSymbols = false
+[pager]
+    # opt out via: git --no-pager diff
+    dd = true
+    dsf = true
+    icdiff = true
+    status = true
+    diff = diff-so-fancy | $(git config core.pager)
+    #log  = diff-so-fancy | $(git config core.pager)
+    #show = diff-so-fancy | $(git config core.pager)

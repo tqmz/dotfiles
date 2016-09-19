@@ -1,1 +1,5 @@
-/etc/tigrc
+# Tig custom configuration
+#
+# Please see 'man tigrc' for a complete reference.
+
+bind status + !git commit --amend
