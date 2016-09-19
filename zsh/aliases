@@ -16,6 +16,7 @@ alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
 # Vim
 alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
 alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimsession && touch tags'
+alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
 # MORE
 source $ZSH_PRIVATE/_aliases

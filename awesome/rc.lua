@@ -58,8 +58,8 @@ modkey = "Mod4"
 -- don't change this! commenting some out renders window ordering instable!!
 layouts =
 {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
+    awful.layout.suit.floating, -- this must be the first suit, otherwise: disorder
+    awful.layout.suit.tile, -- how make this default?
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
