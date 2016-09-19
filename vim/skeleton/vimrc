@@ -35,8 +35,8 @@ set tabstop=4
 " tig integration
 noremap T :!tig status<CR>
 
-" Command-T
-exec "nmap <silent> <leader>g :CommandT " . g:proj_path . "<CR>"
+" fzf
+exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
 
 " Spell check
 "setlocal spell spelllang=en_us

@@ -19,7 +19,7 @@ set exrc                               " read .vimrc within every directory
 set secure
 set visualbell                         " ESC in Normal mode: visual bell only
 " }}}
-" {{{ BUNDLES
+" {{{ PLUGINS
 " {{{ Vundle
 "---------------------------------------------------------------
 " Vundle init
@@ -49,8 +49,9 @@ Plugin 'dannyob/quickfixstatus'
 " }}}
 " {{{ Files, Buffer
 
-" BufExplorer
-"Plugin 'corntrace/bufexplorer'
+set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
+Plugin 'junegunn/fzf.vim'
+let g:fzf_command_prefix = 'Fz'
 
 " Project
 " allows maintaining custom file trees in left window

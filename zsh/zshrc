@@ -114,3 +114,5 @@ zmodload -i zsh/complist
 
 # load inspector completion
 # inspector zsh --bind=inspector --program=inspector | source /dev/stdin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
