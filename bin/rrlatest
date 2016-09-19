@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd $HOME/m/radiorecorder && find . -type f -mmin -2800 -name "*.mp3" -exec du -h "{}" \;

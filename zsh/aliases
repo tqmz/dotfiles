@@ -18,6 +18,9 @@ alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
 alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimsession && touch tags'
 alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
+# Radiorecorder
+alias wrrlatest='watch -n 60 -t rrlatest'
+
 # MORE
 source $ZSH_PRIVATE/_aliases
 
