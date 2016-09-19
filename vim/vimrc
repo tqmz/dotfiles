@@ -53,6 +53,9 @@ set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
 Plugin 'junegunn/fzf.vim'
 let g:fzf_command_prefix = 'Fz'
 
+" <Leader>f to run ranger within Vim
+Plugin 'francoiscabrol/ranger.vim'
+
 " Project
 " allows maintaining custom file trees in left window
 " fork allows custom project files instead of global .vimprojects only

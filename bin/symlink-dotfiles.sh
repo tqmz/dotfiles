@@ -49,6 +49,10 @@ mkdir -p ~/.config/kupfer
 cd ~/.config/kupfer
 ln -fs $DOTFILES/kupfer.cfg
 
+mkdir -p ~/.config/ranger
+cd ~/.config/ranger
+ln -fs $DOTFILES/ranger rc.conf
+
 mkdir -p ~/.local/share
 cd ~/.local/share
 ln -fs $DOTFILES/applications
