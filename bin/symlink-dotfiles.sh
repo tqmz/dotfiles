@@ -20,6 +20,7 @@ ln -fsT $DOTFILES/gtk-bookmarks .gtk-bookmarks
 ln -fsT $DOTFILES/gtkrc-2.0 .gtkrc-2.0
 ln -fsT $DOTFILES/lynxrc .lynxrc
 ln -fsT $DOTFILES/my.cnf .my.cnf
+ln -fsT $DOTFILES/myclirc .myclirc
 ln -fsT $DOTFILES/newsbeuter .newsbeuter
 ln -fsT $DOTFILES/pandoc .pandoc
 ln -fsT $DOTFILES/fonts.conf .fonts.conf
