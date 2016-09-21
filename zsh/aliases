@@ -22,6 +22,6 @@ alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 alias wrrlatest='watch -n 60 -t rrlatest'
 
 # MORE
-source $ZSH_PRIVATE/_aliases
+[ -f $ZSH_PRIVATE/_aliases ] && source $ZSH_PRIVATE/_aliases
 
 # vim: set ft=zsh:

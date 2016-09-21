@@ -1,4 +1,4 @@
 # MORE
-source $ZSH_PRIVATE/_misc
+[ -f $ZSH_PRIVATE/_misc ] && source $ZSH_PRIVATE/_misc
 
 # vim: set ft=zsh:

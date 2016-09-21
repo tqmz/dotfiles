@@ -270,6 +270,7 @@ map <F5> <Esc>:EnableFastPHPFolds<Cr>
 "map <F7> <Esc>:DisablePHPFolds<Cr>
 " }}}
 " {{{ PHP MANUAL AS HELP FILES TO BE OPENED WITH `K`
+" for a better approach (+flexible, -autocmd), see blueyed dotfiles
 filetype on "Make sure this - or some variation thereof is present in your file
 autocmd FileType php set keywordprg=pman
 " }}}

@@ -1,5 +1,5 @@
 # MORE
-source $ZSH_PRIVATE/_functions
+[ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
 
 # `h baz` to print history of baz commands
 h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }

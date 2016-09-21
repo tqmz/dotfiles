@@ -1,6 +1,6 @@
 setopt null_glob # silently ignore non-matching globs, allow print *.md *.jpg when there is no jpg
 
 # MORE
-source $ZSH_PRIVATE/_options
+[ -f $ZSH_PRIVATE/_options ] && source $ZSH_PRIVATE/_options
 
 # vim: set ft=zsh:

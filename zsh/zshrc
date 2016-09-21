@@ -3,15 +3,11 @@
 # <https://github.com/robbyrussell/oh-my-zsh>
 # <https://github.com/tqmz/oh-my-zsh.git> ##### use this version! ####
 export ZSH=/usr/local/src/oh-my-zsh
-
 export ZSH_CUSTOM=~/.zsh
-
 export HISTFILE=$ZSH_CUSTOM/history/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
-
 export ZSH_PRIVATE=~/datafiles/zsh
-
 
 # SETTINGS
 
@@ -27,10 +23,8 @@ export DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
-
 # PLUGINS
 # (see $ZSH/plugins/)
-
 plugins=(
         composer
         command-not-found
@@ -42,7 +36,6 @@ plugins=(
         zsh-syntax-highlighting
 )
 # zsh-syntax-highlighting: must be initialized as git submodule in $ZSH
-
 
 # COMPLETION
 
@@ -73,26 +66,9 @@ zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
 
-
-# ENVIRONMENT VARIABLES
-## TODO mv to appropriate place (shell indep.)
-# -- for very global settings, edit `/etc/login.defs`
-# -- for global settings edit `/etc/environment`
-# -- see `/etc/profile`, too
-# -- yet, $PATH gets overwritten somewhere else
-
-export EDITOR="vim"
-export LESS="-R --ignore-case -P ?f%f:stdin.  line %lt–%lb/%L  ?e(END):%PB\%."
-export JAVA_HOME="/usr/lib/jvm/default-java"
-export PATH="$PATH:$HOME/bin:$HOME/bin-public:$HOME/dotfiles/bin"
-
-# regular part read out via `manpath`, but MySQL is included anyways already
-# export MANPATH="/usr/local/man:/usr/local/share/man:/usr/share/man:/home/t/lib/mysql/refman-5.6-en.man-gpl"
-
-# vim : set ft=config :
-
 # MORE
 source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/environment
 source $ZSH_CUSTOM/aliases
 source $ZSH_CUSTOM/functions
 source $ZSH_CUSTOM/misc
