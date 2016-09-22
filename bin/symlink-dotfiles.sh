@@ -13,9 +13,11 @@ DATAFILES="$HOME/datafiles"
 cd
 ln -fsT $DOTFILES/abcde.conf .abcde.conf
 ln -fsT $DOTFILES/ackrc .ackrc
+ln -fsT $DOTFILES/agignore .agignore
 ln -fsT $DOTFILES/cmus .cmus
 ln -fsT $DOTFILES/colortail .colortail
 ln -fsT $DOTFILES/gitconfig .gitconfig
+ln -fsT $DOTFILES/gitignore .gitignore
 ln -fsT $DOTFILES/gtk-bookmarks .gtk-bookmarks
 ln -fsT $DOTFILES/gtkrc-2.0 .gtkrc-2.0
 ln -fsT $DOTFILES/lynxrc .lynxrc

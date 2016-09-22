@@ -1,0 +1,11 @@
+*.bak
+*.log
+*~
+.*.sw?
+.DS_Store
+.agignore
+.idea
+.svn
+.vim*
+.~lock.*#
+tags

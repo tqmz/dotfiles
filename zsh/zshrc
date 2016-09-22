@@ -28,7 +28,6 @@ export DISABLE_AUTO_UPDATE="true"
 plugins=(
         composer
         command-not-found
-        debian
         git
         history-substring-search
         screen
