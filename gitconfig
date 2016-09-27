@@ -1,42 +1,72 @@
 # git config --global --includes user.email   # to change mail on a system, but for all repos
+
 [include]
     path = ~/datafiles/git/gitconfig.local
+
 [color]
     ui = auto
+
 [pack]
     threads = 0
+# see also <http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/>
+
 [alias]
-    aliases = !git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /	/' | sort
-    co  = checkout
-    com = checkout master
-    rom = rebase origin/master
-    st  = status
+
+    # basics
+    alias = !git config -l | grep alias | cut -c 7- | sort
+    cc = commit --amend
+    co = checkout
+    st = status
+    ss = stash save
+    sp = stash pop
+    rv = remote -v
+    ra = remote add
+    rr = remote rename
+    rs = remote show
+    ru = remote set-url
+    fa = fetch --all
+
+    # tags
+    lr = !git latest-release
+    colr = !git checkout `git latest-release`
+    latest-release = describe --tags --abbrev=0
+    #latest-release = "!f() { LATEST_TAGGED_REV=$(git rev-list --tags --max-count=1) && git describe --tags $LATEST_TAGGED_REV; }; f"
+
+    # log
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    lg = !"git lg1"
-    lg1 = !"git lg1-specific --all"
-    lg2 = !"git lg2-specific --all"
-    lg3 = !"git lg3-specific --all"
-    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+    lolf = lol --stat
+    lola = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold dim white)(%ar)%C(reset) %C(blue)%s%C(reset) %C(bold dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lolaf = lola --stat
+    lof = log -u
+
+    # diverse
+    grepr = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+
 [core]
     excludesfile = ~/.gitignore
     fileMode = true
     editor = vim -u NONE
     pager = less -R --chop-long-lines --no-init --quit-if-one-screen
+
 [merge]
     tool = vimdiff
-    # show common ancestor in conflict hunks
     conflictstyle = diff3
+    prompt = false
+
 [diff-so-fancy]
     stripLeadingSymbols = false
-[pager]
-    # opt out via: git --no-pager diff
+
+[pager] # --no-pager (for opt out)
     dd = true
     dsf = true
     icdiff = true
     status = true
     diff = diff-so-fancy | $(git config core.pager)
-    #log  = diff-so-fancy | $(git config core.pager)
-    #show = diff-so-fancy | $(git config core.pager)
+    log  = diff-so-fancy | $(git config core.pager)
+    show = diff-so-fancy | $(git config core.pager)
+    
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
