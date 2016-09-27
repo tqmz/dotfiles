@@ -70,9 +70,6 @@ Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'majutsushi/tagbar'
 
-" Command-T:
-" activate via `cd ~/.vim/bundle/command-t && rake make`
-Plugin 'wincent/Command-T'
 " }}}
 " {{{ All Languages
 
