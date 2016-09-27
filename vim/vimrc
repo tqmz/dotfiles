@@ -64,6 +64,8 @@ Plugin 'tqmz/project.tar.gz'
 
 Plugin 'scrooloose/nerdtree'
 
+" requires ctags package (use Universal Ctags)
+" Vundle: `:PluginDocs` to generate `:h gutentags` files
 Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'majutsushi/tagbar'

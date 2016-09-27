@@ -14,6 +14,7 @@ cd
 ln -fsT $DOTFILES/abcde.conf .abcde.conf
 ln -fsT $DOTFILES/ackrc .ackrc
 ln -fsT $DOTFILES/agignore .agignore
+ln -fsT $DOTFILES/ctags .ctags
 ln -fsT $DOTFILES/cmus .cmus
 ln -fsT $DOTFILES/colortail .colortail
 ln -fsT $DOTFILES/gitconfig .gitconfig

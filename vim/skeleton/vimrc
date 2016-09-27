@@ -6,7 +6,7 @@ let g:proj_file=expand(g:proj_path.".vimproject")
 " autocmd BufWritePost .vimrc so <sfile>
 
 " tags
-exec "set tags=".g:proj_path."tags"
+let g:gutentags_exclude = ['*.css', '*.html', '*.js']
 
 " load default session
 source .vimsession
@@ -17,7 +17,6 @@ exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
 
 " Save session and viminfo, quit
 exec "nmap <silent> <F10> :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
-setlocal nomodified
 
 " prevent vim from writing newline to last line of file
 " set binary
@@ -48,3 +47,6 @@ exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
 colo moria
 " colo bclear
 " }}}
+
+
+

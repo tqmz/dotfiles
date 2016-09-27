@@ -1,8 +1,25 @@
-" Remove quick help etc.
-let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['+', '-']
-let g:tagbar_autopreview = 1
 
+" GENERAL OPTIONS
+nmap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_ctags_bin='ctags'
+let g:tagbar_compact = 1
+let g:tagbar_left = 0
+let g:tagbar_width = 35
+let g:tagbar_indent = 2
+let g:tagbar_show_linenumbers = 2
+let g:tagbar_iconchars = ['►', '▼']
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_autopreview = 1
+let g:tagbar_previewwin_pos = "botright"
+
+
+" FILETYPE OPTIONS
+" for more file types, see:
+" <https://github.com/majutsushi/tagbar/wiki#support-for-additional-filetypes>
+
+" PHP
+" see also <https://github.com/vim-php/tagbar-phpctags.vim>
 let g:tagbar_type_php  = {
     \ 'ctagstype' : 'php',
     \ 'sort' : 0,
@@ -17,16 +34,18 @@ let g:tagbar_type_php  = {
     \ ]
 \ }
 
-" Show headlines within markdown files
+" Markdown
 let g:tagbar_type_markdown = {
-            \ 'ctagstype' : 'markdown',
-            \ 'kinds' : [
-            \ 'h:headings'
-            \ ],
-            \ 'sort' : 0,
-            \ }
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:headings',
+        \ 'l:links',
+        \ 'i:images'
+    \ ],
+    \ "sort" : 0
+\ }
 
-" Show parts of rst files
+" ReStructuredText
 let g:tagbar_type_rst = {
     \ 'ctagstype': 'rst',
     \ 'ctagsbin' : '~/bin/rst2ctags/rst2ctags.py',
@@ -42,4 +61,3 @@ let g:tagbar_type_rst = {
     \ 'sort': 0,
 \ }
 
-let g:tagbar_ctags_bin='ctags'
