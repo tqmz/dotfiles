@@ -139,7 +139,10 @@ Plugin 'zaki/zazen'
 Plugin 'zenesque.vim'
 " }}}
 call vundle#end()
+
 filetype plugin indent on " for Vundle, may be commented out
+filetype on
+
 " }}}
 " {{{ INCLUDES
 runtime! config/*.vim
@@ -221,12 +224,6 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = "jshint"
 " }}}
-" {{{ php.vim
-let php_sql_query          = 1
-let php_html_in_strings    = 1
-let php_parent_error_close = 1
-let php_no_shorttags       = 1
-" }}}
 " {{{ MARKS
 " jump to last position when reopening file
 if has("autocmd")
@@ -239,65 +236,6 @@ endif
 nmap <silent> <F2> <Plug>ToggleProject
 let g:proj_window_width = 50
 let g:proj_flags        = "ibmnstgT"
-" }}}
-" {{{ KEY MAPPINGS PHP
-" TODO use syntactic instead
-" use <C-M> to run the script itself only in projects where appropriate!
-":autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
-" :autocmd FileType php map <C-M> :!/usr/bin/php -l %<CR>
-" :autocmd FileType php map <C-L> :!/usr/bin/php -l %<CR>
-" tabs
-:autocmd FileType php set expandtab
-:autocmd FileType php set shiftwidth=4
-:autocmd FileType php set softtabstop=4
-:autocmd FileType php set tabstop=4
-" phpdoc
-let g:pdv_cfg_Type      = "string"
-let g:pdv_cfg_Package   = ""
-let g:pdv_cfg_Package   = ""
-let g:pdv_cfg_Version   = ""
-let g:pdv_cfg_Author    = "Tim Quellmalz <tim.quellmalz@webentwickler.cc>"
-let g:pdv_cfg_Copyright = ""
-let g:pdv_cfg_License   = ""
-" source ~/.vim/php-doc.vim
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
-"map <C-p> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
-map <F5> <Esc>:EnableFastPHPFolds<Cr>
-"map <F6> <Esc>:EnablePHPFolds<Cr>
-"map <F7> <Esc>:DisablePHPFolds<Cr>
-" }}}
-" {{{ PHP MANUAL AS HELP FILES TO BE OPENED WITH `K`
-" for a better approach (+flexible, -autocmd), see blueyed dotfiles
-filetype on "Make sure this - or some variation thereof is present in your file
-autocmd FileType php set keywordprg=pman
-" }}}
-" {{{ php-getter-setter.vim settings
-  let b:phpgetset_setterTemplate =
-  \ "\n" .
-  \ "    /**\n" .
-  \ "     * set %varname%\n" .
-  \ "     *\n" .
-  \ "     * @param mixed $%varname%\n" .
-  \ "     */\n" .
-  \ "    public function %funcname%($%varname%)\n" .
-  \ "    {\n" .
-  \ "        $this->%varname% = $%varname%;\n" .
-  \ "\n" .
-  \ "    return $this;\n" .
-  \ "    }"
-  let b:phpgetset_getterTemplate =
-    \ "// test\n" .
-    \ "    /**\n" .
-    \ "     * get %varname%\n" .
-    \ "     *\n" .
-    \ "     * @return %varname%\n" .
-    \ "     */\n" .
-    \ "    public function %funcname%()\n" .
-    \ "    {\n" .
-    \ "        return $this->%varname%;\n" .
-    \ "    }"
 " }}}
 " {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
 " make pdf (^m)
