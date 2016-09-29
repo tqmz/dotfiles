@@ -73,6 +73,8 @@ Plugin 'majutsushi/tagbar'
 " }}}
 " {{{ All Languages
 
+Plugin 'tpope/vim-commentary'
+
 Plugin 'godlygeek/tabular'
 
 Plugin 'scrooloose/syntastic'
@@ -129,10 +131,8 @@ Plugin 'sotte/presenting.vim'
 " {{{ Colors
 Plugin 'CSApprox'
 Plugin 'Colour-Sampler-Pack'
-Plugin 'Sorcerer'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/Vim-Tomorrow-Theme'
-Plugin 'cloudhead/shady.vim'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'veloce/vim-aldmeris'
 Plugin 'zaki/zazen'
@@ -152,7 +152,7 @@ set guioptions-=T                      " no toolbar (for gvim)
 set laststatus=2                       " always show the status line with file name
 set report=0                           " tell us when anything is changed via :...
 set ruler                              " show statusline with cursor position
-set mouse=a                            " use mouse everywhere – prevents GNOME Ctrl+C, use register + instead: `" +p` / ` " +y`
+set mouse=a                            " use mouse everywhere – prevents GNOME Ctrl+C clipboard copy, use register + instead: `" +p` / ` " +y`
 set mousehide                          " hide the mouse cursor when typing
 set scrolloff=10                       " Keep 10 lines (top/bottom) for scope
 set shortmess=aOstT                    " shortens messages to avoid
