@@ -19,7 +19,7 @@ alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimse
 alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
 # Radiorecorder
-alias wrrlatest='watch -n 60 -t rrlatest'
+alias wrrlatest='watch -n 60 -t rrlatest ' # amount of minutes can be appended, e. g. `wrrlatest 1440`
 
 # MORE
 [ -f $ZSH_PRIVATE/_aliases ] && source $ZSH_PRIVATE/_aliases

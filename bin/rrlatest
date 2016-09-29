@@ -1,3 +1,4 @@
 #!/bin/bash
 
-cd $HOME/m/radiorecorder && find . -type f -mmin -2800 -name "*.mp3" -exec du -h "{}" \;
+MINUTES=${1:-2800}
+cd $HOME/m/radiorecorder && find . -type f -mmin -${MINUTES} -name "*.mp3" -exec du -h "{}" \;
