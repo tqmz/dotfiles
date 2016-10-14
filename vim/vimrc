@@ -93,6 +93,8 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'gabrielelana/vim-markdown'
 
+Plugin 'itchyny/vim-highlighturl'
+
 " }}}
 " {{{ Textile
 
