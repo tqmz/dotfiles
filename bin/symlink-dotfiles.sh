@@ -26,6 +26,7 @@ ln -fsT $DOTFILES/my.cnf .my.cnf
 ln -fsT $DOTFILES/myclirc .myclirc
 ln -fsT $DOTFILES/newsbeuter .newsbeuter
 ln -fsT $DOTFILES/pandoc .pandoc
+ln -fsT $DOTFILES/php_cs .php_cs
 ln -fsT $DOTFILES/fonts.conf .fonts.conf
 ln -fsT $DOTFILES/synergy.conf .synergy.conf
 ln -fsT $DOTFILES/tigrc .tigrc

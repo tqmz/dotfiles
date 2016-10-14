@@ -111,6 +111,8 @@ Plugin 'vim-json-bundle'
 " }}}
 " {{{ PHP
 
+Plugin 'stephpy/vim-php-cs-fixer'
+
 Plugin 'phpfolding.vim'
 
 Plugin 'tqmz/php-doc.vim'
