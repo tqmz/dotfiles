@@ -12,6 +12,7 @@ alias nb='newsbeuter '
 alias SU='sudo su'
 alias tail='colortail '
 alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
+alias xx='xmodmap ~/.Xmodmap'
 
 # Vim
 alias vimclear='echo -n > .vimsession && echo -n > .viminfo'

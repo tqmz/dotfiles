@@ -8,25 +8,45 @@
 ! keysyms
 ! for list of keysyms to be used, try `dumpkeys -l` (as root), or better:
 ! <http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap>
+! see also:
+! <http://cweiske.de/howto/xmodmap/allinone.html> #multimedia
+! <http://www.andwil.de/weblog/meine-xmodmap> #utf8
 
 ! map Capslock as additional Ctrl key
 clear   Lock
 clear   Control
 keycode 66 = Control_L
-!keycode 66 = Caps_Lock
 add     Control = Control_L Control_R
 
+! Apostrophe (4 key)
+! AltGr + Shift for typographic apostrophe (rightsinglequotemark by Unicode standards)
+keycode 13 = apostrophe 4 apostrophe 4 braceleft U2019 braceleft U2019
+
+! Backtick and percent (ù key)
 ! replace ù by ` (use ... to `u to write ù instead)
-keycode  48 = grave percent grave percent twosuperior grave twosuperior grave grave percent twosuperior grave grave percent twosuperior grave
+keycode  48 = grave percent grave percent twosuperior grave twosuperior grave
 
-! replace œ by % (TODO better use that key)
-! keycode  49 = percent OE percent OE leftdoublequotemark rightdoublequotemark leftdoublequotemark rightdoublequotemark percent OE leftdoublequotemark rightdoublequotemark percent OE leftdoublequotemark rightdoublequotemark
+! German quotation marks (ù key)
+! „Die ‚Zitate dieser Art‘ waren überaus beeindruckend.“
+! Shift for right (“), AltGr for single (‚)
+!keycode 48 = doublelowquotemark leftdoublequotemark doublelowquotemark leftdoublequotemark singlelowquotemark leftsinglequotemark singlelowquotemark leftsinglequotemark
+! TODO: switch "quotation mark key" via different xmodmaps
 
-! replace È by dead_acute (both ` and ´ on same key)
-keycode  16 = egrave 7 egrave 7 dead_grave dead_acute dead_grave dead_acute egrave 7 dead_grave dead_acute egrave 7 dead_grave dead_acute
+! English quotation marks (² key)
+! “Did you read the article ‘The 10 Great Quotes’ today?”
+! Shift for right (”), AltGr for single (‘)
+keycode  49 = leftdoublequotemark rightdoublequotemark leftdoublequotemark rightdoublequotemark leftsinglequotemark rightsinglequotemark leftsinglequotemark rightsinglequotemark
 
-! replace µ by dash
-keycode  51 = asterisk endash asterisk endash threesuperior yen threesuperior yen asterisk endash threesuperior yen asterisk endash threesuperior yen
+! French quotation marks / Guillemet (< key)
+! « Bonjour! » in French, »Guten Morgen!« in German novel style
+keycode  94 = less greater less greater guillemotleft guillemotright guillemotleft guillemotright
+
+! Acute and grave (7 key)
+! AltGr for `, AltGr+Shift followed by letter for e. g. é
+keycode  16 = egrave 7 egrave 7 dead_grave dead_acute dead_grave dead_acute
+
+! Dash (µ key)
+keycode  51 = asterisk endash asterisk endash threesuperior yen threesuperior yen
 
 ! replace Print by Pause // for kupfer
 keycode 107 = Pause Break Pause Break Pause Break Pause Break
