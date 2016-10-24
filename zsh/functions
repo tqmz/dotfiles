@@ -2,6 +2,13 @@
 [ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
 
 # `h baz` to print history of baz commands
-h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+function h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
+# ranger: wrap by Roxterm color switch for better previews
+function ranger() {
+    ttdd                        # set darker terminal theme
+    /usr/local/bin/ranger "$@"  # call ranger w/ arguments
+    ttd                         # set dark terminal (TODO reset to original theme)
+}
 
 # vim: set ft=zsh:
