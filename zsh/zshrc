@@ -91,3 +91,6 @@ zmodload -i zsh/complist
 # inspector zsh --bind=inspector --program=inspector | source /dev/stdin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# set $OPERATION_SYSTEM for $DOTFILES/setup/* scripts
+source $DOTFILES/bin/setosenv.sh
