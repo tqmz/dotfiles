@@ -15,10 +15,12 @@
     # basics
     alias = !git config -l | grep alias | cut -c 7- | sort
     cc = commit --amend
+    ci = commit
     co = checkout
     st = status
     ss = stash save
     sp = stash pop
+    rom = rebase origin master
     rv = remote -v
     ra = remote add
     rr = remote rename
@@ -45,7 +47,7 @@
 [core]
     excludesfile = ~/.gitignore
     fileMode = true
-    editor = vim -u NONE
+    editor = vim -u /etc/vim/vimrc
     pager = less -R --chop-long-lines --no-init --quit-if-one-screen
 
 [merge]
@@ -64,8 +66,8 @@
     diff = diff-so-fancy | $(git config core.pager)
     log  = diff-so-fancy | $(git config core.pager)
     show = diff-so-fancy | $(git config core.pager)
-    
-[diff]
+
+[diff] # use `git clean` for removing `*.orig* files after merge
     tool = vimdiff
 
 [difftool]
