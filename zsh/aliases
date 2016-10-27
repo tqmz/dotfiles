@@ -11,6 +11,7 @@ alias lf='dpkg --listfiles '
 alias nb='newsbeuter '
 alias SU='sudo su'
 alias tail='colortail '
+alias tigg='tig --all '
 alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
 alias xx='xmodmap ~/.Xmodmap'
 
