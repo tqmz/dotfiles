@@ -47,7 +47,7 @@
 [core]
     excludesfile = ~/.gitignore
     fileMode = true
-    editor = vim -u /etc/vim/vimrc
+    editor = vim -u ~/.vimrc.minimal
     pager = less -R --chop-long-lines --no-init --quit-if-one-screen
 
 [merge]

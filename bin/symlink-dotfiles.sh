@@ -33,6 +33,7 @@ ln -fsT $DOTFILES/tigrc .tigrc
 ln -fsT $DOTFILES/urlview .urlview
 ln -fsT $DOTFILES/vim .vim
 ln -fsT $DOTFILES/vim/vimrc .vimrc
+ln -fsT $DOTFILES/vim/vimrc.minimal .vimrc.minimal
 ln -fsT $DOTFILES/wgetrc .wgetrc
 ln -fsT $DOTFILES/xmodmap .Xmodmap
 ln -fsT $DOTFILES/xscreensaver .xscreensaver

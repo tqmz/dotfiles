@@ -1,0 +1,11 @@
+# a minimal vimrc for usage e. g. in git commits (see dotfiles/gitconfig)
+# use via: vim -u ~/.vimrc.minimal
+
+syn on
+let mapleader = "_"
+set relativenumber
+map! ç <Esc>
+set autochdir                          " always switch to the current file directory
+set nocompatible                       " don't imitate vi bugs and limitiations
+set visualbell                         " ESC in Normal mode: visual bell only
+
