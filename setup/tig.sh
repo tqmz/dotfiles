@@ -1,7 +1,10 @@
 #!/bin/bash
 # <http://jonas.nitro.dk/tig/INSTALL.html>
 
-# for yet missing diff-highlight support see <https://github.com/jonas/tig/issues/313>
-sudo aptitude install --add-user-tag=tig libncurses-dev libncursesw5-dev libreadline-dev && \
-cd /tmp && git clone http://github.com/jonas/tig && \
-cd /tmp/tig && make && make install && make install-release-doc
+sudo aptitude install --add-user-tag=tig libncurses-dev libncursesw5-dev libreadline-dev asciidoc &&\
+cd /tmp &&\
+git clone http://github.com/jonas/tig &&\
+cd tig &&\
+make prefix=/usr/local &&\
+sudo make install prefix=/usr/local &&\
+make install-release-doc

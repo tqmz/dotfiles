@@ -3,3 +3,5 @@
 # Please see 'man tigrc' for a complete reference.
 
 bind status + !git commit --amend
+
+set diff-highlight = true
