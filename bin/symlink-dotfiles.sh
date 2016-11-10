@@ -91,7 +91,7 @@ ln -fs $DATAFILES/lynx/lynx_bookmarks.html
 ln -fsT $DATAFILES/mongodb/dbshell .dbshell
 ln -fsT $DATAFILES/mysql/mysql_history .mysql_history
 ln -fsT $DATAFILES/openvpn .openvpn
-ln -fsT $DATAFILES/ssh .ssh
+ln -fsT "$DATAFILES/ssh-`hostname`" .ssh
 ln -fsT $DATAFILES/vocabularylist .vocabularylist
 touch $DATAFILES/zsh/_aliases
 touch $DATAFILES/zsh/_functions
