@@ -1,5 +1,5 @@
-# a minimal vimrc for usage e. g. in git commits (see dotfiles/gitconfig)
-# use via: vim -u ~/.vimrc.minimal
+" a minimal vimrc for usage e. g. in git commits (see dotfiles/gitconfig)
+" use via: vim -u ~/.vimrc.minimal
 
 set noexrc                             " do NOT read .vimrc within every directory
 
