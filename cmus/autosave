@@ -46,20 +46,13 @@ set continue=true
 set device=/dev/cdrom
 set display_artist_sort_name=false
 set dsp.alsa.device=default
-set dsp.ao.buffer_size=16384
-set dsp.ao.device_interface=
-set dsp.ao.driver=
-set dsp.ao.wav_counter=1
-set dsp.ao.wav_dir=/home/smile_x
-set dsp.jack.resampling_quality=2
-set dsp.jack.server_name=
-set dsp.roar.role=
+set dsp.roar.role
 set dsp.roar.server=
 set follow=false
 set format_current= >> %a -%c- -%g- **%t** (%y) %= %D %n %d
 set format_playlist= %-20a %-20c %-10g %t %= %y %D-%n %d
 set format_playlist_va= %-20a %-20c %-10g %t %= %y %D %n %d
-set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?bpm>0?at %{bpm} BPM }%{?volume>=0?vol: %{?lvolume!=rvolume?%{lvolume},%{rvolume} ?%{volume} }}%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{?repeat_current?repeat current?%{?play_library?%{playlist_mode} from %{?play_sorted?sorted }library?playlist}} | %1{continue}%1{follow}%1{repeat}%1{shuffle} 
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}- %{total} %{?volume>=0?vol: %{?lvolume!=rvolume?%{lvolume},%{rvolume} ?%{volume} }}%{?stream?buf: %{buffer} }%{?show_current_bitrate & bitrate>=0? %{bitrate} kbps }%=%{?repeat_current?repeat current?%{?play_library?%{playlist_mode} from %{?play_sorted?sorted }library?playlist}} | %1{continue}%1{follow}%1{repeat}%1{shuffle} 
 set format_title=%t - %a
 set format_trackwin= %02n. %t %= %g  %y   %d
 set format_trackwin_album= %l 
