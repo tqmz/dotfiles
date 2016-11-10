@@ -120,3 +120,17 @@ cd ~/dev/fs/radiorecorder/config
 ln -fs $DATAFILES/radiorecorder/broadcasts
 ln -fs $DATAFILES/radiorecorder/record
 ln -fs $DATAFILES/radiorecorder/stations
+
+#-------------------------------------------------------------------------------
+# BIN
+#-------------------------------------------------------------------------------
+mkdir -p ~/bin
+
+#-------------------------------------------------------------------------------
+# SSH Permissions
+#-------------------------------------------------------------------------------
+cd ~/.ssh
+chmod 600 *
+touch authorized_keys
+chmod 644 authorized_keys
+
