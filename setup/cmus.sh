@@ -16,7 +16,7 @@ git checkout $(git describe --tags `git rev-list --tags --max-count=1`) &&\
  # make install used here, as checkinstall makes /usr/local/lib/cmus/ip a binary (must be dir)
 sudo make install &&\
 
-sudo aptitude install --add-user-tag=cmus libcurl3-dev libcrypto++-dev libssl-dev libnotify-dev &&\
+sudo aptitude install --add-user-tag=cmusfm libcurl3-dev libcrypto++-dev libssl-dev libnotify-dev dh-autoreconf &&\
 cd /tmp &&\
 git clone https://github.com/Arkq/cmusfm.git &&\
 cd cmusfm &&\
