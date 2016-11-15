@@ -76,8 +76,8 @@ source $ZSH_PRIVATE/_zshrc
 
 # use distinct host indication
 # derived from $ZSH/themes/fishy.zsh-theme
-local user_color='blue'; [ $UID -eq 0 ] && user_color='magenta'
-PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
+local user_color='white'; [ $UID -eq 0 ] && user_color='magenta'
+PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$reset_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 
 # vi mode
 # bindkey -v
