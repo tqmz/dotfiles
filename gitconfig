@@ -20,7 +20,7 @@
     st = status
     ss = stash save
     sp = stash pop
-    rom = rebase origin master
+    rom = rebase origin/master
     rv = remote -v
     ra = remote add
     rr = remote rename
