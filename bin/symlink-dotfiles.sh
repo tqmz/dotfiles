@@ -51,6 +51,10 @@ ln -fsT $DOTFILES/roxterm roxterm.sourceforge.net
 #cd ~/.config/htop
 #ln -fs $DOTFILES/htoprc
 
+mkdir -p ~/.config/git
+cd ~/.config/git
+ln -fs $DOTFILES/gitattributes attributes
+
 mkdir -p ~/.config/kupfer
 cd ~/.config/kupfer
 ln -fs $DOTFILES/kupfer.cfg
@@ -68,6 +72,9 @@ mkdir -p ~/.local/share
 cd ~/.local/share
 ln -fs $DOTFILES/applications
 
+mkdir -p ~/.w3m
+cd ~/.w3m
+ln -fs $DOTFILES/w3m/keymap
 
 #-------------------------------------------------------------------------------
 # DATAFILES

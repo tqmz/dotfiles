@@ -31,6 +31,11 @@ feed-sort-order "title-desc"
 feedlist-format "%3-i %12-T  %S  %n  %3U  %3c        %-80t" # %d for description
 text-width 70 # half screen of notbook display
 
+# custom filters
+define-filter "current" "tags # \"current\"" # => `f` for selecting a filter, `^f` for clearing filter selection
+
+
+
 # colors – disabled, as without defing colours here, all terminal color schemes work best
 # original
 #color article black white

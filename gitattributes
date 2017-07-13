@@ -1,0 +1,3 @@
+# https://dev.to/igorsantos07/quick-tip-on-git-diffs-for-php-files
+# name method name, not class name above hunks
+*.php diff=php

@@ -55,6 +55,7 @@ let g:fzf_command_prefix = 'Fz'
 
 " <Leader>f to run ranger within Vim
 Plugin 'francoiscabrol/ranger.vim'
+" vs. https://github.com/Mizuchi/vim-ranger ?
 
 " Project
 " allows maintaining custom file trees in left window
@@ -62,7 +63,8 @@ Plugin 'francoiscabrol/ranger.vim'
 " <https://github.com/tqmz/project.tar.gz/blob/master/README.md>
 Plugin 'tqmz/project.tar.gz'
 
-Plugin 'scrooloose/nerdtree'
+"NerdTree shouldn't be used along with ranger
+"Plugin 'scrooloose/nerdtree'
 
 " requires ctags package (use Universal Ctags)
 " Vundle: `:PluginDocs` to generate `:h gutentags` files
@@ -99,6 +101,11 @@ Plugin 'itchyny/vim-highlighturl'
 " {{{ Textile
 
 Plugin 'timcharper/textile.vim'
+
+" }}}
+" {{{ Taskjuggler
+
+Plugin 'kalafut/vim-taskjuggler'
 
 " }}}
 " {{{ UML
@@ -195,7 +202,8 @@ set t_Co=256
 "colo lucius
 set background=light
 " colo solarized
-colo jellybeans
+" colo jellybeans
+colo pyte-improved
 " required to run solarized in terminal:
 let g:solarized_termcolors=256
 " }}}
