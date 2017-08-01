@@ -1,5 +1,5 @@
 [roxterm profile]
-colour_scheme=Solarized Light
+colour_scheme=Solarized Dark
 hide_menubar=1
 font=DejaVu Sans Mono 9
 show_resize_grip=1
@@ -13,4 +13,4 @@ full_screen=0
 maximise=0
 saturation=1,000000
 width=80
-term=xterm-256color
+term=

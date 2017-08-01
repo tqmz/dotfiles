@@ -15,6 +15,12 @@ alias tigg='tig --all '
 alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
 alias xx='xmodmap ~/.Xmodmap'
 
+# Docker
+# https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b
+alias docker-rm-stopped="docker ps -q -a | xargs docker rm" # all containers
+alias docker-rm-dangling="docker rmi $(docker images -q -f dangling=true)"
+# plus: `docker system prune`
+
 # Vim
 alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
 alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimsession && touch tags'

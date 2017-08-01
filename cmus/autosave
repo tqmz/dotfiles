@@ -46,7 +46,11 @@ set continue=true
 set device=/dev/cdrom
 set display_artist_sort_name=false
 set dsp.alsa.device=default
-set dsp.roar.role
+set dsp.ao.buffer_size=16384
+set dsp.ao.driver=
+set dsp.ao.wav_counter=1
+set dsp.ao.wav_dir=/home/t
+set dsp.roar.role=
 set dsp.roar.server=
 set follow=false
 set format_current= >> %a -%c- -%g- **%t** (%y) %= %D %n %d
@@ -83,10 +87,10 @@ set scroll_offset=2
 set set_term_title=true
 set show_all_tracks=true
 set show_current_bitrate=true
-set show_hidden=true
+set show_hidden=false
 set show_playback_position=true
 set show_remaining_time=false
-set shuffle=false
+set shuffle=true
 set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false
