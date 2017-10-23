@@ -2,27 +2,26 @@
 
 # DOCKER
 
-#############################################################
+#######################################################################
 # Docker Engine
-# <https://docs.docker.com/engine/installation/linux/debian/>
-#############################################################
+# <https://docs.docker.com/engine/installation/linux/docker-ce/debian/>
+#######################################################################
 
 sudo aptitude purge "lcx-docker*"
 sudo aptitude purge "docker.io*"
+sudo aptitude purge "docker-engine"
 sudo aptitude update
-sudo aptitude  install apt-transport-https ca-certificates gnupg2
+sudo aptitude install curl apt-transport-https ca-certificates gnupg2 software-properties-common lsb-release
 
-sudo apt-key adv \
-       --keyserver hkp://ha.pool.sks-keyservers.net:80 \
-       --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 
 SOURCES="/etc/apt/sources.list.d/docker.list"
 sudo touch $SOURCES
-echo "deb https://apt.dockerproject.org/repo debian-jessie main" | sudo tee "$SOURCES"
+echo "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable" | sudo tee "$SOURCES"
 
 sudo aptitude update
-sudo apt-cache policy docker-engine
-sudo aptitude install docker-engine
+sudo apt-cache policy docker-ce
+sudo aptitude install docker-ce
 sudo service docker start
 sudo docker run hello-world # verify docker is installed correctly
 
