@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# a script for quick screenshootings during presentations
+
+if !hash import 2>/dev/null; then
+    echo "Please install ImageMagick first to provide the command 'import' for taking a screenshot."
+    exit 255
+fi
+
+SCREENSHOT_DIR=$HOME/screenshots
+mkdir -p "$SCREENSHOT_DIR"
+cd "$SCREENSHOT_DIR"
+
+clear
+echo 'Screenshot loop is running ...'
+
+if [ -t 0 ]; then stty -echo -icanon -icrnl time 0 min 0; fi
+
+count=0
+keypress=''
+while [ "x$keypress" = "x" ]; do
+    let count+=1
+    screenshotfile=`date +%Y-%m-%d--%H-%M-%S`.png
+    import $screenshotfile
+    echo $screenshotfile
+    sleep 1
+    keypress="`cat -v`"
+done
+
+if [ -t 0 ]; then stty sane; fi
+
+echo "You pressed '$keypress' after $count loop iterations"
+echo "Thanks for using this script."
+exit 0
