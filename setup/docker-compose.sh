@@ -7,7 +7,7 @@
 #############################################################
 
 COMPOSE_FILE="/usr/local/bin/docker-compose"
-sudo wget https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -O $COMPOSE_FILE && \
+sudo wget https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` -O $COMPOSE_FILE && \
 sudo chmod +x $COMPOSE_FILE
 
 #############################################################
