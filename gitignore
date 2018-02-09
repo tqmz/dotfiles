@@ -5,6 +5,7 @@
 .DS_Store
 .agignore
 .idea
+.jira.d
 .svn
 .vim*
 .~lock.*#

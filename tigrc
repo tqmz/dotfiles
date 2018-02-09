@@ -1,7 +1,13 @@
 # Tig custom configuration
 #
 # Please see 'man tigrc' for a complete reference.
+#
+# Bind examples: <https://github.com/jonas/tig/wiki/Bindings>
 
 bind status + !git commit --amend
+bind main J !sh -c "jira-ui"
+bind main T !sh -c "jira-ui `git ticket %(commit)`" # open Jira ticket in jira-ui
+bind main E !sh -c "jira comment `git ticket %(commit)` -m \"`git url-commit %(commit); git show --pretty=oneline --abbrev-commit %(commit)`\"" # write multi-line Jira comment
+bind main U !@sh -c "git url-commit %(commit) | xclip -selection c" # copy commit URL to clipboard
 
 set diff-highlight = true
