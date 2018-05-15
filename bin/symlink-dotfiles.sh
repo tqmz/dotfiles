@@ -55,6 +55,10 @@ mkdir -p ~/.config/git
 cd ~/.config/git
 ln -fs $DOTFILES/gitattributes attributes
 
+mkdir -p ~/.config/i3
+cd ~/.config/i3
+ln -fs $DOTFILES/i3/config
+
 mkdir -p ~/.config/kupfer
 cd ~/.config/kupfer
 ln -fs $DOTFILES/kupfer.cfg
