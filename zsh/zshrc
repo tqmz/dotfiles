@@ -83,7 +83,7 @@ local user_color='white'; [ $UID -eq 0 ] && user_color='magenta'
 PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$reset_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 
 # vi mode
-# bindkey -v
+bindkey -v
 
 # enable zsh completion => required for running <https://github.com/stecman/symfony-console-completion> (?)
 # Sven Guckes "Zsh" p. 109
