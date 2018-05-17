@@ -1,4 +1,4 @@
-setopt null_glob # silently ignore non-matching globs, allow print *.md *.jpg when there is no jpg
+#setopt null_glob # silently ignore non-matching globs, applies all files when none matches (careful with rm !)
 
 # MORE
 [ -f $ZSH_PRIVATE/_options ] && source $ZSH_PRIVATE/_options
