@@ -65,6 +65,9 @@ zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
 
+# completion ignore
+zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD' # for git
+
 # MORE
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/environment
