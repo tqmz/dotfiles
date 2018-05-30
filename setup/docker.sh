@@ -31,6 +31,7 @@ sudo docker run hello-world # verify docker is installed correctly
 # <https://github.com/docker/compose/releases> ~> `docker-compose` URL
 #############################################################
 
+cd `dirname $0`
 ./docker-compose.sh
 
 #############################################################
