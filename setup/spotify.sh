@@ -9,6 +9,9 @@
 case "$OPERATION_SYSTEM" in
 
     Debian)
+        # 0. Install dirmngr if not installed yet
+        sudo aptitude install dirmngr
+
         # 1. Add the Spotify repository signing keys to be able to verify downloaded packages
         sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 
