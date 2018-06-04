@@ -315,12 +315,12 @@ nmap <silent> <F9> :source /home/t/.vim/.vimsession<CR>:set viminfo=%,'50,<1000,
 " {{{ UNDOFILE
 " <http://vi.stackexchange.com/a/53>
 if !isdirectory($HOME."/.vim")
-    call mkdir($HOME."/.vim", "", 0770)
+    call mkdir($HOME."/.vim", "", 0700)
 endif
-if !isdirectory($HOME."/.vim/undo-dir")
-    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+if !isdirectory($HOME."/.vim-undo-dir")
+    call mkdir($HOME."/.vim-undo-dir", "", 0700)
 endif
-set undodir=~/.vim/undo-dir
+set undodir=~/.vim-undo-dir
 set undofile
 " }}}
 " {{{ GUIOPTIONS (gvim)
