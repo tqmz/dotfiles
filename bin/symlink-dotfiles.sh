@@ -103,6 +103,7 @@ ln -fsT $DATAFILES/mongodb/dbshell .dbshell
 ln -fsT $DATAFILES/mysql/mysql_history .mysql_history
 ln -fsT $DATAFILES/openvpn .openvpn
 ln -fsT "$DATAFILES/ssh-`hostname`" .ssh
+mkdir -p "$DATAFILES/ssh-`hostname`"
 ln -fsT $DATAFILES/vocabularylist .vocabularylist
 touch $DATAFILES/zsh/_aliases
 touch $DATAFILES/zsh/_functions
@@ -135,8 +136,8 @@ mkdir -p ~/bin
 #-------------------------------------------------------------------------------
 # SSH Permissions
 #-------------------------------------------------------------------------------
-cd ~/.ssh
-chmod 600 *
-touch authorized_keys
-chmod 644 authorized_keys
+chown -R $USER:$USER ~/.ssh
+chmod 600 ~/.ssh/*
+touch     ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/authorized_keys
 
