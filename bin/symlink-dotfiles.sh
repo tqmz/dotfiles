@@ -86,6 +86,7 @@ ln -fs $DOTFILES/w3m/keymap
 
 cd
 mkdir -p $DATAFILES
+mkdir -p $DATAFILES/imapfilter
 mkdir -p $DATAFILES/irclogs
 mkdir -p $DATAFILES/irssi
 mkdir -p $DATAFILES/mongodb
@@ -95,10 +96,11 @@ mkdir -p $DATAFILES/openvpn
 mkdir -p $DATAFILES/zsh/history
 ln -fs $DATAFILES/aspell/.aspell.de.prepl
 ln -fs $DATAFILES/aspell/.aspell.de.pws
+ln -fs $DATAFILES/lynx/lynx_bookmarks.html
 ln -fsT $DATAFILES/caff/caffrc .caffrc
+ln -fsT $DATAFILES/imapfilter .imapfilter
 ln -fsT $DATAFILES/irclogs .irclogs
 ln -fsT $DATAFILES/irssi .irssi
-ln -fs $DATAFILES/lynx/lynx_bookmarks.html
 ln -fsT $DATAFILES/mongodb/dbshell .dbshell
 ln -fsT $DATAFILES/mysql/mysql_history .mysql_history
 ln -fsT $DATAFILES/openvpn .openvpn
