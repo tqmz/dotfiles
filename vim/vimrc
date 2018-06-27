@@ -250,12 +250,9 @@ let g:proj_window_width = 50
 let g:proj_flags        = "ibmnstgT"
 " }}}
 " {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
-" make pdf (^m)
-:autocmd FileType pdc noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t latex % -o %.pdf<CR>
+:autocmd FileType markdown noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
+:autocmd FileType markdown set nospell
 :autocmd FileType pdc let b:presenting_slide_separator = '\v(^|\n)\ze#+'
-" :autocmd BufRead,BufNewFile *.md noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
-" :autocmd BufRead,BufNewFile *.mkd noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
-" :autocmd BufRead,BufNewFile *.markdown noremap <C-M> :w!<CR>:!markdown2pdf %<CR>
 
 " YML
 :autocmd FileType yml set expandtab
@@ -280,6 +277,9 @@ nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
 " shortcut for pasting from GNOME
 nmap <silent> <leader>p "+p
 nmap <silent> <leader>P "+P
+" shortcut for inserting date or timestamp
+nmap <silent> <leader>id :put = strftime('%b %d, %Y')<CR>
+nmap <silent> <leader>it :put = strftime('%c')<CR>
 " }}}
 " {{{ POST WRITES
 " read .vimrc
