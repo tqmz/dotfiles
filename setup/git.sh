@@ -32,3 +32,6 @@ case "$OPERATION_SYSTEM" in
 
 esac
 
+cd `dirname $0`
+./diff-highlight.sh
+./diff-so-fancy.sh

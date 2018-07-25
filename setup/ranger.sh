@@ -2,5 +2,5 @@
 # images, atool for archives, pdftotext for PDFs and mediainfo
 # <https://github.com/ranger/ranger/wiki/Official-user-guide>
 
-sudo aptitude install lynx highlight caca-utils atool poppler-utils mediainfo
-cd /tmp && git clone git@github.com:ranger/ranger.git && cd ranger && make && sudo checkinstall
+sudo aptitude install lynx highlight caca-utils atool poppler-utils mediainfo pylint
+cd /tmp && git clone https://github.com/ranger/ranger.git && cd ranger && make -i && sudo checkinstall
