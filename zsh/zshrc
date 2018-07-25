@@ -38,6 +38,10 @@ plugins=(
 
 # COMPLETION
 
+## `pass` completion
+fpath=(/usr/share/zsh/vendor-completions/_pass $fpath)
+#autoload -U /usr/share/zsh/vendor-completions/_pass
+
 ## Load completion for hub
 #fpath=(/usr/local/src/hub/etc $fpath)
 #autoload -U /usr/local/src/hub/etc/hub.zsh_completion(:t)
@@ -97,3 +101,4 @@ zmodload -i zsh/complist
 
 # set $OPERATION_SYSTEM for $DOTFILES/setup/* scripts
 source $DOTFILES/bin/setosenv.sh
+
