@@ -4,10 +4,11 @@
 # a terminal recorder and animated git creator
 # <https://github.com/sugyan/ttygif>
 
-sudo aptitude install ttyrec golang &&\
-export GOPATH=/usr/local/src/go &&\
-sudo mkdir -p $GOPATH &&\
-sudo chown ${USER}:root $GOPATH &&\
+# run ./go.sh first to get go
+sudo aptitude install ttyrec &&\  #golang &&\
+#export GOPATH=/usr/local/src/go &&\
+#sudo mkdir -p $GOPATH &&\
+#sudo chown ${USER}:root $GOPATH &&\
 go get github.com/sugyan/ttygif &&\
 cd /usr/local/bin &&\
 sudo ln -fs $GOPATH/bin/ttygif
