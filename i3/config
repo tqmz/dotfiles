@@ -161,6 +161,15 @@ bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
 
 
+# Applications (use `xprop` to get window name)
+for_window [title="appear.in screen sharing is sharing your screen with appear.in."] border pixel 0
+for_window [title="appear.in screen sharing is sharing your screen with appear.in."] floating enable
+for_window [title="Google Hangouts is sharing your screen with hangouts.google.com."] border pixel 0
+for_window [title="Google Hangouts is sharing your screen with hangouts.google.com."] floating enable
+for_window [title="Jitsi Desktop Streamer is sharing your screen with meet.jit.si."] border pixel 0
+for_window [title="Jitsi Desktop Streamer is sharing your screen with meet.jit.si."] floating enable
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
