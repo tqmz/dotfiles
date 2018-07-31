@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# pass
+sudo aptitude install pass
+
 # Rofi Pass
 # <https://github.com/carnager/rofi-pass>
 

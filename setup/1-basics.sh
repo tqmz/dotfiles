@@ -1,8 +1,6 @@
 #!/bin/bash
 
-sudo aptitude install make gcc checkinstall curl
-
-sudo aptitude install i3 rofi
+sudo aptitude install make gcc checkinstall curl tree
 
 cd `dirname $0`
 ./git.sh
