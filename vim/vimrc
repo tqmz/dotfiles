@@ -91,9 +91,8 @@ Plugin 'mattn/emmet-vim'
 
 " Bundle 'pdc.vim'
 
-" Plugin 'plasticboy/vim-markdown'
-
-Plugin 'gabrielelana/vim-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 Plugin 'itchyny/vim-highlighturl'
 
