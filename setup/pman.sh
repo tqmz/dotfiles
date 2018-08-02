@@ -1,21 +1,41 @@
 #!/bin/bash
 
-# pman – PHP Manual Pages for Command Line (via Debian Jessie Docker)
+# pman – PHP Manual Pages for Command 
+# <https://github.com/willdurand/pman>
 
-## (1) Setup via Docker
-## <https://github.com/willdurand/pman>
-## problem with this docker approach is, PHP Manual of Debian Jessie's PHP is
-## genrated instead of your own PHP
-composer global require willdurand/pman:dev-master && \
+COMPOSER_PACKAGE=willdurand/pman
+DIR_PMAN=$COMPOSER_HOME/vendor/$COMPOSER_PACKAGE
+
+composer global require ${COMPOSER_PACKAGE}:dev-master && \
+
+# PR: <>
+cd $DIR_PMAN &&\
+git remote add tqmz git@github.com:tqmz/pman.git &&\
+git fetch tqmz &&\
+git checkout tqmz/php7 &&\
+
 mkdir -p $HOME/bin && \
 cd $HOME/bin && \
-ln -fs $COMPOSER_HOME/vendor/willdurand/pman/bin/pman && \
-ln -fs $COMPOSER_HOME/vendor/willdurand/pman/bin/sync-pman && \
-sudo aptitude install docker && \
-echo "For generating man pages, please check (dev-master) script and run: sudo $HOME/bin/sync-pman"
-#sudo $HOME/bin/sync-pman
+ln -fs $DIR_PMAN/bin/pman && \
+ln -fs $DIR_PMAN/bin/sync-pman && \
 
-# (2) Setup via PEAR
-#sudo aptitude install php-pear man &&\
-#sudo pear install doc.php.net/pman &&\
-#sudo pear upgrade doc.php.net/pman
+# todo: check if docker exists, otherwise ./docker.sh
+sudo aptitude install docker && \
+
+echo "For generating man pages, please *review* (untrusted source from
+      dev-master!), then run: sudo $HOME/bin/sync-pman"
+less $HOME/bin/sync-pman &&\
+
+echo -n "Run sync-pman with sudo? [y/N] "
+while true; do
+    read -s RUN
+    if [ -n "$RUN" ]; then
+        echo $RUN
+        break;
+    fi
+done
+
+if [ "$RUN" == "y" ]; then
+    sudo $HOME/bin/sync-pman
+fi
+
