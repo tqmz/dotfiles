@@ -249,7 +249,7 @@ let g:proj_window_width = 50
 let g:proj_flags        = "ibmnstgT"
 " }}}
 " {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
-:autocmd FileType markdown noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
+:autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
 :autocmd FileType markdown set nospell
 :autocmd FileType pdc let b:presenting_slide_separator = '\v(^|\n)\ze#+'
 
@@ -273,9 +273,6 @@ noremap <F12> :%s/\(> \)\+$//g<CR>:set ft=pdc<CR>
 " shortcuts for replacing tabs / removing trailing whitespace
 nmap <silent> <LocalLeader>ct :%s/\t/    /g<CR>:%s/\s\+$//g<CR>
 nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
-" shortcut for pasting from GNOME
-nmap <silent> <leader>p "+p
-nmap <silent> <leader>P "+P
 " shortcut for inserting date or timestamp
 nmap <silent> <leader>id :put = strftime('%b %d, %Y')<CR>
 nmap <silent> <leader>it :put = strftime('%c')<CR>

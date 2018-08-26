@@ -1,18 +1,27 @@
 #!/bin/bash
 
 # Pandoc
-sudo aptitude install -y pandoc
+#sudo aptitude install -y pandoc # Debian Stretch: pandoc 1.17 does not match with letter-boiler-plate-latex, so we do:
+# <https://pandoc.org/installing.html#compiling-from-source> with
+# <https://docs.haskellstack.org/en/stable/install_and_upgrade/#debian>
 
+hash stack 2>/dev/null || curl -sSL https://get.haskellstack.org/ | sh &&\
+cd /tmp/ &&\
+git clone https://github.com/jgm/pandoc &&\
+cd pandoc &&\
+stack setup -v &&\
+stack install -v &&\
+# rm -rf ~/.stack
 
 # Pandoc Themes
 # <https://github.com/diversen/pandoc-uikit>
 # <https://getuikit.com/v2/docs/customizer.html> #css #customize
 
-export PANDOC_THEMES_DIR=/opt/pandoc/themes/
-sudo mkdir -p $PANDOC_THEMES_DIR
-sudo chown -R $USER:$USER $PANDOC_THEMES_DIR
+export PANDOC_THEMES_DIR=/opt/pandoc/themes/ &&\
+sudo mkdir -p $PANDOC_THEMES_DIR &&\
+sudo chown -R $USER:$USER $PANDOC_THEMES_DIR &&\
 
-cd $PANDOC_THEMES_DIR
+cd $PANDOC_THEMES_DIR &&\
 ln -s "`dirname $0`/../pandoc/templates/default.latex" #a4 #de #pdf
 
 #git clone https://github.com/diversen/pandoc-uikit
