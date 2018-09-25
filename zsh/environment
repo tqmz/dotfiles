@@ -6,7 +6,7 @@ export LESS="-R --ignore-case -P ?f%f:stdin.  line %lt–%lb/%L  ?e(END):%PB\%."
 export DOTFILES="$HOME/dotfiles"
 export DATAFILES="$HOME/datafiles"
 export GOPATH="/opt/go" # <https://github.com/golang/go/wiki/GOPATH>
-export PATH="$PATH:$HOME/bin:$HOME/bin-public:$DOTFILES/bin:$DATAFILES/bin:${GOPATH//://bin:}/bin:$COMPOSER_HOME/vendor/willdurand/pman/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/bin-public:$DOTFILES/bin:$DATAFILES/bin:${GOPATH//://bin:}/bin:$COMPOSER_HOME/vendor/willdurand/pman/bin"
 export FZF_DEFAULT_COMMAND='ag --hidden -a --ignore .git -l -g ""' # let fzf find hidden files
 export PANDOC_THEMES_DIR=/opt/pandoc/themes/
 
