@@ -17,20 +17,22 @@ stack install -v &&\
 # <https://github.com/diversen/pandoc-uikit>
 # <https://getuikit.com/v2/docs/customizer.html> #css #customize
 
-export PANDOC_THEMES_DIR=/opt/pandoc/themes/ &&\
+export PANDOC_THEMES_DIR=/opt/pandoc/themes &&\
 sudo mkdir -p $PANDOC_THEMES_DIR &&\
 sudo chown -R $USER:$USER $PANDOC_THEMES_DIR &&\
 
 cd $PANDOC_THEMES_DIR &&\
-ln -s "`dirname $0`/../pandoc/templates/default.latex" #a4 #de #pdf
+ln -s "${DOTFILES}/pandoc/templates/default.latex" #a4 #de #pdf
+ln -s "${DOTFILES}/pandoc/templates/uikit.css" #html
 
-#git clone https://github.com/diversen/pandoc-uikit
+git clone https://github.com/diversen/pandoc-uikit
 
 # Usage Example:
 # pandoc https://raw.githubusercontent.com/jgm/pandoc/master/MANUAL.txt -o index.html -f markdown --template standalone.html --toc --toc-depth=2
 
-# .vimrc Example:
-# :autocmd FileType markdown noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
+# .vimrc Example (expecting uikit.css in same directory as the markdown file)
+# :autocmd FileType markdown noremap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $DOTFILES/pandoc/templates/standalone.html --variable=teplate_css:$PANDOC_THEMES_DIR/uikit.css --toc --toc-depth=4 % -o %.html<CR>
+
 
 # Pandoc (Extended) Markdown Syntax:
 # <https://pandoc.org/MANUAL.html#pandocs-markdown>
