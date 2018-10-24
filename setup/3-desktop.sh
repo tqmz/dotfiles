@@ -20,3 +20,7 @@ sudo aptitude install -y gthumb
 
 # pdf viewer
 sudo aptitude install -y evince
+
+# audio
+sudo aptitude install -y pavucontrol
+
