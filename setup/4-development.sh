@@ -1,12 +1,16 @@
 #!/bin/bash
 
-sudo aptitude install -y libxml2-utils #xmllint #xmlcatalog
-sudo aptitude install -y recode tidy
-sudo aptitude install -y php php-mbstring php-zip
-sudo aptitude install -y autokey-gtk   #textbausteine
+sudo aptitude install -y colortail multitail #logs #monitoring
+sudo aptitude install -y dos2unix recode tidy #converters
+sudo aptitude install -y shellcheck #bash #validation
+sudo aptitude install -y php php-mbstring php-zip #php
+sudo aptitude install -y mysql-client #mysql
+sudo aptitude install -y libxml2-utils #xml #xmllint #xmlcatalog
+sudo aptitude install -y autokey-gtk #textbausteine
 
 cd `dirname $0`
-./mycli.sh
 ./composer.sh
-./pman.sh
+./mycli.sh
 ./pandoc.sh
+./pman.sh
+./repren.sh
