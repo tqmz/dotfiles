@@ -12,6 +12,7 @@ sudo aptitude install -y i3 rofi arandr
 cd `dirname $0`
 ./firefox.sh
 ./chromium.sh
+sudo aptitude install -y epiphany-browser
 
 # mail
 sudo aptitude install -y evolution imapfilter
