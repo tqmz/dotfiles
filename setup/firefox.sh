@@ -4,6 +4,7 @@
 # <https://support.mozilla.org/de/kb/firefox-unter-linux-installieren#w_ohne-paketverwaltung-installieren>
 # <https://wiki.debian.org/Firefox#Firefox_Stable.2C_Beta_and_Nightly>
 
+killall firefox
 killall firefox-esr
 sudo aptitude remove -y firefox-esr &&\
 cd /tmp &&\
