@@ -30,3 +30,5 @@ sudo aptitude install -y evince
 # audio
 sudo aptitude install -y pavucontrol
 
+# video
+sudo aptitude install -y youtube-dl
