@@ -37,9 +37,8 @@ keycode  48 = grave percent grave percent twosuperior grave twosuperior grave
 ! Shift for right (”), AltGr for single (‘)
 keycode  49 = leftdoublequotemark rightdoublequotemark leftdoublequotemark rightdoublequotemark leftsinglequotemark rightsinglequotemark leftsinglequotemark rightsinglequotemark
 
-! French quotation marks / Guillemet (< key)
-! « Bonjour! » in French, »Guten Morgen!« in German novel style
-keycode  94 = less greater less greater guillemotleft guillemotright guillemotleft guillemotright
+! (for previously at this place used French quotation marks (Guillemet), use Altgr + w|x)
+keycode  94 = less greater less greater leftarrow rightarrow leftarrow rightarrow
 
 ! Acute and grave (7 key)
 ! AltGr for `, AltGr+Shift followed by letter for e. g. é
