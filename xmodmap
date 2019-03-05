@@ -38,7 +38,7 @@ keycode  48 = grave percent grave percent twosuperior grave twosuperior grave
 keycode  49 = leftdoublequotemark rightdoublequotemark leftdoublequotemark rightdoublequotemark leftsinglequotemark rightsinglequotemark leftsinglequotemark rightsinglequotemark
 
 ! (for previously at this place used French quotation marks (Guillemet), use Altgr + w|x)
-keycode  94 = less greater less greater leftarrow rightarrow leftarrow rightarrow
+keycode  94 = less greater less greater rightarrow leftarrow rightarrow leftarrow
 
 ! Acute and grave (7 key)
 ! AltGr for `, AltGr+Shift followed by letter for e. g. é
