@@ -35,3 +35,5 @@ esac
 cd `dirname $0`
 ./diff-highlight.sh
 ./diff-so-fancy.sh
+#./gitin.sh # another shell client for git but not as powerful as tig
+./tig.sh
