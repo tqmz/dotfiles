@@ -6,6 +6,7 @@ sudo update-alternatives --set x-terminal-emulator /usr/bin/konsole
 
 # window manager
 sudo aptitude install -y suckless-tools # slock
+sudo aptitude install -y xautolock
 sudo aptitude install -y i3 rofi arandr
 
 # browser
