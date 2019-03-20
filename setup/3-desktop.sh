@@ -32,4 +32,4 @@ sudo aptitude install -y evince
 sudo aptitude install -y pavucontrol
 
 # video
-sudo aptitude install -y youtube-dl
+sudo aptitude install -y youtube-dl simplescreenrecorder
