@@ -7,5 +7,4 @@
 
 . `dirname $0`/../bin/setosenv.sh
 
-sudo easy_install pip &&\
 sudo pip install ansible
