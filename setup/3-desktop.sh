@@ -28,8 +28,12 @@ sudo aptitude install -y gthumb
 # pdf viewer
 sudo aptitude install -y evince
 
+# fonts
+./fonts.sh
+
 # audio
 sudo aptitude install -y pavucontrol
+sudo aptitude install -y twinkle #voip #telephone #client #sip
 
 # video
 sudo aptitude install -y youtube-dl simplescreenrecorder
