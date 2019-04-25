@@ -3,7 +3,7 @@ let g:proj_path=expand("`pwd`")
 let g:proj_file=expand(g:proj_path.".vimproject")
 
 " tags
-let g:gutentags_exclude = ['*.css', '*.html', '*.js']
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js']
 
 " PHP-CS-FIXER
 let g:php_cs_fixer_level = 'all' " with 'symfony' default, level would overwrite config filter removals!
