@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Compiled HTML Help (CHM) file viewer for X.
-Exec=xchm %f
-Categories=Other;
-NoDisplay=true
-MimeType=application/vnd.ms-htmlhelp
-Terminal=false

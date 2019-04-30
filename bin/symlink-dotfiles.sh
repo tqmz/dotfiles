@@ -74,7 +74,6 @@ ln -fs $DOTFILES/fonts.conf
 
 mkdir -p ~/.local/share
 cd ~/.local/share
-ln -fs $DOTFILES/applications
 ln -fs $DOTFILES/konsole
 
 mkdir -p ~/.w3m
