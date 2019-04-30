@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # terminal
-sudo aptitude install -y konsole &&\
-sudo update-alternatives --set x-terminal-emulator /usr/bin/konsole
+cd `dirname $0`
+./konsole.sh
 
 # window manager
 sudo aptitude install -y suckless-tools # slock
