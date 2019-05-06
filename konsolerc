@@ -1,0 +1,18 @@
+[Desktop Entry]
+DefaultProfile=Black on Light Yellow.profile
+
+[Favorite Profiles]
+Favorites=Dracula.profile,Nord.profile,Black on White.profile,Black on Light Yellow.profile
+
+[KonsoleWindow]
+ShowWindowTitleOnTitleBar=true
+UseSingleInstance=true
+
+[MainWindow]
+Height 1080=510
+Height 1440=1399
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAADWwAAAV3AAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1916
+Width 3440=3436
