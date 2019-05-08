@@ -9,20 +9,20 @@
 
 sudo aptitude build-dep cmus &&\
 cd /tmp &&\
-git clone -b pu https://github.com/cmus/cmus.git &&\
+git clone https://github.com/cmus/cmus.git &&\
 cd cmus &&\
 git checkout $(git describe --tags `git rev-list --tags --max-count=1`) &&\
 ./configure &&\
  # make install used here, as checkinstall makes /usr/local/lib/cmus/ip a binary (must be dir)
 sudo make install &&\
 
-sudo aptitude install --add-user-tag=cmusfm libcurl3-dev libcrypto++-dev libssl-dev libnotify-dev dh-autoreconf &&\
+sudo aptitude install -y --add-user-tag=cmusfm libcurl3-dev libcrypto++-dev libssl-dev libnotify-dev dh-autoreconf &&\
 cd /tmp &&\
 git clone https://github.com/Arkq/cmusfm.git &&\
 cd cmusfm &&\
 autoreconf --install &&\
 mkdir -p build && cd build &&\
 ../configure --enable-libnotify &&\
-make && sudo checkinstall &&\
+make && sudo checkinstall -y &&\
 
 cmusfm init

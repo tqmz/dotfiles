@@ -113,8 +113,9 @@ touch $DATAFILES/zsh/_misc
 touch $DATAFILES/zsh/_options
 touch $DATAFILES/zsh/_zshrc
 
-cd ~/.config
-ln -fsT $DATAFILES/cmusfm cmus
+mkdir -p ~/.config/cmus
+cd ~/.config/cmus
+ln -fsT $DATAFILES/cmusfm
 
 mkdir -p ~/.config/easytag
 cd ~/.config/easytag
