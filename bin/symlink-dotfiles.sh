@@ -43,6 +43,7 @@ ln -fsT $DOTFILES/zsh/zshrc .zshrc
 mkdir -p ~/.config
 cd ~/.config
 ln -fs $DOTFILES/awesome
+ln -fsT $DOTFILES/konsolerc konsolerc
 ln -fs $DOTFILES/newsbeuter
 ln -fsT $DOTFILES/roxterm roxterm.sourceforge.net
 #ln -fsT $DOTFILES/thunar Thunar
@@ -115,7 +116,7 @@ touch $DATAFILES/zsh/_zshrc
 
 mkdir -p ~/.config/cmus
 cd ~/.config/cmus
-ln -fsT $DATAFILES/cmusfm
+ln -fsT $DATAFILES/cmusfm.conf
 
 mkdir -p ~/.config/easytag
 cd ~/.config/easytag
