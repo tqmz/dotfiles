@@ -22,7 +22,7 @@ function gpu() {
     gopass $(gpfzf) | grep user | sed -e 's/user://g' | tr -d '[:space:]' | xclip -selection c
 }
 
-function gpl) {
+function gpl() {
     gopass $(gpfzf) | grep url | sed -e 's/url://g' | tr -d '[:space:]' | xclip -selection c
 }
 
