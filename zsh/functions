@@ -4,11 +4,30 @@
 # `h baz` to print history of baz commands
 function h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
 
-# ranger: wrap by Roxterm color switch for better previews
-function ranger() {
-    ttdd                        # set darker terminal theme
-    /usr/local/bin/ranger "$@"  # call ranger w/ arguments
-    ttd                         # set dark terminal (TODO reset to original theme)
+# gopass w/ fzf
+function gpfzf() {
+    export pw=$(gopass ls -f | fzf --no-multi)
+    echo $pw
+}
+
+function gps() {
+    gopass show $(gpfzf)
+}
+
+function gpc() {
+    gopass -c $(gpfzf)
+}
+
+function gpu() {
+    gopass $(gpfzf) | grep user | sed -e 's/user://g' | tr -d '[:space:]' | xclip -selection c
+}
+
+function gpl) {
+    gopass $(gpfzf) | grep url | sed -e 's/url://g' | tr -d '[:space:]' | xclip -selection c
+}
+
+function gpe() {
+    gopass edit $(gpfzf)
 }
 
 # vim: set ft=zsh:
