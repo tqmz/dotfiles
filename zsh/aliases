@@ -32,6 +32,7 @@ alias wrrlatest='watch -n 60 -t rrlatest ' # amount of minutes can be appended, 
 
 # Tools
 alias ping='prettyping '
+alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
 # MORE
 [ -f $ZSH_PRIVATE/_aliases ] && source $ZSH_PRIVATE/_aliases
