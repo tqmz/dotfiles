@@ -1,12 +1,7 @@
-*.bak
-*.log
 *~
 .*.sw?
-.DS_Store
 .agignore
-.idea
-.jira.d
-.svn
 .vim*
 .~lock.*#
 tags
+vendor/*
