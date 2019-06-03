@@ -27,6 +27,7 @@ ln -fsT $DOTFILES/myclirc .myclirc
 ln -fsT $DOTFILES/newsbeuter .newsbeuter
 ln -fsT $DOTFILES/pandoc .pandoc
 ln -fsT $DOTFILES/php_cs .php_cs
+ln -fsT $DOTFILES/podget .podget
 ln -fsT $DOTFILES/fonts.conf .fonts.conf
 ln -fsT $DOTFILES/synergy.conf .synergy.conf
 ln -fsT $DOTFILES/tigrc .tigrc
@@ -105,8 +106,6 @@ ln -fsT $DATAFILES/irssi .irssi
 ln -fsT $DATAFILES/mongodb/dbshell .dbshell
 ln -fsT $DATAFILES/mysql/mysql_history .mysql_history
 ln -fsT $DATAFILES/openvpn .openvpn
-ln -fsT "$DATAFILES/ssh-`hostname`" .ssh
-mkdir -p "$DATAFILES/ssh-`hostname`"
 ln -fsT $DATAFILES/vocabularylist .vocabularylist
 touch $DATAFILES/zsh/_aliases
 touch $DATAFILES/zsh/_functions
@@ -116,7 +115,7 @@ touch $DATAFILES/zsh/_zshrc
 
 mkdir -p ~/.config/cmus
 cd ~/.config/cmus
-ln -fsT $DATAFILES/cmusfm.conf
+ln -fsT $DATAFILES/cmusfm.conf cmusfm.conf
 
 mkdir -p ~/.config/easytag
 cd ~/.config/easytag
