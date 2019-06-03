@@ -31,6 +31,7 @@ alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 alias wrrlatest='watch -n 60 -t rrlatest ' # amount of minutes can be appended, e. g. `wrrlatest 1440`
 
 # Tools
+alias ag='ag --hidden '
 alias ping='prettyping '
 alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
