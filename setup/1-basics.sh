@@ -14,4 +14,5 @@ cd `dirname $0`
 ./vim.sh
 ./zsh.sh
 
+./rust.sh
 sudo aptitude install -y python-pip python3-pip
