@@ -81,6 +81,8 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'scrooloose/syntastic'
 
+Plugin 'metakirby5/codi.vim'
+
 " }}}
 " {{{ HTML/ XML, CSS
 
