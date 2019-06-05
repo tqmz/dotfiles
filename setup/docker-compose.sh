@@ -7,7 +7,9 @@
 #############################################################
 
 COMPOSE_FILE="/usr/local/bin/docker-compose"
-sudo wget https://github.com/docker/compose/releases/download/1.23.1/docker-compose-`uname -s`-`uname -m` -O $COMPOSE_FILE && \
+release=$(git ls-remote --tags git://github.com/docker/compose.git | grep -v docs | cut -d '/' -f 3 | sort -n | fzf --no-sort --tac -e)
+echo $release
+sudo wget https://github.com/docker/compose/releases/download/$release/docker-compose-`uname -s`-`uname -m` -O $COMPOSE_FILE && \
 sudo chmod +x $COMPOSE_FILE
 
 #############################################################
