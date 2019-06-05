@@ -1,9 +1,6 @@
 # MORE
 [ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
 
-# `h baz` to print history of baz commands
-function h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
-
 # gopass w/ fzf
 function gpfzf() {
     export pw=$(gopass ls -f | fzf --no-multi)
@@ -28,6 +25,11 @@ function gpl() {
 
 function gpe() {
     gopass edit $(gpfzf)
+}
+
+# tldr; w/ bat
+function tldr() {
+    tldrb "$1" | bat -l md --style=grid,numbers
 }
 
 # vim: set ft=zsh:
