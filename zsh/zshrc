@@ -29,6 +29,7 @@ plugins=(
         composer
         command-not-found
         history-substring-search
+        rails
         screen
         sudo
         zsh-syntax-highlighting

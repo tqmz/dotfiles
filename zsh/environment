@@ -9,7 +9,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden -a --ignore .git -l -g ""' # let fzf fin
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'" # via <https://github.com/sharkdp/bat/issues/357>
 export PANDOC_THEMES_DIR=/opt/pandoc/themes
 export GOPATH="/opt/go" # <https://github.com/golang/go/wiki/GOPATH>
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/bin-public:$DOTFILES/bin:$DATAFILES/bin:/bin:$COMPOSER_HOME/vendor/willdurand/pman/bin:$GOPATH/bin:$GOPATH/go/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/bin-public:$DOTFILES/bin:$DATAFILES/bin:/bin:$COMPOSER_HOME/vendor/willdurand/pman/bin:$GOPATH/bin:$GOPATH/go/bin:$HOME/.cargo/bin:$HOME/.gem/ruby/2.3.0/bin"
 
 # MORE
 [ -f $ZSH_PRIVATE/_environment ] && source $ZSH_PRIVATE/_environment
