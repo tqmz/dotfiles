@@ -22,8 +22,9 @@ sudo aptitude install -y alpine alpine-doc
 # file manager
 sudo aptitude install -y spacefm
 
-# images
+# images and colors
 sudo aptitude install -y gthumb
+sudo aptitude install -y gcolor2 # color picker
 
 # pdf viewer
 sudo aptitude install -y evince
