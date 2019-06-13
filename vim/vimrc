@@ -86,8 +86,6 @@ Plugin 'metakirby5/codi.vim'
 " }}}
 " {{{ HTML/ XML, CSS
 
-Plugin 'mattn/emmet-vim'
-
 " }}}
 " {{{ Markdown
 
@@ -116,6 +114,11 @@ Plugin 'aklt/plantuml-syntax'
 " {{{ Javascript + JSON
 
 Plugin 'vim-json-bundle'
+
+" }}}
+" {{{ Ruby/Rails
+
+Plugin 'danchoi/ri.vim'
 
 " }}}
 " {{{ PHP
