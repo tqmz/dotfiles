@@ -33,6 +33,7 @@ alias wrrlatest='watch -n 60 -t rrlatest ' # amount of minutes can be appended, 
 
 # Tools
 alias ag='ag --hidden '
+alias fd='fd --no-ignore-vcs ' # otherwise, run `command fd` 
 alias ping='prettyping '
 alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
