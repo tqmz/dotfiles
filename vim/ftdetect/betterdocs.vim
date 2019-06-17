@@ -2,19 +2,9 @@
 "au! Bufread,BufNewFile *.rst      set ft=rst
 
 
-" Pandoc filetype for markdown
-" requires Plugin `pdc.vim`
-au! Bufread,BufNewFile *.markdown set ft=pdc
-au! Bufread,BufNewFile *.md       set ft=pdc
-au! Bufread,BufNewFile *.mkd      set ft=pdc
-au! Bufread,BufNewFile *.pdc      set ft=pdc
-
 " textwidth
 au! FileType rst      set tw=76
 au! FileType markdown set tw=76
-au! FileType md       set tw=76
-au! FileType mkd      set tw=76
-au! FileType pdc      set tw=76
 
 " formatoptions (:help fo-table)
 "
@@ -30,9 +20,6 @@ au! FileType pdc      set tw=76
 
 au! FileType rst      set fo=tcrqn
 au! FileType markdown set fo=tcrqn
-au! FileType md       set fo=tcrqn
-au! FileType mkd      set fo=tcrqn
-au! FileType pdc      set fo=tcrqn
 
 " open file under cursor as image
 :nnoremap gO :!feh ./<cfile> &<CR>

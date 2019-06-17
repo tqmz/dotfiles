@@ -89,8 +89,6 @@ Plugin 'metakirby5/codi.vim'
 " }}}
 " {{{ Markdown
 
-" Bundle 'pdc.vim'
-
 Plugin 'plasticboy/vim-markdown'
 
 Plugin 'itchyny/vim-highlighturl'
@@ -255,7 +253,6 @@ let g:proj_flags        = "ibmnstgT"
 " {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
 :autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
 :autocmd FileType markdown set nospell
-:autocmd FileType pdc let b:presenting_slide_separator = '\v(^|\n)\ze#+'
 
 " YML
 :autocmd FileType yml set expandtab
@@ -271,7 +268,7 @@ let g:proj_flags        = "ibmnstgT"
 " set tw=75 or the text width you like from your mail client
 " in Evolution, configure the external editor plugin like this:
 "     gvim -f -c 'set fo=tcrq' -c 'set tw=76'
-noremap <F12> :%s/\(> \)\+$//g<CR>:set ft=pdc<CR>
+noremap <F12> :%s/\(> \)\+$//g<CR>
 " }}}
 " {{{ KEY MAPPINGS GENERAL
 " shortcuts for replacing tabs / removing trailing whitespace

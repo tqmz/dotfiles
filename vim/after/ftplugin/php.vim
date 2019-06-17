@@ -22,7 +22,6 @@ let g:pdv_cfg_Type      = "string"
 let g:pdv_cfg_Package   = ""
 let g:pdv_cfg_Package   = ""
 let g:pdv_cfg_Version   = ""
-let g:pdv_cfg_Author    = "Tim Quellmalz <tim.quellmalz@webentwickler.cc>"
 let g:pdv_cfg_Copyright = ""
 let g:pdv_cfg_License   = ""
 " source ~/.vim/php-doc.vim
