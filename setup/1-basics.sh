@@ -18,4 +18,5 @@ cd `dirname $0`
 
 sudo aptitude install -y ruby ruby-dev default-libmysqlclient-dev && sudo gem install bundler pry
 sudo aptitude install -y python-pip python3-pip
+./go.sh
 ./rust.sh

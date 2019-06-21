@@ -38,3 +38,6 @@ sudo aptitude install -y twinkle #voip #telephone #client #sip
 
 # video
 sudo aptitude install -y youtube-dl simplescreenrecorder
+
+# clock / timer
+./countdown.sh
