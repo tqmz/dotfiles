@@ -3,8 +3,8 @@
 
 
 " textwidth
-au! FileType rst      set tw=76
-au! FileType markdown set tw=76
+au! FileType rst      set tw=80
+au! FileType markdown set tw=80
 
 " formatoptions (:help fo-table)
 "
@@ -17,9 +17,10 @@ au! FileType markdown set tw=76
 "   Note that formatting will not change blank lines or lines containing
 "   only the comment leader.  A new paragraph starts after such a line,
 "   or when the comment leader changes.
+" l ...
 
-au! FileType rst      set fo=tcrqn
-au! FileType markdown set fo=tcrqn
+au! FileType rst      set fo=tcrqnlj1
+au! FileType markdown set fo=tcrqnlj1
 
 " open file under cursor as image
 :nnoremap gO :!feh ./<cfile> &<CR>
