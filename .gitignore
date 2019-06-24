@@ -4,7 +4,9 @@
 .*.swp
 cmus/*-history
 cmus/*.pl
+cmus/autosave
 cmus/cache
+cmus/playlists
 cmus/trackdb.*
 roxterm/Sessions
 tags
