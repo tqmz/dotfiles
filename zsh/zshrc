@@ -26,11 +26,8 @@ export DISABLE_AUTO_UPDATE="true"
 # PLUGINS
 # (see $ZSH/plugins/)
 plugins=(
-        composer
         command-not-found
         history-substring-search
-        rails
-        screen
         sudo
         zsh-syntax-highlighting
 )
@@ -79,7 +76,6 @@ source $ZSH_CUSTOM/aliases
 source $ZSH_CUSTOM/functions
 source $ZSH_CUSTOM/misc
 source $ZSH_CUSTOM/options
-source $ZSH_PRIVATE/_zshrc
 
 # use distinct host indication
 # derived from $ZSH/themes/fishy.zsh-theme
@@ -102,3 +98,7 @@ zmodload -i zsh/complist
 # set $OPERATION_SYSTEM for $DOTFILES/setup/* scripts
 source $DOTFILES/bin/setosenv.sh
 
+# at end to fix completions
+source $ZSH_PRIVATE/_zshrc
+
+# vim: ft=sh
