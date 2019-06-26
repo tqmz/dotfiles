@@ -8,7 +8,8 @@ function gpfzf() {
 }
 
 function gps() {
-    gopass show $(gpfzf)
+    key=$(gpfzf)
+    gopass show $key && gopass -c $key
 }
 
 function gpc() {
