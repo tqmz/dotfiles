@@ -24,8 +24,8 @@ FILE=go${VERSION}.${OS}-${ARCH}.tar.gz
 URL=https://dl.google.com/go/${FILE}
 
 cd /tmp
-wget $URL
-sudo mkdir $GOPATH && \
+wget -c $URL
+sudo mkdir -p $GOPATH && \
 sudo tar -C $GOPATH -xzf $FILE
 sudo ln -fs $GOPATH/go/bin/go /usr/local/bin/go
 sudo chown -R $USER:$USER $GOPATH
