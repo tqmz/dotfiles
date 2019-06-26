@@ -10,5 +10,6 @@ cmus/playlists
 cmus/trackdb.*
 roxterm/Sessions
 tags
+vim/.netrwhist
 vim/bundle
 vim/undo-dir
