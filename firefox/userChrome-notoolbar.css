@@ -1,0 +1,25 @@
+/*
+ * A userChrome.css derivate for a firefox profile without toolbar – e. g. for
+ * using CodiMD for a worklog
+ *
+ * Just place/link it under `chrome/userChrome.css` in a new Firefox profile
+ * folder.
+ *
+ * Run `firefox -no-remote -P` to run that profile besides others.
+ *
+ * Inspired by <https://superuser.com/a/1269912>.
+ */
+
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+
+/*
+ * Currently used element names can be found under
+ * <http://kb.mozillazine.org/Chrome_element_names_and_IDs>
+ */
+#navigator-toolbox {visibility: collapse;}
+#urlbar {visibility: visible;}
+
