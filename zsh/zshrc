@@ -1,7 +1,7 @@
-# ZSH PATHES
-
 # <https://github.com/robbyrussell/oh-my-zsh>
-# <https://github.com/tqmz/oh-my-zsh.git> ##### use this version! ####
+
+
+# ZSH PATHES
 export ZSH=/usr/local/src/oh-my-zsh
 export ZSH_CUSTOM=~/.zsh
 export HISTFILE=$ZSH_CUSTOM/history/.zsh_history
@@ -9,32 +9,44 @@ export HISTSIZE=50000
 export SAVEHIST=50000
 export ZSH_PRIVATE=~/datafiles/zsh
 
+
 # SETTINGS
 
-# Set to the name theme to load.
+# theme
 export ZSH_THEME="fishy"
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
+# disable weekly auto-update checks
 export DISABLE_AUTO_UPDATE="true"
 
+
 # PLUGINS
-# (see $ZSH/plugins/)
 plugins=(
-        command-not-found
+
+        # <$ZSH/plugins/globalias/README.md>
+        globalias
+
+        # <$ZSH/plugins/history-substring-search/README.md>
         history-substring-search
-        sudo
+
+        # <$ZSH/plugins/docker/README.md>
+        docker
+
+        # <$ZSH/plugins/docker-compose/README.md>
+        docker-compose
+
+        # <$ZSH/plugins/rails/rails.plugin.zsh>
+        rails
+
+        # <$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/README.md>
         zsh-syntax-highlighting
+
 )
-# zsh-syntax-highlighting: must be initialized as git submodule in $ZSH
+
 
 # COMPLETION
 
 ## `pass` completion
 fpath=(/usr/share/zsh/vendor-completions/_pass $fpath)
-
 
 ## overwrite hosts completion to avoid `/etc/hosts` to be included,
 ## which contains too many hosts (from <http://someonewhocares.org/hosts/hosts>)
@@ -62,7 +74,9 @@ zstyle ':completion:*' group-name ''
 # completion ignore
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD' # for git
 
+
 # MORE
+
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/environment
 source $ZSH_CUSTOM/aliases
