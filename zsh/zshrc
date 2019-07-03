@@ -20,9 +20,6 @@ export ZSH_THEME="fishy"
 # Comment this out to disable weekly auto-update checks
 export DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
 # PLUGINS
 # (see $ZSH/plugins/)
 plugins=(
@@ -37,25 +34,21 @@ plugins=(
 
 ## `pass` completion
 fpath=(/usr/share/zsh/vendor-completions/_pass $fpath)
-#autoload -U /usr/share/zsh/vendor-completions/_pass
 
-## Load completion for hub
-#fpath=(/usr/local/src/hub/etc $fpath)
-#autoload -U /usr/local/src/hub/etc/hub.zsh_completion(:t)
 
-# overwrite hosts completion to avoid `/etc/hosts` to be included,
-# which contains too many hosts (from <http://someonewhocares.org/hosts/hosts>)
-# (functionality introduced via ZSH/lib/completion.zsh)
-#
-# use -/etc/hosts- and known_hosts for hostname completion
-[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-hosts=(
-  "$_global_ssh_hosts[@]"
-  "$_ssh_hosts[@]"
-  "$HOST"
-  localhost
-)
+## overwrite hosts completion to avoid `/etc/hosts` to be included,
+## which contains too many hosts (from <http://someonewhocares.org/hosts/hosts>)
+## (functionality introduced via ZSH/lib/completion.zsh)
+##
+## use -/etc/hosts- and known_hosts for hostname completion
+#[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+#[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+#hosts=(
+#  "$_global_ssh_hosts[@]"
+#  "$_ssh_hosts[@]"
+#  "$HOST"
+#  localhost
+#)
 
 zstyle ':completion:*:hosts' hosts $hosts
 
@@ -85,14 +78,11 @@ PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$reset_col
 # vi mode
 bindkey -v
 
-# enable zsh completion => required for running <https://github.com/stecman/symfony-console-completion> (?)
 # Sven Guckes "Zsh" p. 109
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-# load inspector completion
-# inspector zsh --bind=inspector --program=inspector | source /dev/stdin
-
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # set $OPERATION_SYSTEM for $DOTFILES/setup/* scripts
