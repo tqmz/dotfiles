@@ -21,7 +21,6 @@ export DISABLE_AUTO_UPDATE="true"
 
 # PLUGINS
 plugins=(
-
         # <$ZSH/plugins/globalias/README.md>
         globalias
 
@@ -37,10 +36,14 @@ plugins=(
         # <$ZSH/plugins/rails/rails.plugin.zsh>
         rails
 
+        # <$ZSH_CUSTOM/plugins/zsh-autosuggestions/README.md>
+        zsh-autosuggestions
+
         # <$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/README.md>
         zsh-syntax-highlighting
-
 )
+
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
 
 # COMPLETION
@@ -89,8 +92,14 @@ source $ZSH_CUSTOM/options
 local user_color='white'; [ $UID -eq 0 ] && user_color='magenta'
 PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$reset_color]%}$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 
-# vi mode
+# vi mode and keybindings
+# -----------------------
+# hint: to find out a terminal's key code for <enter> & co., follow this guide:
+# <https://github.com/zsh-users/zsh-autosuggestions/issues/255#issuecomment-321879150>
 bindkey -v
+bindkey '^ ' autosuggest-accept # ctrl + space
+bindkey '^[OM' autosuggest-execute # ctrl + shift + enter
+bindkey '^?' autosuggest-clear # backspace
 
 # Sven Guckes "Zsh" p. 109
 autoload -U compinit && compinit
