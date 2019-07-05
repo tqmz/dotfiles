@@ -36,6 +36,9 @@ plugins=(
         # <$ZSH/plugins/rails/rails.plugin.zsh>
         rails
 
+        # <$ZSH/plugins/vi-mode/README.md>
+        #vi-mode
+
         # <$ZSH_CUSTOM/plugins/zsh-autosuggestions/README.md>
         zsh-autosuggestions
 
@@ -98,8 +101,10 @@ PROMPT='%{$bg[$user_color]%}%{$fg[black]%}%n@%m%{$reset_color%} %{$fg[$reset_col
 # <https://github.com/zsh-users/zsh-autosuggestions/issues/255#issuecomment-321879150>
 bindkey -v
 bindkey '^ ' autosuggest-accept # ctrl + space
-bindkey '^[OM' autosuggest-execute # ctrl + shift + enter
-bindkey '^?' autosuggest-clear # backspace
+bindkey '^L' autosuggest-accept # ctrl + l
+bindkey '^J' autosuggest-execute # ctrl + j
+bindkey '^H' autosuggest-clear # ctrl + h
+bindkey '^K' autosuggest-fetch # ctrl + k
 
 # Sven Guckes "Zsh" p. 109
 autoload -U compinit && compinit
