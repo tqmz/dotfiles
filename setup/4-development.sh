@@ -16,3 +16,4 @@ cd `dirname $0`
 ./pandoc.sh
 ./pman.sh
 ./repren.sh
+./repl.sh

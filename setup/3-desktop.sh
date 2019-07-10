@@ -39,5 +39,8 @@ sudo aptitude install -y twinkle #voip #telephone #client #sip
 # video
 sudo aptitude install -y youtube-dl simplescreenrecorder
 
+# language
+sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng dict-freedict-eng-spa dict-freedict-deu-fra dict-freedict-fra-deu
+
 # clock / timer
 ./countdown.sh
