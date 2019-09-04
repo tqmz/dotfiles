@@ -35,12 +35,16 @@ sudo aptitude install -y evince
 # audio
 sudo aptitude install -y pavucontrol
 sudo aptitude install -y twinkle #voip #telephone #client #sip
+sudo aptitude install -y gnome-sound-recorder #audio #recorder #~/Recordings
 
 # video
 sudo aptitude install -y youtube-dl simplescreenrecorder
 
 # language
 sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng dict-freedict-eng-spa dict-freedict-deu-fra dict-freedict-fra-deu
+
+# mind maps
+sudo aptitude install -y freeplane
 
 # clock / timer
 ./countdown.sh
