@@ -2,7 +2,7 @@
 set keywordprg=:call\ ri#LookupNameUnderCursor()
 
 " treat class names like ActiveRecord::Migration as one word
-autocmd FileType ruby set iskeyword=@,48-57,_,192-255,_,$,@,%,#,-,:
+set iskeyword=@,48-57,_,192-255,_,$,@,%,#,-,:
 
 " disable the default ri.vim plugin mappings
 let g:ri_no_mappings=1
