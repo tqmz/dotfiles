@@ -44,11 +44,18 @@ Plugin 'VundleVim/Vundle.vim'
 " for specifying plugin versions / branches "---------------------------------------------------------------
 " }}}
 " {{{ Status
+
+" Vim Powerline
+" → <$HOME/.vim/bundle/vim-powerline/README.rst>
 Plugin 'Lokaltog/vim-powerline'
+let g:Powerline_stl_path_style = 'full'
+
 Plugin 'dannyob/quickfixstatus'
 " }}}
 " {{{ Files, Buffer
 
+" fzf
+" → <$HOME/.vim/bundle/fzf.vim/README.md>
 set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
 Plugin 'junegunn/fzf.vim'
 let g:fzf_command_prefix = 'Fz'
