@@ -38,7 +38,8 @@ sudo aptitude install -y twinkle #voip #telephone #client #sip
 sudo aptitude install -y gnome-sound-recorder #audio #recorder #~/Recordings
 
 # video
-sudo aptitude install -y youtube-dl simplescreenrecorder
+sudo aptitude install -y vlc simplescreenrecorder
+sudo -H pip install --upgrade youtube-dl
 
 # language
 sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng dict-freedict-eng-spa dict-freedict-deu-fra dict-freedict-fra-deu
