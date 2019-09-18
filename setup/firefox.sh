@@ -13,4 +13,4 @@ sudo rm -rf /opt/firefox-previous
 sudo mv /opt/firefox /opt/firefox-previous
 sudo mkdir /opt/firefox &&\
 sudo tar xjf /tmp/firefox-latest.tar.bz2 -C /opt/firefox/ &&\
-sudo ln -s /opt/firefox/firefox/firefox /usr/local/bin/firefox
+sudo ln -sf /opt/firefox/firefox/firefox /usr/local/bin/firefox
