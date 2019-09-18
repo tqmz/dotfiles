@@ -1,6 +1,12 @@
 # MORE
 [ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
 
+# konsole: switch profile w/ fzf
+function kk() {
+    profile=$(konsole --list-profiles | fzf --no-multi)
+    konsoleprofile ColorScheme="$profile"
+}
+
 # gopass w/ fzf
 function gpfzf() {
     export pw=$(gopass ls -f | fzf --no-multi)

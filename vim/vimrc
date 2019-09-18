@@ -17,7 +17,7 @@ set autochdir                          " always switch to the current file direc
 set nocompatible                       " don't imitate vi bugs and limitiations
 set exrc                               " read .vimrc within every directory
 set secure
-set visualbell                         " ESC in Normal mode: visual bell only
+set novisualbell                       " don't flash
 " }}}
 " {{{ PLUGINS
 " {{{ Vundle
