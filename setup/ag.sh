@@ -6,12 +6,19 @@
 
 . `dirname $0`/../bin/setosenv.sh
 
+INSTALL_DIR="/tmp/ag"
+
 case "$OPERATION_SYSTEM" in
 
     Debian)
+        cd $INSTALL_DIR || git clone https://github.com/ggreer/the_silver_searcher $INSTALL_DIR
+        cd $INSTALL_DIR && git fetch &&\
         sudo aptitude build-dep silversearcher-ag &&\
-        cd /tmp && git clone https://github.com/ggreer/the_silver_searcher ag && cd /tmp/ag &&\
-        git checkout $(git describe --tags `git rev-list --tags --max-count=1`) && ./build.sh && sudo checkinstall
+        RELEASE=$(git describe --tags `git rev-list --tags --max-count=1`)
+        git checkout $RELEASE &&\
+        ./build.sh &&\
+        sudo mkdir -p /usr/local/share/the_silver_searcher
+        sudo checkinstall -y --pkgversion $RELEASE
         ;;
 
     Centos)
