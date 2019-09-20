@@ -289,6 +289,10 @@ nmap <silent> <leader>it :put = strftime('%c')<CR>
 " read .vimrc
 " :autocmd BufWritePost ~/.vimrc   so ~/.vimrc
 " }}}
+" {{{ RELOAD BUFFER WHEN CHANGED FROM OUTSIDE
+" https://unix.stackexchange.com/a/383044
+au CursorHold,CursorHoldI * checktime
+" }}}
 " {{{ OPEN FILE UNDER CURSOR AS IMAGE
 :nnoremap gO :!feh <cfile> &<CR>
 " }}}
