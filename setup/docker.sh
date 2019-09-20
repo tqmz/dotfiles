@@ -12,9 +12,10 @@ release=$(apt-cache policy docker-ce | command grep '~' | sed -e 's/\*/ /g' | so
 release=$(echo $release | cut -d ' ' -f 1)
 echo Version to be installed: ${release}.
 
+sudo aptitude remove -y docker-ce docker-ce-cli
 sudo aptitude install -y docker-ce=$release docker-ce-cli=$release &&\
 sudo service docker start &&\
-sudo docker run hello-world &&\ # verify docker is installed correctly
+sudo docker run hello-world &&\
 echo Docker version installed: &&\
 docker --version &&\
 
