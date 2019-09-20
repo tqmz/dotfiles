@@ -7,6 +7,16 @@ function kk() {
     konsoleprofile ColorScheme="$profile"
 }
 
+# git: get latest tag or master
+function git_latest_tag_or_master() {
+    latest_tag_revision=$(command git rev-list --tags --max-count=1)
+    if [ "" != "$latest_tag_revision" ]; then
+        echo $(command git describe --tags $latest_tag_revision)
+        return
+    fi
+    echo "master"
+}
+
 # gopass w/ fzf
 function gpfzf() {
     export pw=$(gopass ls -f | fzf --no-multi)
