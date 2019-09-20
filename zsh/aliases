@@ -1,15 +1,10 @@
 # ALIASES
 
 # General
-alias AI='aptitude install '
-alias AS='aptitude search '
-alias ack='ack-grep'
 alias bpp="upower -i `upower -e | grep battery` | grep -E 'battery|state|time to empty|percentage|capacity'"
 alias dc='docker-compose'
 alias ll='ls -lah '
 alias lf='dpkg --listfiles '
-alias nb='newsbeuter '
-alias SU='sudo su'
 alias sen='docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen' #docker #tui #cli #container
 alias docui='docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui' #docker #tui #cli #ls #inspect
 alias tail='colortail '
@@ -28,12 +23,9 @@ alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
 alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimsession && touch tags'
 alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
-# Radiorecorder
-alias wrrlatest='watch -n 60 -t rrlatest ' # amount of minutes can be appended, e. g. `wrrlatest 1440`
-
 # Tools
-alias ag='command ag --hidden '
-alias fd='command fd --no-ignore-vcs ' # otherwise, run `command fd` 
+alias ag='\ag --hidden '
+alias fd='\fd --no-ignore-vcs ' # otherwise, run `command fd` 
 alias ping='prettyping '
 alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 

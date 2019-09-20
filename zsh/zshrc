@@ -119,4 +119,8 @@ source $DOTFILES/bin/setosenv.sh
 # at end to fix completions
 source $ZSH_PRIVATE/_zshrc
 
+# and unset unwanted aliases from oh-my-zsh
+unalias grep
+alias grep='grep --color=auto'
+
 # vim: ft=sh
