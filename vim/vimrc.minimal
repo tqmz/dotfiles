@@ -9,7 +9,6 @@ set relativenumber
 map! ç <Esc>
 set autochdir                          " always switch to the current file directory
 set nocompatible                       " don't imitate vi bugs and limitiations
-set visualbell                         " ESC in Normal mode: visual bell only
 
 autocmd FileType gitcommit set tw=80 fo=tcrqnlj1
 
