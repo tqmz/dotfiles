@@ -64,21 +64,18 @@ let g:fzf_command_prefix = 'Fz'
 Plugin 'francoiscabrol/ranger.vim'
 " vs. https://github.com/Mizuchi/vim-ranger ?
 
-" Project
-" allows maintaining custom file trees in left window
-" fork allows custom project files instead of global .vimprojects only
-" <https://github.com/tqmz/project.tar.gz/blob/master/README.md>
-Plugin 'tqmz/project.tar.gz'
-
-"NerdTree shouldn't be used along with ranger
-"Plugin 'scrooloose/nerdtree'
-
 " requires ctags package (use Universal Ctags)
 " Vundle: `:PluginDocs` to generate `:h gutentags` files
 Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'majutsushi/tagbar'
 
+" }}}
+" {{{ Git
+" committa.vim
+" (see git status and diff when editing a commit message)
+" → <$HOME/.vim/bundle/committia.vim/README.md>
+Plugin 'rhysd/committia.vim'
 " }}}
 " {{{ All Languages
 
@@ -91,19 +88,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'metakirby5/codi.vim'
 
 " }}}
-" {{{ HTML/ XML, CSS
-
-" }}}
 " {{{ Markdown
 
 Plugin 'plasticboy/vim-markdown'
 
 Plugin 'itchyny/vim-highlighturl'
-
-" }}}
-" {{{ Textile
-
-Plugin 'timcharper/textile.vim'
 
 " }}}
 " {{{ Taskjuggler
@@ -133,8 +122,6 @@ Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'phpfolding.vim'
 
 Plugin 'tqmz/php-doc.vim'
-
-"Plugin 'docteurklein/php-getter-setter.vim'
 
 Plugin 'StanAngeloff/php.vim'
 
@@ -291,6 +278,7 @@ nmap <silent> <leader>it :put = strftime('%c')<CR>
 " }}}
 " {{{ RELOAD BUFFER WHEN CHANGED FROM OUTSIDE
 " https://unix.stackexchange.com/a/383044
+set autoread
 au CursorHold,CursorHoldI * checktime
 " }}}
 " {{{ OPEN FILE UNDER CURSOR AS IMAGE
