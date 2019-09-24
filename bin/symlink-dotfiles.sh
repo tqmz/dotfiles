@@ -78,6 +78,10 @@ mkdir -p ~/.local/share
 cd ~/.local/share
 ln -fs $DOTFILES/konsole
 
+mkdir -p ~/.local/share/applications
+cd ~/.local/share/applications
+ln -fs $DOTFILES/mimeapps.list
+
 mkdir -p ~/.w3m
 cd ~/.w3m
 ln -fs $DOTFILES/w3m/keymap
