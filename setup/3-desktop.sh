@@ -23,7 +23,7 @@ sudo aptitude install -y alpine alpine-doc
 sudo aptitude install -y spacefm
 
 # images and colors
-sudo aptitude install -y gthumb feh
+sudo aptitude install -y eog gthumb feh
 sudo aptitude install -y gcolor2 # color picker
 
 # pdf viewer
