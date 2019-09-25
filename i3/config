@@ -5,8 +5,8 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# set background image
-exec --no-startup-id feh --bg-fill /srv/Bilder2/2016/12/IMG_8927.JPG
+# set random background image (for two desktops)
+exec --no-startup-id \feh --bg-fill --randomize --no-fehbg /srv/Wallpapers /srv/Wallpapers
 
 # i3 config file (v4)
 #
