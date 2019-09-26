@@ -4,10 +4,13 @@
 cd `dirname $0`
 ./konsole.sh
 
+# keyboard
+sudo aptitude install -y xdotool # → xdotool key Caps_Lock
+
 # window manager
+sudo aptitude install -y i3 i3 i3-wm i3status rofi arandr
 sudo aptitude install -y suckless-tools # slock
 sudo aptitude install -y xautolock
-sudo aptitude install -y i3 rofi arandr
 
 # browser
 cd `dirname $0`
@@ -42,7 +45,8 @@ sudo aptitude install -y vlc simplescreenrecorder
 sudo -H pip install --upgrade youtube-dl
 
 # language
-sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng dict-freedict-eng-spa dict-freedict-deu-fra dict-freedict-fra-deu
+sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng \
+dict-freedict-eng-spa dict-freedict-deu-fra dict-freedict-fra-deu
 
 # mind maps
 sudo aptitude install -y freeplane

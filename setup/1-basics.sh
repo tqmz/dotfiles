@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo aptitude update
-sudo aptitude install -y make gcc curl wget tree locate info ncdu htop iotop
+sudo aptitude install -y make gcc curl wget tree locate info ncdu htop iotop gddrescue
 sudo aptitude install -y -t buster-backports checkinstall
 sudo aptitude install -y apt-transport-https ca-certificates gnupg2 software-properties-common
 sudo aptitude install -y postfix # MTA for crontab local mails
