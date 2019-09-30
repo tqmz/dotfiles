@@ -3,7 +3,7 @@
 
 # konsole: switch profile w/ fzf
 function kk() {
-    profile=$(konsole --list-profiles | fzf --no-multi)
+    profile=$(konsole --list-profiles | fzf --tac --no-multi)
     konsoleprofile ColorScheme="$profile"
 }
 

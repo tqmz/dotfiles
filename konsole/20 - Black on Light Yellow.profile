@@ -2,5 +2,5 @@
 ColorScheme=BlackOnLightYellow
 
 [General]
-Name=Black on Light Yellow
+Name=20 - Black on Light Yellow
 Parent=FALLBACK/

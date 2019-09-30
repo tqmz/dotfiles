@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=nord
+ColorScheme=Dracula
 
 [General]
-Name=Nord
+Name=80 - Dracula
 Parent=FALLBACK/

@@ -2,5 +2,5 @@
 ColorScheme=BlackOnWhite
 
 [General]
-Name=Black on White
+Name=10 - Black on White
 Parent=FALLBACK/
