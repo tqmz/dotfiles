@@ -1,12 +1,16 @@
 /*
- * A userChrome.css derivate for a firefox profile without toolbar – e. g. for
- * using CodiMD for a worklog
+ * A userChrome.css derivate for a firefox profile without toolbar.
+ *                                 -------------------------------
+ * Usage
+ * =====
  *
- * Just place/link it under `chrome/userChrome.css` in a new Firefox profile
- * folder.
+ * 1. Create a new firefox profile.
+ * 2. Symlink this file from `chrome/userChrome.css` within profile folder.
+ * 3. about:config → toolkit.legacyUserProfileCustomizations.stylesheets → true
  *
- * Run `firefox -no-remote -P` to run that profile besides others.
+ * Run `firefox -no-remote -P` to open that profile besides others.
  *
+ * --
  * Inspired by <https://superuser.com/a/1269912>.
  */
 
@@ -22,4 +26,3 @@
  */
 #navigator-toolbox {visibility: collapse;}
 #urlbar {visibility: visible;}
-
