@@ -44,9 +44,4 @@ function gpe() {
     gopass edit $(gpfzf)
 }
 
-# tldr; w/ bat
-function tldr() {
-    tldrb "$1" | bat -l md --style=grid,numbers
-}
-
 # vim: set ft=zsh:

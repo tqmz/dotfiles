@@ -1,10 +1,16 @@
 #!/bin/bash
 
-# tldr;
+# too long, didn't read – community maintained man pages
+# tldr and navi for simplified, community maintained man pages
 
-#######################################################################
-# too long, didn't read – community maintained man pages 
-# <https://tldr.sh/>
-#######################################################################
+# tldr
+# → <https://tldr.sh/>
+sudo aptitude install -y tldr
+tldr --help
 
-gem install --user-install tldrb
+# navi
+# → <https://raw.githubusercontent.com/denisidoro/navi/master/README.md>
+git clone --depth 1 http://github.com/denisidoro/navi /tmp/navi &&\
+cd /tmp/navi &&\
+make install $HOME/bin/
+navi --help
