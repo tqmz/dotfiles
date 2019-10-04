@@ -27,7 +27,7 @@ sudo aptitude install -y spacefm
 
 # images and colors
 sudo aptitude install -y eog gthumb feh
-sudo aptitude install -y gcolor2 # color picker
+sudo aptitude install -y gpick # color picker
 
 # pdf viewer
 sudo aptitude install -y evince
