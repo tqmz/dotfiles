@@ -8,9 +8,9 @@ killall firefox
 killall firefox-esr
 sudo aptitude remove -y firefox-esr &&\
 cd /tmp &&\
-wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=de" &&\
-sudo rm -rf /opt/firefox-previous
-sudo mv /opt/firefox /opt/firefox-previous
+wget -c -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=de" &&\
+sudo rm -rf /opt/firefox-previous &&\
+sudo mv /opt/firefox /opt/firefox-previous &&\
 sudo mkdir /opt/firefox &&\
 sudo tar xjf /tmp/firefox-latest.tar.bz2 -C /opt/firefox/ &&\
 sudo ln -sf /opt/firefox/firefox/firefox /usr/local/bin/firefox
