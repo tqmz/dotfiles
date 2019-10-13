@@ -42,7 +42,7 @@ sudo aptitude install -y gnome-sound-recorder #audio #recorder #~/Recordings
 
 # video
 sudo aptitude install -y vlc simplescreenrecorder
-sudo -H pip install --upgrade youtube-dl
+./youtube-dl.sh
 
 # language
 sudo aptitude install -y dict dictd dict-de-en dict-freedict-spa-eng \
