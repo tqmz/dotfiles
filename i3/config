@@ -62,7 +62,7 @@ bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
-#bindsym $mod+Down focus down bindsym $mod+Up focus up bindsym $mod+Right focus right 
+#bindsym $mod+Down focus down bindsym $mod+Up focus up bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -180,7 +180,7 @@ bar {
         # Whole color settings
         background #000000
         statusline #ffffff
-        separator  #666666
+        separator  #333333
 
         # Type             border  background font
         focused_workspace  #008fff #007fff #ffffff
@@ -193,5 +193,5 @@ bar {
     mode dock # always show the dock menu
     position top # put the window menu at the top
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font pango:DejaVu Sans Mono 10
+    font pango:DejaVu Sans Mono 8
 }

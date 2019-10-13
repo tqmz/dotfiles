@@ -61,6 +61,10 @@ mkdir -p ~/.config/i3
 cd ~/.config/i3
 ln -fs $DOTFILES/i3/config
 
+mkdir -p ~/.config/i3status
+cd ~/.config/i3status
+ln -fs $DOTFILES/i3/i3status.conf config
+
 mkdir -p ~/.config/kupfer
 cd ~/.config/kupfer
 ln -fs $DOTFILES/kupfer.cfg
