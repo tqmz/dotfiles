@@ -1,0 +1,26 @@
+#!/bin/bash
+# --------------------------------------------------------------------------
+# autopush
+#
+# Pushs local commits of current branch to all remotes, after rebasing them.
+#
+# Note:
+# can be used along with <autocommit>:
+# autocommit [path] && autopush [path]
+#
+# For usage in crons, pipe stdout to /dev/null via
+# autopush [path] > /dev/null
+# --------------------------------------------------------------------------
+directory="${1:-`pwd`}"
+cd ${directory}
+
+# get latest remote changes
+git pull --rebase --autostash
+
+# push to each remote
+remotes=$(git remote)
+for remote in ${remotes[*]}; do
+    git push $remote HEAD
+done
+
+# vim: ft=sh
