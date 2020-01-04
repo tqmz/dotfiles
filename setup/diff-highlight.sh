@@ -4,7 +4,7 @@
 # <https://github.com/git/git>
 # <https://github.com/git/git/tree/master/contrib/diff-highlight>
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 
 cd /tmp
 git clone https://github.com/git/git.git &&\

@@ -4,7 +4,7 @@
 # <https://github.com/ggreer/the_silver_searcher>
 
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 . `dirname $0`/../zsh/functions
 
 INSTALL_DIR="/tmp/ag"

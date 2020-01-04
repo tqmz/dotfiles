@@ -114,7 +114,7 @@ zmodload -i zsh/complist
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # set $OPERATION_SYSTEM for $DOTFILES/setup/* scripts
-source $DOTFILES/bin/setosenv.sh
+source $DOTFILES/bin/setosenv
 
 # at end to fix completions
 source $ZSH_PRIVATE/_zshrc

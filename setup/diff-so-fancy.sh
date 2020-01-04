@@ -3,7 +3,7 @@
 # Diff so fancy
 # <https://github.com/so-fancy/diff-so-fancy>
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 
 case "$OPERATION_SYSTEM" in
 

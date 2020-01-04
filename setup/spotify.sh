@@ -4,7 +4,7 @@
 # <https://www.spotify.com/de/download/linux/>
 
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 
 case "$OPERATION_SYSTEM" in
 

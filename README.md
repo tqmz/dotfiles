@@ -2,7 +2,7 @@
 
 Debian Buster w/ vim flavor.
 
-Symlinks are created with `./bin/symlink-dotfiles.sh`.
+Symlinks are created with `./bin/symlink-dotfiles`.
 
 Installers are in `setup/`.
 

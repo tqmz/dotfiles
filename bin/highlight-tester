@@ -1,8 +1,0 @@
-#!/bin/bash
-
-file="$1"
-for theme in `highlight -w | grep -Ev '(Use|Installed)'`; do
-    highlight --out-format=xterm256 --style "$theme" "$file"
-    echo $theme
-    read -s CONFIRM
-done

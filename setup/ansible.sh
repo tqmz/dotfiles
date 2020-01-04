@@ -5,6 +5,6 @@
 # <https://github.com/ansible/ansible>
 
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 
 sudo pip install ansible

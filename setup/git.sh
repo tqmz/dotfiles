@@ -4,7 +4,7 @@
 # <https://github.com/git/git>
 
 
-. `dirname $0`/../bin/setosenv.sh
+. `dirname $0`/../bin/setosenv
 
 case "$OPERATION_SYSTEM" in
 
@@ -36,4 +36,5 @@ cd `dirname $0`
 ./diff-highlight.sh
 ./diff-so-fancy.sh
 #./gitin.sh # another shell client for git but not as powerful as tig
+./git-remote-gcrypt.sh
 ./tig.sh
