@@ -1,7 +1,7 @@
 # git config --global --includes user.email   # to change mail on a system, but for all repos
 
 [include]
-    path = ~/datafiles/git/gitconfig.local
+    path = ~/datafiles/`hostname`/gitconfig.local
 
 [color]
     ui = auto

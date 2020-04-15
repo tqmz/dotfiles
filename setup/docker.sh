@@ -7,6 +7,12 @@
 # <https://docs.docker.com/engine/installation/linux/docker-ce/debian/>
 #######################################################################
 
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - &&\
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+
 sudo aptitude update
 release=$(apt-cache policy docker-ce | command grep '~' | sed -e 's/\*/ /g' | sort | uniq | fzf)
 release=$(echo $release | cut -d ' ' -f 1)

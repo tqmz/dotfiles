@@ -103,27 +103,14 @@ mkdir -p $DATAFILES/mongodb
 mkdir -p $DATAFILES/mysql
 mkdir -p $DATAFILES/newsbeuter
 mkdir -p $DATAFILES/openvpn
-mkdir -p $DATAFILES/zsh/history
-ln -fs $DATAFILES/aspell/.aspell.de.prepl
-ln -fs $DATAFILES/aspell/.aspell.de.pws
-ln -fs $DATAFILES/lynx/lynx_bookmarks.html
-ln -fsT $DATAFILES/caff/caffrc .caffrc
+mkdir -p ~/.zshhistory
 ln -fsT $DATAFILES/imapfilter .imapfilter
-ln -fsT $DATAFILES/irclogs .irclogs
 ln -fsT $DATAFILES/irssi .irssi
-ln -fsT $DATAFILES/mongodb/dbshell .dbshell
-ln -fsT $DATAFILES/mysql/mysql_history .mysql_history
-ln -fsT $DATAFILES/openvpn .openvpn
-ln -fsT $DATAFILES/vocabularylist .vocabularylist
 touch $DATAFILES/zsh/_aliases
 touch $DATAFILES/zsh/_functions
 touch $DATAFILES/zsh/_misc
 touch $DATAFILES/zsh/_options
 touch $DATAFILES/zsh/_zshrc
-
-mkdir -p ~/.config/cmus
-cd ~/.config/cmus
-ln -fsT $DATAFILES/cmusfm.conf cmusfm.conf
 
 mkdir -p ~/.config/easytag
 cd ~/.config/easytag

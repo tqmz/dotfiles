@@ -245,7 +245,7 @@ let g:proj_window_width = 50
 let g:proj_flags        = "ibmnstgT"
 " }}}
 " {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
-:autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
+":autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
 :autocmd FileType markdown set nospell
 
 " YML
