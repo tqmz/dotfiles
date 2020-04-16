@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo aptitude install -y ansible #ansible #ansible-vault
-sudo aptitude install -y colortail multitail #logs #monitoring
 sudo aptitude install -y dos2unix recode tidy #converters
 sudo aptitude install -y shellcheck #bash #validation
 sudo aptitude install -y php php-mbstring php-zip #php

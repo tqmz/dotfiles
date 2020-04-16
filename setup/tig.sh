@@ -2,7 +2,6 @@
 # <http://jonas.nitro.dk/tig/INSTALL.html>
 
 cd `dirname $0`
-./git.sh
 
 sudo aptitude install --add-user-tag=tig libncurses-dev libncursesw5-dev libreadline-dev asciidoc &&\
 cd /tmp &&\
