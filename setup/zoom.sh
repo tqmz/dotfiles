@@ -6,6 +6,7 @@
 
 
 cd /tmp
+sudo aptitude install -y libxcb-xtest0
 wget -qnc https://zoom.us/client/latest/zoom_amd64.deb
 sudo aptitude install ibus
 sudo dpkg -i zoom_amd64.deb
