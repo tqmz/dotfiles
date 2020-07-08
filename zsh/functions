@@ -3,8 +3,47 @@
 
 # konsole: switch profile w/ fzf
 function kk() {
-    profile=$(konsole --list-profiles | fzf --tac --no-multi)
+    profile=$(echo "BlackOnWhite\nBlackOnLightYellow\nSolarizedLight\nBreeze\nnord\nDarkPastels\nDracula\nSolarized\nRedOnBlack\nWhiteOnBlack\n" | fzf --tac --no-multi)
     konsoleprofile ColorScheme="$profile"
+    case "$profile" in
+        BlackOnWhite)
+            export BAT_THEME="GitHub"
+            ;;
+        BlackOnLightYellow)
+            export BAT_THEME="GitHub"
+            ;;
+        SolarizedLight)
+            export BAT_THEME="GitHub"
+            ;;
+        Breeze)
+            export BAT_THEME="TwoDark"
+            ;;
+        nord)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        DarkPastels)
+            export BAT_THEME="base16"
+            ;;
+        Dracula)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        Solarized)
+            export BAT_THEME="1337"
+            ;;
+        RedOnBlack)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        WhiteOnBlack)
+            export BAT_THEME="OneHalfDark"
+            ;;
+    esac
+}
+
+function kkv() {
+    kk
+    echo $BAT_THEME
+    bat --list-themes
+    bat $HOME/.profile
 }
 
 # git: get latest tag or master

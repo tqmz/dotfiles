@@ -33,10 +33,13 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal --hide-menubar --hide-tabbar
+bindsym $mod+Return exec i3-sensible-terminal --hide-menubar --hide-tabbar --profile="10 - Black on White"
 
 # start a browser
 bindsym $mod+b exec firefox -no-remote -P
+
+# display an image
+#bindkey $mod+x exec \feh --scale-down --image-bg "#31362B" --randomize /srv/Wallpapers
 
 # kill focused window
 bindsym $mod+Shift+c kill
