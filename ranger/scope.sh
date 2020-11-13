@@ -83,6 +83,12 @@ handle_extension() {
             lynx -dump -- "${FILE_PATH}" && exit 5
             elinks -dump "${FILE_PATH}" && exit 5
             ;; # Continue with next handler on failure
+
+        # GnuPG
+        gpg)
+           gpg -d "${FILE_PATH}" && exit 5 
+           ;;
+
     esac
 }
 
