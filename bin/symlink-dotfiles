@@ -72,6 +72,7 @@ ln -fs $DOTFILES/kupfer.cfg
 mkdir -p ~/.config/ranger
 cd ~/.config/ranger
 ln -fs $DOTFILES/ranger/rc.conf
+ln -fs $DOTFILES/ranger/scope.sh
 
 mkdir -p ~/.config/fontconfig
 cd ~/.config/fontconfig
