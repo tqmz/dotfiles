@@ -73,6 +73,7 @@ mkdir -p ~/.config/ranger
 cd ~/.config/ranger
 ln -fs $DOTFILES/ranger/rc.conf
 ln -fs $DOTFILES/ranger/scope.sh
+ln -fs $DOTFILES/ranger/rifle.conf
 
 mkdir -p ~/.config/fontconfig
 cd ~/.config/fontconfig
