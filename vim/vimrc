@@ -162,7 +162,7 @@ set ruler                              " show statusline with cursor position
 set mouse=a                            " use mouse everywhere – prevents GNOME Ctrl+C clipboard copy, use register + instead: `" +p` / ` " +y`
 set mousehide                          " hide the mouse cursor when typing
 set scrolloff=10                       " Keep 10 lines (top/bottom) for scope
-set shortmess=aOstT                    " shortens messages to avoid
+set shortmess=aOstTI                   " shortens messages to avoid
 set showcmd                            " show the command being typed
 set sidescrolloff=10                   " Keep 5 lines at the size
 " }}}
