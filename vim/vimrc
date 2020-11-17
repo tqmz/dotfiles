@@ -119,8 +119,6 @@ Plugin 'danchoi/ri.vim'
 
 Plugin 'stephpy/vim-php-cs-fixer'
 
-Plugin 'phpfolding.vim'
-
 Plugin 'tqmz/php-doc.vim'
 
 Plugin 'StanAngeloff/php.vim'
