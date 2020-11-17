@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# gopass-edit - pass gopass a file path for editing
+
+secret=`echo ${PASSWORDMOUNT}${1/$PASSWORDSTORE/} | sed -e 's/\.gpg//g'`
+gopass edit $secret
