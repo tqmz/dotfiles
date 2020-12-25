@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo aptitude install -y texlive-latex-base texlive-xetex texlive-fonts-extra
+sudo aptitude install -y texlive-latex-base texlive-xetex texlive-fonts-extra texlive-lang-german
 
 cd `dirname $0`
 ./pandoc.sh
