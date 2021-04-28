@@ -8,9 +8,11 @@
 sudo aptitude install -y tldr
 tldr --help
 
-# navi
+# navi (requires ./fzf.sh)
 # → <https://raw.githubusercontent.com/denisidoro/navi/master/README.md>
 git clone --depth 1 http://github.com/denisidoro/navi /tmp/navi &&\
 cd /tmp/navi &&\
-make install $HOME/bin/
+export BIN_DIR=$HOME/bin; export TMP_DIR=/tmp/navi; make install
+sudo cp $HOME/bin/navi /usr/local/bin/
 navi --help
+echo "navi repo browse  # to add cheatsheets"

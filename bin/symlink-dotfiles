@@ -1,15 +1,7 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------
 DOTFILES="$HOME/dotfiles"
-DATAFILES="$HOME/datafiles"
 # ------------------------------------------------------------------------------
-
-# TODO use a loop :)
-
-#-------------------------------------------------------------------------------
-# DOTFILES
-#-------------------------------------------------------------------------------
-
 cd
 ln -fsT $DOTFILES/abcde.conf .abcde.conf
 ln -fsT $DOTFILES/ackrc .ackrc
@@ -90,42 +82,6 @@ ln -fs $DOTFILES/mimeapps.list
 mkdir -p ~/.w3m
 cd ~/.w3m
 ln -fs $DOTFILES/w3m/keymap
-
-#-------------------------------------------------------------------------------
-# DATAFILES
-#-------------------------------------------------------------------------------
-
-cd
-mkdir -p $DATAFILES
-mkdir -p $DATAFILES/imapfilter
-mkdir -p $DATAFILES/irclogs
-mkdir -p $DATAFILES/irssi
-mkdir -p $DATAFILES/mongodb
-mkdir -p $DATAFILES/mysql
-mkdir -p $DATAFILES/newsbeuter
-mkdir -p $DATAFILES/openvpn
-mkdir -p ~/.zshhistory
-ln -fsT $DATAFILES/imapfilter .imapfilter
-ln -fsT $DATAFILES/irssi .irssi
-touch $DATAFILES/zsh/_aliases
-touch $DATAFILES/zsh/_functions
-touch $DATAFILES/zsh/_misc
-touch $DATAFILES/zsh/_options
-touch $DATAFILES/zsh/_zshrc
-
-mkdir -p ~/.config/easytag
-cd ~/.config/easytag
-ln -fs $DATAFILES/easytagrc
-
-#newsbeuter
-cd ~/.local/share
-ln -fsT $DATAFILES/newsbeuter newsbeuter
-
-mkdir -p ~/dev/fs/radiorecorder/config
-cd ~/dev/fs/radiorecorder/config
-ln -fs $DATAFILES/radiorecorder/broadcasts
-ln -fs $DATAFILES/radiorecorder/record
-ln -fs $DATAFILES/radiorecorder/stations
 
 #-------------------------------------------------------------------------------
 # BIN

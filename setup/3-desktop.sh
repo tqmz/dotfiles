@@ -12,6 +12,9 @@ sudo aptitude install -y i3 i3 i3-wm i3status rofi arandr
 sudo aptitude install -y suckless-tools # slock
 sudo aptitude install -y xautolock
 
+# X11 clipboard
+sudo aptitude install -y xclip
+
 # browser
 cd `dirname $0`
 ./firefox.sh
@@ -26,6 +29,7 @@ sudo aptitude install -y alpine alpine-doc
 sudo aptitude install -y spacefm
 
 # images and colors
+sudo aptitude install -y imagemagick
 sudo aptitude install -y eog gthumb feh
 sudo aptitude install -y gpick # color picker
 

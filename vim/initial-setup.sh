@@ -8,6 +8,4 @@ vim +PluginInstall +qall
 # TODO: <https://unix.stackexchange.com/a/397464> fix paste on Debian Stretch
 
 cd `dirname $0`
-./fzf.sh
-./ranger.sh
 ./ctags.sh

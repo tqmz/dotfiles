@@ -16,8 +16,12 @@ sudo unattended-upgrade -d
 cd `dirname $0`
 sudo aptitude install -y colortail multitail #logs #monitoring
 ./git.sh
-./vim.sh
+./ag.sh
+./fzf.sh
 ./zsh.sh
+./ranger.sh
+./vim.sh
+./tldr.sh # with releated tools (navi)
 
 sudo aptitude install -y ruby ruby-dev default-libmysqlclient-dev && sudo gem install bundler pry
 sudo aptitude install -y python-pip python3-pip
