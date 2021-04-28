@@ -1,11 +1,19 @@
 #!/bin/zsh
 
 # gopass
-# <https://github.com/gopasspw/gopass/blob/master/docs/setup.md>
+# <https://raw.githubusercontent.com/gopasspw/gopass/master/docs/setup.md>
 
-cd `dirname $0`
-./go.sh
-go get github.com/gopasspw/gopass
+#cd `dirname $0`
+# throwing:
+# package crypto/ed25519: unrecognized import path "crypto/ed25519" (import path does not begin with hostname)
+#go get github.com/gopasspw/gopass
+
+RELEASE="1.12.5"
+FILE="gopass_${RELEASE}_linux_amd64.deb"
+DEB_URL="https://github.com/gopasspw/gopass/releases/download/v${RELEASE}/${FILE}"
+
+wget -O /tmp/${FILE} -c $DEB_URL
+sudo dpkg -i /tmp/${FILE}
 
 # zsh completions
 # as suggested on
