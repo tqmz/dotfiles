@@ -59,6 +59,7 @@ Plugin 'dannyob/quickfixstatus'
 set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
 Plugin 'junegunn/fzf.vim'
 let g:fzf_command_prefix = 'Fz'
+exec "nmap <silent> <leader>b :FzBuffers<CR>"
 
 " <Leader>f to run ranger within Vim
 Plugin 'francoiscabrol/ranger.vim'

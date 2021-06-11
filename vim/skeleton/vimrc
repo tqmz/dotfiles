@@ -44,11 +44,20 @@ exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
 "setlocal spell spelllang=de_de
 "set complete+=kspell
 
-" {{{ COLORSCHEME
-" colo kellys
-colo moria
+" COLORSCHEME
+"
+" dotfiles:
+" colo darkspectrum
+"
+" dev.dev, dev.notes:
+" colo pyte-improved
+"
+" f:
 " colo bclear
-" }}}
+"
+" ?:
+" colo kellys
+" colo moria
 
 
 
