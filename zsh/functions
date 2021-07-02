@@ -1,6 +1,9 @@
 # MORE
 [ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
 
+# kubectl find pod
+function kfp() { kubectl get pod -l "app.kubernetes.io/name=${1:-$(basename $PWD)}" -o jsonpath="{.items[0].metadata.name}" }
+
 # konsole: switch profile w/ fzf
 function kk() {
     profile=$(echo "BlackOnWhite\nBlackOnLightYellow\nSolarizedLight\nBreeze\nnord\nDarkPastels\nDracula\nSolarized\nRedOnBlack\nWhiteOnBlack\n" | fzf --tac --no-multi)
