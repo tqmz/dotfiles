@@ -7,7 +7,7 @@ export ZSH_CUSTOM=~/.zsh
 export HISTFILE=$ZSH_CUSTOM/history/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
-export ZSH_PRIVATE=~/datafiles/zsh
+export ZSH_PRIVATE=~/datafiles/$HOST/zsh
 
 
 # SETTINGS

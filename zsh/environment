@@ -10,18 +10,8 @@ export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --co
 export BAT_THEME="GitHub"
 export PANDOC_THEMES_DIR=/opt/pandoc/themes
 export GOPATH="/opt/go" # <https://github.com/golang/go/wiki/GOPATH>
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/bin-public:$DOTFILES/bin:$DATAFILES/bin:/bin:$COMPOSER_HOME/vendor/willdurand/pman/bin:$GOPATH/bin:$GOPATH/go/bin:$HOME/.cargo/bin:$HOME/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$DOTFILES/bin:$DATAFILES/bin:/bin:$GOPATH/bin:$GOPATH/go/bin:$HOME/.cargo/bin:$HOME/.gem/ruby/2.5.0/bin"
 export PASSWORDSTORE=${PASSWORDSTORE:-$HOME/.password-store}
-
-# flatpak
-#'/var/lib/flatpak/exports/share'
-#'/home/t/.local/share/flatpak/exports/share'
-#
-#are not in the search path set by the XDG_DATA_DIRS environment variable, so
-#applications installed by Flatpak may not appear on your desktop until the
-#session is restarted.
-
-
 
 # MORE
 [ -f $ZSH_PRIVATE/_environment ] && source $ZSH_PRIVATE/_environment
