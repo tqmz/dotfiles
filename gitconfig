@@ -1,55 +1,27 @@
-# git config --global --includes user.email   # to change mail on a system, but for all repos
-
-[include]
-    path = ~/datafiles/`hostname`/gitconfig.local
-
 [color]
     ui = auto
 
 [pack]
     threads = 0
-# see also <http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/>
 
 [alias]
 
     # basics
     alias = !git config -l | grep alias | cut -c 7- | sort
-    cc = commit --amend
     ci = commit
     co = checkout
     cof = !git checkout `git branch | fzf`
     st = status
     ss = stash save
     sp = stash pop
-    rom = rebase origin/master
     rv = remote -v
-    ra = remote add
-    rr = remote rename
-    rs = remote show
-    ru = remote set-url
     fa = fetch --all
 
     # tags
-    lr = !git latest-release
-    colr = !git checkout `git latest-release`
     latest-release = describe --tags --abbrev=0
-    #latest-release = "!f() { LATEST_TAGGED_REV=$(git rev-list --tags --max-count=1) && git describe --tags $LATEST_TAGGED_REV; }; f"
-
-    # ticket (assuming commit message starting with ticket number and ':')
-    ticket = "!f() { git show --pretty=raw --format=format:'%s' $1 | head -n 1 | sed -e 's/:.*//g' ; }; f"
-
-    # url-commit (works with Gitlab)
-    url-commit = "!f() { echo 'https://'$(git remote get-url origin | sed -e 's/git@//g' -e 's#[:]#/#g' -e 's#.git#/commit/#g')$1 ; }; f"
 
     # log
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lolf = lol --stat
-    lola = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold dim white)(%ar)%C(reset) %C(blue)%s%C(reset) %C(bold dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-    lolaf = lola --stat
-    lof = log -u
-
-    # diverse
-    grepr = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
 
 [core]
     excludesfile = ~/.gitignore
@@ -62,23 +34,14 @@
     conflictstyle = diff3
     prompt = false
 
-[diff-so-fancy]
-    stripLeadingSymbols = false
-
 [pager] # --no-pager (for opt out)
     dd = true
     dsf = true
     icdiff = true
     status = true
-    diff = diff-so-fancy | $(git config core.pager)
-    log  = diff-so-fancy | $(git config core.pager)
-    show = diff-so-fancy | $(git config core.pager)
 
-[diff] # use `git clean` for removing `*.orig* files after merge
+[diff]
     tool = vimdiff
 
 [difftool]
     prompt = false
-
-[credential]
-    helper = "!gopass git-credential $@"
