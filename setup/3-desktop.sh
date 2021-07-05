@@ -7,7 +7,11 @@ cd `dirname $0`
 # keyboard
 sudo aptitude install -y xdotool # → xdotool key Caps_Lock
 
+# tasksel
+sudo tasksel install
+
 # window manager
+sudo aptitude install -y lightdm
 sudo aptitude install -y i3 i3 i3-wm i3status rofi arandr
 sudo aptitude install -y suckless-tools # slock
 sudo aptitude install -y xautolock

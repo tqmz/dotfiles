@@ -8,4 +8,14 @@ vim +PluginInstall +qall
 # TODO: <https://unix.stackexchange.com/a/397464> fix paste on Debian Stretch
 
 cd `dirname $0`
+<<<<<<< Updated upstream
 ./ctags.sh
+||||||| merged common ancestors
+./fzf.sh
+./ranger.sh
+./ctags.sh
+=======
+#./fzf.sh
+#./ranger.sh
+#./ctags.sh
+>>>>>>> Stashed changes
