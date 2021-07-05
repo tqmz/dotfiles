@@ -2,13 +2,6 @@
 let g:proj_path=expand("`pwd`")
 let g:proj_file=expand(g:proj_path.".vimproject")
 
-" tags
-let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js']
-
-" PHP-CS-FIXER
-let g:php_cs_fixer_level = 'all' " with 'symfony' default, level would overwrite config filter removals!
-let g:php_cs_fixer_config_file = g:proj_path . '.php_cs'
-
 " load default session, but only when not in diff mode
 if !&diff
     source .vimsession
@@ -19,10 +12,6 @@ exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
 
 " Save session and viminfo, quit
 exec "nmap <silent> <F10> :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
-
-" prevent vim from writing newline to last line of file
-" set binary
-" set noeol
 
 " set file formats
 set ff=unix
@@ -38,6 +27,9 @@ noremap T :!tig status<CR>
 
 " fzf
 exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
+command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
+exec "nmap <silent> <leader>G :FzxFiles<CR>"
+
 
 " Spell check
 "setlocal spell spelllang=en_us
@@ -58,6 +50,4 @@ exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
 " ?:
 " colo kellys
 " colo moria
-
-
 
