@@ -45,3 +45,6 @@
 
 [difftool]
     prompt = false
+
+ [credential]
+    helper = "!gopass git-credential $@"
