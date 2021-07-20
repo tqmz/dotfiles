@@ -1,6 +1,7 @@
 *~
 .*.sw?
 .agignore
+.fdignore
 .vim*
 .~lock.*#
 tags
