@@ -36,6 +36,7 @@ sudo aptitude install -y spacefm
 sudo aptitude install -y imagemagick
 sudo aptitude install -y eog gthumb feh
 sudo aptitude install -y gpick # color picker
+sudo aptitude install -y rapid-photo-downloader
 
 # pdf viewer
 sudo aptitude install -y evince
