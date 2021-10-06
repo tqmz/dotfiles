@@ -36,6 +36,7 @@ ln -fsT $DOTFILES/zsh/zshrc .zshrc
 mkdir -p ~/.config
 cd ~/.config
 ln -fs $DOTFILES/awesome
+ln -fs $DOTFILES/chromium-flags.conf
 ln -fs $DOTFILES/newsbeuter
 ln -fsT $DOTFILES/roxterm roxterm.sourceforge.net
 #ln -fsT $DOTFILES/thunar Thunar
