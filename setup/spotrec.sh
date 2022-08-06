@@ -11,8 +11,8 @@
 # <https://raw.githubusercontent.com/Bleuzen/SpotRec/master/README.md>
 #############################################################
 
-#sudo mkdir -p /opt
-#sudo git clone https://github.com/Bleuzen/SpotRec.git /opt/SpotRec
+sudo mkdir -p /opt
+sudo git clone https://github.com/Bleuzen/SpotRec.git /opt/SpotRec
 echo 'python3 /opt/SpotRec/spotrec.py "$@"' > $HOME/bin/spotrec
 chmod u+x $HOME/bin/spotrec
 

@@ -8,7 +8,7 @@
 # package crypto/ed25519: unrecognized import path "crypto/ed25519" (import path does not begin with hostname)
 #go get github.com/gopasspw/gopass
 
-RELEASE="1.12.5"
+RELEASE="1.12.7"
 FILE="gopass_${RELEASE}_linux_amd64.deb"
 DEB_URL="https://github.com/gopasspw/gopass/releases/download/v${RELEASE}/${FILE}"
 

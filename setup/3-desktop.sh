@@ -41,6 +41,9 @@ sudo aptitude install -y rapid-photo-downloader
 # pdf viewer
 sudo aptitude install -y evince
 
+# pdf toolkit & grep
+sudo aptitude install -y pdftk pdfgrep
+
 # fonts
 ./fonts.sh
 

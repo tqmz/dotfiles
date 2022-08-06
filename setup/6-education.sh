@@ -25,4 +25,6 @@ sudo aptitude install -y minuet # <https://minuet.kde.org/>
 # geography
 sudo aptitude install -y marble kgeography
 
+# lego bricks
+sudo aptitude install -y leocad ldraw-parts
 
