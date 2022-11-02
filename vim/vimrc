@@ -93,7 +93,7 @@ Plugin 'metakirby5/codi.vim'
 
 Plugin 'plasticboy/vim-markdown'
 
-Plugin 'itchyny/vim-highlighturl'
+"Plugin 'itchyny/vim-highlighturl'
 
 " }}}
 " {{{ Taskjuggler

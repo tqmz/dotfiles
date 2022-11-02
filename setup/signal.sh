@@ -10,4 +10,5 @@
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo aptitude update && sudo aptitude install signal-desktop
-
+sudo chown root:root /opt/Signal/chrome-sandbox
+sudo chmod 4755 /opt/Signal/chrome-sandbox

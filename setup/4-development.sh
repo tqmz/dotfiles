@@ -10,9 +10,11 @@ sudo aptitude install -y libxml2-utils xmlstarlet #xml #xmllint #xmlcatalog #xml
 sudo aptitude install -y autokey-gtk #textbausteine
 
 cd `dirname $0`
+./jsonlint.sh
 ./composer.sh
 ./mycli.sh
 ./pandoc.sh
 ./pman.sh
 ./repren.sh
 ./repl.sh
+./yq.sh
