@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# YAML Parser
+# <https://github.com/mikefarah/yq>
+# <https://raw.githubusercontent.com/mikefarah/yq/master/README.md>
+# <https://mikefarah.gitbook.io/yq/>
+
+# YAML Parser yq, like jq
 VERSION=v4.27.5
 BINARY=yq_linux_amd64
 
