@@ -33,7 +33,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal --hide-menubar --hide-tabbar --profile="10 - Black on White"
+bindsym $mod+Return exec i3-sensible-terminal --hide-menubar --hide-tabbar --profile="00 - DarkPastelsProfile"
+bindsym $mod+Shift+Return exec i3-sensible-terminal --hide-menubar --hide-tabbar --profile="10 - Black on White"
 
 # start a browser
 bindsym $mod+b exec firefox -no-remote -P
