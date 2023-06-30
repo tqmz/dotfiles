@@ -53,6 +53,7 @@ sudo aptitude install -y twinkle #voip #telephone #client #sip
 sudo aptitude install -y gnome-sound-recorder #audio #recorder #~/Recordings
 
 # video
+sudo aptitude install -y flameshot #screenshots
 sudo aptitude install -y vlc simplescreenrecorder
 ./youtube-dl.sh
 

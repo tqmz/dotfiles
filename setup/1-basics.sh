@@ -15,6 +15,7 @@ sudo unattended-upgrade -d
 
 cd `dirname $0`
 sudo aptitude install -y colortail multitail #logs #monitoring
+./deb-get.sh
 ./git.sh
 ./ag.sh
 ./fzf.sh

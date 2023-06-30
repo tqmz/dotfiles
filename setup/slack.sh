@@ -10,7 +10,10 @@ cd `dirname $0` && ./pup.sh
 
 # find out latest version
 version=$(curl -s https://slack.com/intl/de-de/release-notes/linux | pup '#main > div > div > div > div.legal-content > article:nth-child(1) > h2 text{}' | cut -d' ' -f 2)
+# version 4.29.144 not available for download
+version=4.28.182
 echo "Slack, latest version available: $version"
+
 
 # check if version is installed
 if hash slack 2>/dev/null; then
