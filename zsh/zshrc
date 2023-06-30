@@ -110,6 +110,15 @@ bindkey '^K' autosuggest-fetch # ctrl + k
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
+# helm
+# K8s auto-complete
+autoload -U +X compinit && compinit
+source <(kubectl completion zsh)
+
+if (( $+commands[helm] )); then
+    source <(helm completion zsh)
+fi
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

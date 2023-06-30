@@ -29,6 +29,9 @@ alias fd='\fd --no-ignore-vcs ' # otherwise, run `command fd`
 alias ping='prettyping '
 alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
+# Kubernetes
+alias kx='kubeconfig; kubectx; kubens; k9s'
+
 # MORE
 [ -f $ZSH_PRIVATE/_aliases ] && source $ZSH_PRIVATE/_aliases
 
