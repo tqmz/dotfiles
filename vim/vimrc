@@ -9,6 +9,9 @@ let mapleader = "_"
 " from the current line.
 set relativenumber
 
+" Additionally, indicate current line number instead of 0.
+set number
+
 " a nice shortcut for ppl with french keyboard layout who don't write french
 " often; use `r` (replace) to type it nonetheless
 map! ç <Esc>
@@ -112,8 +115,8 @@ Plugin 'vim-json-bundle'
 
 " }}}
 " {{{ Ruby/Rails
-
 Plugin 'danchoi/ri.vim'
+Plugin 'ruby-formatter/rufo-vim'
 
 " }}}
 " {{{ PHP
@@ -128,6 +131,11 @@ Plugin 'StanAngeloff/php.vim'
 " {{{ Twig
 
 Plugin 'beyondwords/vim-twig'
+
+" }}}
+" {{{ Other
+Plugin 'jbmorgado/vim-pine-script'
+
 
 " }}}
 " {{{ Slides / Presentations
