@@ -1,0 +1,48 @@
+[alias]
+    ci = commit
+    co = checkout
+    cof = !git checkout `git branch | fzf`
+    st = status
+    ss = stash save
+    sp = stash pop
+    rv = remote -v
+    fa = fetch --all
+
+[color]
+    ui = auto
+
+[core]
+    excludesfile = ~/.gitignore
+    fileMode = true
+    editor = vim -u ~/.vimrc.minimal -n
+    pager = less -R --chop-long-lines --no-init --quit-if-one-screen
+
+[diff]
+    tool = vimdiff
+
+[diff "rspec"]
+    xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
+
+[difftool]
+    prompt = false
+
+[credential]
+    helper = "!gopass git-credential $@"
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    prompt = false
+
+[pack]
+    threads = 0
+
+[pager] # --no-pager (for opt out)
+    dd = true
+    dsf = true
+    icdiff = true
+    status = true
+
+[user]
+    email = smile@friendsoft.de
+    name = Tim Heinsohn

@@ -1,0 +1,14 @@
+# toml bombadil (configuration file)
+#
+# A Dotfile Manager written in Rust 
+# <https://oknozor.github.io/toml-bombadil/>
+
+dotfiles_dir = "dotfiles"
+
+[settings.dots]
+i3 = { source = "i3", target = ".config/i3/config" }
+gitattributes = { source = "git/gitattributes", target = ".gitattributes" }
+gitconfig = { source = "git/gitconfig", target = ".gitconfig" }
+gitignore = { source = "git/gitignore", target = ".gitignore" }
+vimrc = { source = "vim/vimrc", target = ".vimrc" }
+vimrc_minimal = { source = "vim/vimrc.minimal", target = ".vimrc.minimal" }

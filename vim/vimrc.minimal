@@ -1,0 +1,31 @@
+" a minimal vimrc for usage e. g. in git commits (see ~/dotfiles/git/gitconfig)
+" use via: vim -u ~/.vimrc.minimal
+set noexrc                             " do NOT read .vimrc within every directory
+
+syn on
+let mapleader = "_"
+set relativenumber
+map! ç <Esc>
+set autochdir                          " always switch to the current file directory
+set nocompatible                       " don't imitate vi bugs and limitiations
+
+autocmd FileType gitcommit set tw=80 fo=tcrqnlj1
+
+" Vundle..
+filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin()
+
+" committa.vim
+" displays git status and diff when editing a commit message
+" see <$HOME/.vim/bundle/committia.vim/README.md>
+Plugin 'rhysd/committia.vim'
+let g:committia_hooks = {}
+function! g:committia_hooks.edit_open(info)
+    wincmd = " render all windows almost equally high and wide
+    setlocal spell spelllang=en_us
+    set complete+=kspell
+endfunction
+
+" ..Vundle
+call vundle#end()
+filetype on
+

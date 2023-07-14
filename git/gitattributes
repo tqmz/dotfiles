@@ -1,0 +1,9 @@
+# for better diff hunk headers
+*.css       diff=css
+*.html      diff=html
+*.html.erb  diff=html
+*.md        diff=markdown
+*.php       diff=php
+*.py        diff=python
+*.rb        diff=ruby
+*_spec.rb   diff=rspec
