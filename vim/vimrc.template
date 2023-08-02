@@ -26,9 +26,10 @@ set tabstop=2
 noremap T :!tig status<CR>
 
 " fzf
-command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
-exec "nmap <silent> <leader>g :FzxFiles<CR>"
-"exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>" " w/o fd
+exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
+" for involving multiple directories, replace with:
+" command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
+" exec "nmap <silent> <leader>g :FzxFiles<CR>"
 
 " Spell check
 "setlocal spell spelllang=en_us
