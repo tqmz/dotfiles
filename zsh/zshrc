@@ -17,6 +17,16 @@ source ~/.zsh/environment
 # functions
 source ~/.zsh/functions
 
+# projects
+find ~ -maxdepth 1 -type d -iname '*.dotfiles*' | while read dotfiles
+do
+  rcfile="${dotfiles}/zsh/zshrc"
+  if [ -f "${rcfile}" ]; then
+      echo $rcfile !
+      source "${rcfile}"
+  fi
+done
+
 # plugins
 export ZSH_PLUGINS=/usr/share/zsh/plugins # Arch packages
 eval "$(sheldon source)" # sheldon
