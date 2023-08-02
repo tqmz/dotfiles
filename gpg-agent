@@ -1,0 +1,12 @@
+# ! After changing this file, reload the agent via:
+#   gpg-connect-agent reloadagent /bye
+
+# ! Test whether agent is working via
+#   gpg -d ~/.password-store/test.gpg
+
+# ! Monitor in htop via filter 'gpg' to
+#   ensure no gpg-agent instance is hanging
+
+# https://wiki.archlinux.org/title/GnuPG#pinentry
+# – define how gpg agent password is requested
+pinentry-program /usr/bin/pinentry-qt # requires qt5-base

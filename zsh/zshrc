@@ -1,0 +1,57 @@
+# instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# general
+bindkey -v
+setopt autocd extendedglob
+unsetopt beep
+
+# aliases
+source ~/.zsh/aliases
+
+# environment
+source ~/.zsh/environment
+
+# functions
+source ~/.zsh/functions
+
+# plugins
+export ZSH_PLUGINS=/usr/share/zsh/plugins # Arch packages
+eval "$(sheldon source)" # sheldon
+
+# history
+# see </usr/share/doc/zsh-history-substring-search/README.md>
+source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+bindkey '^[[A' history-substring-search-up # cursor up, via cat -v
+bindkey '^[[B' history-substring-search-down # cursor down
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# autosuggestions
+# see </usr/share/doc/zsh-autosuggestions/README.md>
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+bindkey '^ ' autosuggest-accept # ctrl + space
+bindkey '^L' autosuggest-accept # ctrl + l
+bindkey '^J' autosuggest-execute # ctrl + j
+bindkey '^H' autosuggest-clear # ctrl + h
+bindkey '^K' autosuggest-fetch # ctrl + k
+
+# completion
+# see </usr/share/doc/zsh-completions/README.md>
+autoload -Uz compinit
+compinit
+
+# rupa/z jump-around
+source /usr/share/z/z.sh
+
+# prompt
+# see </usr/share/zsh-theme-powerlevel10k/README.md>
+# run `p10k configure` or edit ~/.p10k.zsh for customization
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

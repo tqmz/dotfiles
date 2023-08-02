@@ -1,14 +1,29 @@
 # toml bombadil (configuration file)
 #
-# A Dotfile Manager written in Rust 
+# A Dotfile Manager written in Rust
 # <https://oknozor.github.io/toml-bombadil/>
-
 dotfiles_dir = "dotfiles"
 
+[settings]
+prehooks = [ "mkdir -p ~/.config/rofi ~/.config/rofi-pass ~/.config/sheldon ~/.zsh" ]
+
 [settings.dots]
-i3 = { source = "i3", target = ".config/i3/config" }
 gitattributes = { source = "git/gitattributes", target = ".gitattributes" }
 gitconfig = { source = "git/gitconfig", target = ".gitconfig" }
 gitignore = { source = "git/gitignore", target = ".gitignore" }
+gpg_agent = { source = "gpg-agent", target = ".gnupg/gpg-agent.conf" }
+i3 = { source = "i3", target = ".config/i3/config" }
+rofi = { source = "rofi", target = ".config/rofi/config.rasi" }
+rofi_pass = { source = "rofi-pass", target = ".config/rofi-pass/config" }
+tigrc = { source = "tigrc", target = ".tigrc" }
 vimrc = { source = "vim/vimrc", target = ".vimrc" }
 vimrc_minimal = { source = "vim/vimrc.minimal", target = ".vimrc.minimal" }
+vimrc_template = { source = "vim/vimrc.template", target = ".vimrc.template" }
+xinitrc = { source = "xinit", target = ".xinitrc" }
+xmodmap = { source = "xmodmap", target = ".Xmodmap" }
+zsh_aliases = { source = "zsh/aliases", target = ".zsh/aliases" }
+zsh_environment = { source = "zsh/environment", target = ".zsh/environment" }
+zsh_functions = { source = "zsh/functions", target = ".zsh/functions" }
+zsh_p10k = { source = "zsh/p10k.zsh", target = ".p10k.zsh" }
+zsh_sheldon = { source = "zsh/plugins.toml", target = ".config/sheldon/plugins.toml" }
+zshrc = { source = "zsh/zshrc", target = ".zshrc" }

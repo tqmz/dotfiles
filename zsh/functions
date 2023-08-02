@@ -1,0 +1,68 @@
+# FUNCTIONS
+
+# konsole: switch profile w/ fzf
+function kk() {
+    profile=$(echo "BlackOnWhite\nBlackOnLightYellow\nSolarizedLight\nBreeze\nnord\nDarkPastels\nDracula\nSolarized\nRedOnBlack\nWhiteOnBlack\n" | fzf --tac --no-multi)
+    konsoleprofile ColorScheme="$profile"
+    case "$profile" in
+        BlackOnWhite)
+            export BAT_THEME="GitHub"
+            ;;
+        BlackOnLightYellow)
+            export BAT_THEME="GitHub"
+            ;;
+        SolarizedLight)
+            export BAT_THEME="GitHub"
+            ;;
+        Breeze)
+            export BAT_THEME="TwoDark"
+            ;;
+        nord)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        DarkPastels)
+            export BAT_THEME="base16"
+            ;;
+        Dracula)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        Solarized)
+            export BAT_THEME="1337"
+            ;;
+        RedOnBlack)
+            export BAT_THEME="OneHalfDark"
+            ;;
+        WhiteOnBlack)
+            export BAT_THEME="OneHalfDark"
+            ;;
+    esac
+}
+
+# gopass w/ fzf
+function gpfzf() {
+    export pw=$(gopass ls -f | fzf --no-multi)
+    echo $pw
+}
+
+function gps() {
+    key=$(gpfzf)
+    gopass show $key && gopass -c $key
+}
+
+function gpc() {
+    gopass -c $(gpfzf)
+}
+
+function gpu() {
+    gopass $(gpfzf) | grep user | sed -e 's/user://g' | tr -d '[:space:]' | xclip -selection c
+}
+
+function gpl() {
+    gopass $(gpfzf) | grep url | sed -e 's/url://g' | tr -d '[:space:]' | xclip -selection c
+}
+
+function gpe() {
+    gopass edit $(gpfzf)
+}
+
+# vim: set ft=zsh:

@@ -135,6 +135,7 @@ Plugin 'beyondwords/vim-twig'
 " ))
 " (( Other
 Plugin 'jbmorgado/vim-pine-script'
+Plugin 'Fymyte/rasi.vim' " for rofi configuration
 
 
 " ))

@@ -8,7 +8,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -25,9 +25,15 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# lock session
+bindsym $mod+Shift+x exec --no-startup-id loginctl lock-session
+
+# reload Xmodmap
+bindsym $mod+x exec --no-startup-id xmodmap ~/.Xmodmap
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -54,7 +60,14 @@ bindsym $mod+Shift+q kill
 
 # launcher / window switcher
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-bindsym $mod+Escape exec rofi -show combi
+bindsym $mod+Escape exec rofi -theme solarized -show combi
+# (see rofi-theme-selector for further themes)
+
+# rofi show keybindings
+bindsym $mod+Shift+Escape exec rofi -show keys
+
+# dictionary (using dictd)
+bindsym $mod+d exec --no-startup-id "rofi -modes 'dict:dict' -show dict"
 
 # calculator
 bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort > /dev/null"
@@ -63,7 +76,8 @@ bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -
 bindsym $mod+e exec --no-startup-id "rofi -show emoji -modi emoji"
 
 # password manager
-bindsym $mod+p exec rofi-pass
+#bindsym $mod+p exec rofi-pass
+bindsym $mod+p exec --no-startup-id "rofi-pass --root $HOME/.password-store/inaudito-private:$HOME/ia.passwords/:$HOME/.password-store"
 
 # change focus
 bindsym $mod+h focus left
@@ -115,8 +129,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-#set $ws10 "11"
-#set $ws10 "12"
+#set $ws11 "11"
+#set $ws12 "12"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
