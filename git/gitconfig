@@ -17,6 +17,9 @@
     editor = vim -u ~/.vimrc.minimal -n
     pager = less -R --chop-long-lines --no-init --quit-if-one-screen
 
+[credential]
+    helper = "!gopass git-credential $@"
+
 [diff]
     tool = vimdiff
 
@@ -26,8 +29,8 @@
 [difftool]
     prompt = false
 
-[credential]
-    helper = "!gopass git-credential $@"
+[init]
+    defaultBranch = main
 
 [merge]
     tool = vimdiff
@@ -46,3 +49,5 @@
 [user]
     email = smile@friendsoft.de
     name = Tim Heinsohn
+
+# vim: ft=gitconfig
