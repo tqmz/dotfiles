@@ -1,16 +1,1 @@
-*.bak
-*.log
-.*.swo
-.*.swp
-cmus/*-history
-cmus/*.pl
-cmus/autosave
-cmus/cache
-cmus/playlists
-cmus/trackdb.*
-roxterm/Sessions
-tags
-vim/.netrwhist
-vim/bundle
-vim/undo-dir
-zsh/plugins
+.dots

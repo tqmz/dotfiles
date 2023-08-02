@@ -1,7 +1,0 @@
-# Global ignore file for `ag` (The Silver Searcher)
-*.gif
-*.jpg
-*.min.css
-*.min.js
-*.png
-tags

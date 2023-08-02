@@ -1,0 +1,18 @@
+#!/bin/sh
+# copied and adapted from /etc/X11/xinit/xinitrc
+# see <https://github.com/coditva/i3-config/blob/master/xinitrc> for nice examples
+
+# map keys
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
+# start Gnome keyring
+if [ -f /usr/bin/gnome-keyring-daemon ]; then
+  dbus-update-activation-environment --systemd DISPLAY
+  eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+  export SSH_AUTH_SOCK
+fi
+
+# start i3 and keep it running
+if [ -f /usr/bin/i3 ]; then
+    exec i3
+fi

@@ -1,38 +1,29 @@
 # ALIASES
 
-# General
-alias bpp="upower -i `upower -e | grep battery` | grep -E 'battery|state|time to empty|percentage|capacity'"
-alias dc='docker-compose'
-alias ll='ls -lah '
-alias lf='dpkg --listfiles '
-alias sen='docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen' #docker #tui #cli #container
-alias docui='docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui' #docker #tui #cli #ls #inspect
-alias tail='colortail '
-alias tigg='tig --all '
-alias wtf='tail -f /var/log/{dmesg,messages,*{,/*}{log,err}}'
-alias xx='xmodmap ~/.Xmodmap'
+# Basics
+alias l='ls -lh --color=auto'
+alias ll='ls -lah --color=auto'
+#alias ag='\ag --hidden '
+#alias fd='\fd --no-ignore-vcs ' # otherwise, run `command fd`
+
+# Development
+#alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
 # Docker
-# https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b
-alias docker-rm-stopped="docker ps -q -a | xargs docker rm" # all containers
-alias docker-rm-dangling="docker rmi $(docker images -q -f dangling=true)"
-# plus: `docker system prune`
-
-# Vim
-alias vimclear='echo -n > .vimsession && echo -n > .viminfo'
-alias viminit='cp ~/.vim/skeleton/vimrc .vimrc && touch .viminfo && touch .vimsession && touch tags'
-alias rmswp='find . -type f -name ".*.swp" -exec rm {} \;'
-
-# Tools
-alias ag='\ag --hidden '
-alias fd='\fd --no-ignore-vcs ' # otherwise, run `command fd` 
-alias ping='prettyping '
-alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
-
-# Kubernetes
+alias dc='docker compose'
+alias sen='docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen' #docker #tui #cli #container
+alias docui='docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui' #docker #tui #cli #ls #inspect
 alias kx='kubeconfig; kubectx; kubens; k9s'
 
-# MORE
-[ -f $ZSH_PRIVATE/_aliases ] && source $ZSH_PRIVATE/_aliases
+# Dotfiles
+alias bl='bombadil link'
+
+# Keys
+alias xx='xmodmap ~/.Xmodmap'
+alias XX='xdotool key Caps_Lock && xmodmap ~/.Xmodmap' # ;)
+
+# Vim
+alias viminit='cp ~/.vimrc.template .vimrc && touch .viminfo && touch .vimsession && touch tags'
+alias vimrmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
 # vim: set ft=zsh:

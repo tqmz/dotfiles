@@ -1,3 +1,0 @@
-# /etc/urlview/system.urlview
-REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
-COMMAND lynx %s

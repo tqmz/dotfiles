@@ -1,8 +1,4 @@
-# MORE
-[ -f $ZSH_PRIVATE/_functions ] && source $ZSH_PRIVATE/_functions
-
-# kubectl find pod
-function kfp() { kubectl get pod -l "app.kubernetes.io/name=${1:-$(basename $PWD)}" -o jsonpath="{.items[0].metadata.name}" }
+# FUNCTIONS
 
 # konsole: switch profile w/ fzf
 function kk() {
@@ -40,23 +36,6 @@ function kk() {
             export BAT_THEME="OneHalfDark"
             ;;
     esac
-}
-
-function kkv() {
-    kk
-    echo $BAT_THEME
-    bat --list-themes
-    bat $HOME/.profile
-}
-
-# git: get latest tag or master
-function git_latest_tag_or_master() {
-    latest_tag_revision=$(command git rev-list --tags --max-count=1)
-    if [ "" != "$latest_tag_revision" ]; then
-        echo $(command git describe --tags $latest_tag_revision)
-        return
-    fi
-    echo "master"
 }
 
 # gopass w/ fzf

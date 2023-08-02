@@ -1,9 +1,7 @@
-# Tig custom configuration
+# tig (ncurses git client) config
 #
-# Please see 'man tigrc' for a complete reference.
-#
-# Bind examples: <https://github.com/jonas/tig/wiki/Bindings>
-
+# see 'man tigrc' for complete reference
+# see <https://github.com/jonas/tig/wiki/Bindings> for bind examples
 bind status + !git commit --amend
 bind diff V !git show %(commit):%(file)
 bind diff W !git show %(commit)~1:%(file)

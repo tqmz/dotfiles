@@ -1,4 +1,4 @@
-" {{{ GENERAL
+"(( GENERAL
 
 " Set local mapleader
 let mapleader = "_"
@@ -21,9 +21,9 @@ set nocompatible                       " don't imitate vi bugs and limitiations
 set exrc                               " read .vimrc within every directory
 set secure
 set novisualbell                       " don't flash
-" }}}
-" {{{ PLUGINS
-" {{{ Vundle
+"))
+" (( PLUGINS
+" (( Vundle
 "---------------------------------------------------------------
 " Vundle init
 filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin()
@@ -45,8 +45,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Versions:
 " <https://github.com/gmarik/vundle/issues/35>
 " for specifying plugin versions / branches "---------------------------------------------------------------
-" }}}
-" {{{ Status
+" ))
+" (( Status
 
 " Vim Powerline
 " → <$HOME/.vim/bundle/vim-powerline/README.rst>
@@ -54,8 +54,8 @@ Plugin 'Lokaltog/vim-powerline'
 let g:Powerline_stl_path_style = 'full'
 
 Plugin 'dannyob/quickfixstatus'
-" }}}
-" {{{ Files, Buffer
+" ))
+" (( Files, Buffer
 
 " fzf
 " → <$HOME/.vim/bundle/fzf.vim/README.md>
@@ -74,14 +74,14 @@ Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'majutsushi/tagbar'
 
-" }}}
-" {{{ Git
+" ))
+" (( Git
 " committa.vim
 " (see git status and diff when editing a commit message)
 " → <$HOME/.vim/bundle/committia.vim/README.md>
 Plugin 'rhysd/committia.vim'
-" }}}
-" {{{ All Languages
+" ))
+" (( All Languages
 
 Plugin 'tpope/vim-commentary'
 
@@ -91,35 +91,35 @@ Plugin 'scrooloose/syntastic'
 
 Plugin 'metakirby5/codi.vim'
 
-" }}}
-" {{{ Markdown
+" ))
+" (( Markdown
 
 Plugin 'plasticboy/vim-markdown'
 
 "Plugin 'itchyny/vim-highlighturl'
 
-" }}}
-" {{{ Taskjuggler
+" ))
+" (( Taskjuggler
 
 Plugin 'kalafut/vim-taskjuggler'
 
-" }}}
-" {{{ UML
+" ))
+" (( UML
 
 Plugin 'aklt/plantuml-syntax'
 
-" }}}
-" {{{ Javascript + JSON
+" ))
+" (( Javascript + JSON
 
 Plugin 'vim-json-bundle'
 
-" }}}
-" {{{ Ruby/Rails
+" ))
+" (( Ruby/Rails
 Plugin 'danchoi/ri.vim'
 Plugin 'ruby-formatter/rufo-vim'
 
-" }}}
-" {{{ PHP
+" ))
+" (( PHP
 
 Plugin 'stephpy/vim-php-cs-fixer'
 
@@ -127,21 +127,22 @@ Plugin 'tqmz/php-doc.vim'
 
 Plugin 'StanAngeloff/php.vim'
 
-" }}}
-" {{{ Twig
+" ))
+" (( Twig
 
 Plugin 'beyondwords/vim-twig'
 
-" }}}
-" {{{ Other
+" ))
+" (( Other
 Plugin 'jbmorgado/vim-pine-script'
+Plugin 'Fymyte/rasi.vim' " for rofi configuration
 
 
-" }}}
-" {{{ Slides / Presentations
+" ))
+" (( Slides / Presentations
 Plugin 'sotte/presenting.vim'
-" }}}
-" {{{ Colors
+" ))
+" (( Colors
 Plugin 'CSApprox'
 Plugin 'Colour-Sampler-Pack'
 Plugin 'altercation/vim-colors-solarized'
@@ -150,18 +151,18 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'veloce/vim-aldmeris'
 Plugin 'zaki/zazen'
 Plugin 'zenesque.vim'
-" }}}
+" ))
 call vundle#end()
 
 filetype plugin indent on " for Vundle, may be commented out
 filetype on
 
-" }}}
-" {{{ INCLUDES
+" ))
+" (( INCLUDES
 runtime! config/*.vim
 runtime! config/plugin/*.vim
-" }}}
-" {{{ UI
+" ))
+" (( UI
 set cursorcolumn                       " highlight the current column – disturbs autocompletetion background!
 set cursorline                         " highlight current line
 set guioptions-=T                      " no toolbar (for gvim)
@@ -174,8 +175,8 @@ set scrolloff=10                       " Keep 10 lines (top/bottom) for scope
 set shortmess=aOstTI                   " shortens messages to avoid
 set showcmd                            " show the command being typed
 set sidescrolloff=10                   " Keep 5 lines at the size
-" }}}
-" {{{ EDITING
+" ))
+" (( EDITING
 set autoindent                         " use current line for next line's indent level (for pasting from GNOME see :help paste or use " +)
 set expandtab                          " create spaces instead of tabs, use ^V^I for real tabs
 set iskeyword+=_,$,@,%,#               " none of these are word dividers
@@ -187,8 +188,8 @@ set showmatch                          " briefly show corresponding brace, paren
 set smartindent                        " guess indention level (badly indents C-Shift-V inserts)
 set softtabstop=4                      " makes the spaces feel like real tabs
 set tabstop=4                          " tab width
-" }}}
-" {{{ SEARCH
+" ))
+" (( SEARCH
 set hls                                " highlight search results (or not)
 nmap <silent> <leader>h :nohls<CR>     " turn off last search's highlighting
 set incsearch                          " search by typing (incremental search)
@@ -197,31 +198,31 @@ set smartcase                          " smart case matching
 set wildignore+=.git,.svn,*.bak,*.jpg,*.gif,*.png,*.pdf
 set wildmenu                           " don't take first cli match (files, commands), let choose / incremental
 set wildmode=list:longest,full         " multiple matches: list all, complete longest, wildmenu with 2nd tab
-" }}}
-" {{{ COLORS
+" ))
+" (( COLORS
 set t_Co=256
 "set background=dark
 "colo lucius
 set background=light
 " colo solarized
 " colo jellybeans
-colo pyte-improved
+colo pyte
 " required to run solarized in terminal:
 let g:solarized_termcolors=256
-" }}}
-" {{{ FOLDING
+" ))
+" (( FOLDING
 " save folds of a file (created with `zf`)
 " requires existing ~/.vim/view/ directory
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
-" }}}
-" {{{ SYNTAX
-" {{{ Filetype and syntax highlighting
+" ))
+" (( SYNTAX
+" (( Filetype and syntax highlighting
 filetype on        " detect filetypes
 filetype plugin on " guess filetypes
 syn on             " syntax highlighting on
-" }}}
-" {{{ Syntastic
+" ))
+" (( Syntastic
 " :help syntastic-options
 let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
@@ -237,21 +238,21 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = "jshint"
-" }}}
-" {{{ MARKS
+" ))
+" (( MARKS
 " jump to last position when reopening file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
-" }}}
-" }}}
-" {{{ PROJECT      http://www.linupedia.org/opensuse/Vim_Plugins
+" ))
+" ))
+" (( PROJECT      http://www.linupedia.org/opensuse/Vim_Plugins
 nmap <silent> <F2> <Plug>ToggleProject
 let g:proj_window_width = 50
 let g:proj_flags        = "ibmnstgT"
-" }}}
-" {{{ KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
+" ))
+" (( KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
 ":autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
 :autocmd FileType markdown set nospell
 
@@ -260,8 +261,8 @@ let g:proj_flags        = "ibmnstgT"
 :autocmd FileType yml set shiftwidth=2
 :autocmd FileType yml set softtabstop=2
 :autocmd FileType yml set tabstop=2
-" }}}
-" {{{ KEY MAPPINGS MAIL EDITING + QUOTING
+" ))
+" (( KEY MAPPINGS MAIL EDITING + QUOTING
 " replaces empty quoted lines and sets markdown file type
 " which is nice for quotations and common text highlighting
 " use `gq` and a movement command (or `V` before) to fix a
@@ -270,28 +271,28 @@ let g:proj_flags        = "ibmnstgT"
 " in Evolution, configure the external editor plugin like this:
 "     gvim -f -c 'set fo=tcrq' -c 'set tw=76'
 noremap <F12> :%s/\(> \)\+$//g<CR>
-" }}}
-" {{{ KEY MAPPINGS GENERAL
+" ))
+" (( KEY MAPPINGS GENERAL
 " shortcuts for replacing tabs / removing trailing whitespace
 nmap <silent> <LocalLeader>ct :%s/\t/    /g<CR>:%s/\s\+$//g<CR>
 nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
 " shortcut for inserting date or timestamp
 nmap <silent> <leader>id :put = strftime('%b %d, %Y')<CR>
 nmap <silent> <leader>it :put = strftime('%c')<CR>
-" }}}
-" {{{ POST WRITES
+" ))
+" (( POST WRITES
 " read .vimrc
 " :autocmd BufWritePost ~/.vimrc   so ~/.vimrc
-" }}}
-" {{{ RELOAD BUFFER WHEN CHANGED FROM OUTSIDE
+" ))
+" (( RELOAD BUFFER WHEN CHANGED FROM OUTSIDE
 " https://unix.stackexchange.com/a/383044
 set autoread
 au CursorHold,CursorHoldI * checktime
-" }}}
-" {{{ OPEN FILE UNDER CURSOR AS IMAGE
+" ))
+" (( OPEN FILE UNDER CURSOR AS IMAGE
 :nnoremap gO :!feh <cfile> &<CR>
-" }}}
-" {{{ WINDOWS SMART MOVE KEY COMBINATIONS
+" ))
+" (( WINDOWS SMART MOVE KEY COMBINATIONS
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
@@ -301,12 +302,12 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
-" }}}
-" {{{ XML + HTML
+" ))
+" (( XML + HTML
 let g:sparkupExecuteMapping = '<C-e>'   " Mapping used to execute sparkup.
 let g:sparkupNextMapping    = '<C-E>'   " Mapping used to jump to the next empty tag/attribute.
-" }}}
-" {{{ VIM SESSION + INFO (GLOBAL)
+" ))
+" (( VIM SESSION + INFO (GLOBAL)
 " Save session and viminfo, quit
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
@@ -314,8 +315,8 @@ nmap <silent> <F10> :mksession! /home/t/.vim/.vimsession<CR>:wviminfo! /home/t/.
 " reload buffers ... and history of commands, searches, ... with <F9>
 " see `:help user-manual`, chapter 21.3
 nmap <silent> <F9> :source /home/t/.vim/.vimsession<CR>:set viminfo=%,'50,<1000,s100,:50,@10,/50,n/home/t/.vim/.viminfo<CR>
-" }}}
-" {{{ UNDOFILE
+" ))
+" (( UNDOFILE
 " <http://vi.stackexchange.com/a/53>
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0700)
@@ -325,11 +326,11 @@ if !isdirectory($HOME."/.vim-undo-dir")
 endif
 set undodir=~/.vim-undo-dir
 set undofile
-" }}}
-" {{{ GOPASS
+" ))
+" (( GOPASS
 au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
-" }}}
-" {{{ GUIOPTIONS (gvim)
+" ))
+" (( GUIOPTIONS (gvim)
 if has("gui_running")
     set guioptions-=m
     set guioptions-=T
@@ -351,9 +352,9 @@ if has("gui_running")
     let g:indent_guides_guide_size = 1
 endif
 
-" }}}
-" {{{ NERDTree
+" ))
+" (( NERDTree
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
-" }}}
-" vim: fdm=marker fdl=0 sts=2 ai
+" ))
+" vim: fdm=marker foldmarker=((,)) fdl=0 sts=2 ai

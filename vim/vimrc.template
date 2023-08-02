@@ -1,0 +1,50 @@
+" init project environment variables
+let g:proj_path=expand("`pwd`")
+let g:proj_file=expand(g:proj_path.".vimproject")
+
+" load default session, but only when not in diff mode
+if !&diff
+    source .vimsession
+endif
+
+" preserve buffers ... and history of commands, searches, ...
+exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
+
+" Save session and viminfo, quit
+exec "nmap <silent> <F10> :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
+
+" set file formats
+set ff=unix
+
+" tab options for all files
+set expandtab " do use spaces instead of tabs
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+" tig integration
+noremap T :!tig status<CR>
+
+" fzf
+command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
+exec "nmap <silent> <leader>g :FzxFiles<CR>"
+"exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>" " w/o fd
+
+" Spell check
+"setlocal spell spelllang=en_us
+"setlocal spell spelllang=de_de
+"set complete+=kspell
+
+" COLORSCHEME
+" dotfiles:
+" colo darkspectrum
+"
+" x.dev, x.notes:
+" colo pyte
+"
+" f:
+" colo bclear
+"
+" *:
+" colo kellys
+" colo moria
