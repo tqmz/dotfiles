@@ -344,7 +344,7 @@ if has("gui_running")
     set guioptions-=B
     set lines=53
     set columns=143
-    color pyte-improved
+    color pyte
 
     " settings for vim-indent-guides
     set ts=4 sw=4 et
