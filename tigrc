@@ -6,5 +6,3 @@ bind status + !git commit --amend
 bind diff V !git show %(commit):%(file)
 bind diff W !git show %(commit)~1:%(file)
 bind main U !@sh -c "git url-commit %(commit) | xclip -selection c" # copy commit URL to clipboard
-
-set diff-highlight = true
