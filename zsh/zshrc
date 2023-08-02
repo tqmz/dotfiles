@@ -22,7 +22,6 @@ find ~ -maxdepth 1 -type d -iname '*.dotfiles*' | while read dotfiles
 do
   rcfile="${dotfiles}/zsh/zshrc"
   if [ -f "${rcfile}" ]; then
-      echo $rcfile !
       source "${rcfile}"
   fi
 done
