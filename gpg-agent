@@ -9,4 +9,9 @@
 
 # https://wiki.archlinux.org/title/GnuPG#pinentry
 # – define how gpg agent password is requested
-pinentry-program /usr/bin/pinentry-qt # requires qt5-base
+# NOTE: pinentry-qt requires qt5-base
+# ! the line below MUST NOT contain a # comment at the end
+pinentry-program /usr/bin/pinentry-qt
+
+# remember unused keys for ... seconds
+default-cache-ttl 28800
