@@ -14,6 +14,9 @@ source ~/.zsh/aliases
 # environment
 source ~/.zsh/environment
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # functions
 source ~/.zsh/functions
 
