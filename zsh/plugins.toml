@@ -1,2 +1,5 @@
 [plugins.zsh-expand]
 github = 'MenkeTechnologies/zsh-expand'
+
+[plugins.fz]
+github = 'changyuheng/fz.sh'
