@@ -6,7 +6,7 @@ dotfiles_dir = "dotfiles"
 
 [settings]
 prehooks = [ "mkdir -p ~/.config/rofi ~/.config/rofi-pass ~/.config/sheldon ~/.zsh" ]
-posthooks = [ "~/dotfiles/bin/symlink-project-dotfiles" ]
+posthooks = [ "~/dotfiles/bin/setup-projects" ]
 
 [settings.dots]
 gitattributes = { source = "git/gitattributes", target = ".gitattributes" }

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# symlink project dotfiles
+find ~ -maxdepth 1 -type d -iname '*.dotfiles' | while read dotfiles
+do
+  symlink_script="${dotfiles}/bin/symlink-dotfiles"
+  if [ -f "${symlink_script}" ]; then
+    exec "${symlink_script}"
+  fi
+done
+
+# allow direnvs, see `man direnv.toml`
+ALLOWED_DIRS=$(find ~ -maxdepth 1 -type d -iname '*.dev' | sed 's/^\|$/"/g' | paste -s -d, -)
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+TOML_FILE=$XDG_CONFIG_HOME/direnv/direnv.toml
+mkdir -p ${XDG_CONFIG_HOME}/direnv/
+
+echo Whitelist direnv : \'${TOML_FILE}\' -\> ${ALLOWED_DIRS}
+cat << EOF > $TOML_FILE
+# this file was generated via ~/dotfiles/bin/setup-projects
+# do not overwrite it directly
+[whitelist]
+prefix = [ ${ALLOWED_DIRS} ]
+EOF
+
+# vim: ft=bash iskeyword+=.
