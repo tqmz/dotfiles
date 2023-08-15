@@ -49,7 +49,8 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
+# start a terminal (with --login option for rvm)
+# bindsym $mod+Return exec i3-sensible-terminal --login
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a browser

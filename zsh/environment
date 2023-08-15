@@ -7,6 +7,11 @@ export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --co
        # via <https://github.com/sharkdp/bat/issues/357>
 export GTK_THEME=Adwaita:dark
 export LESS="-R --ignore-case -P ?f%f:stdin.  line %lt–%lb/%L  ?e(END):%PB\%."
+
 export PATH="$PATH:$HOME/bin"
+# add rvm path when using yay installation
+if [ -d "/usr/share/rvm/src/rvm/bin" ]; then
+  export PATH="$PATH:/usr/share/rvm/src/rvm/bin"
+fi
 
 # vim: set ft=zsh:

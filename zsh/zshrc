@@ -8,6 +8,16 @@ bindkey -v
 setopt autocd extendedglob
 unsetopt beep
 
+# completion
+# see </usr/share/doc/zsh-completions/README.md>
+# activate completion system and compdef command
+# (must be available before most other stuff)
+# (compdef error occurred with rvm ruby enabled
+#  when this section was further below)
+autoload -Uz compinit
+compinit
+
+
 # aliases
 source ~/.zsh/aliases
 
@@ -53,11 +63,6 @@ bindkey '^L' autosuggest-accept # ctrl + l
 bindkey '^J' autosuggest-execute # ctrl + j
 bindkey '^H' autosuggest-clear # ctrl + h
 bindkey '^K' autosuggest-fetch # ctrl + k
-
-# completion
-# see </usr/share/doc/zsh-completions/README.md>
-autoload -Uz compinit
-compinit
 
 # rupa/z jump-around
 source /usr/share/z/z.sh
