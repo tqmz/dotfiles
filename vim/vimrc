@@ -53,6 +53,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Lokaltog/vim-powerline'
 let g:Powerline_stl_path_style = 'full'
 
+" quickfixstatus
+" <$HOME/.vim/bundle/quickfixstatus/README.md>
 Plugin 'dannyob/quickfixstatus'
 " ))
 " (( Files, Buffer
@@ -73,6 +75,7 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'majutsushi/tagbar'
+exec "nmap <silent> <leader>t :TagbarToggle<CR>"
 
 " ))
 " (( Git
@@ -80,64 +83,71 @@ Plugin 'majutsushi/tagbar'
 " (see git status and diff when editing a commit message)
 " → <$HOME/.vim/bundle/committia.vim/README.md>
 Plugin 'rhysd/committia.vim'
+noremap T :!tig status<CR>
 " ))
 " (( All Languages
 
+" vim-doge
+" generates documentation blocs (_do_cumentation _ge_nerator)
+" <$HOME/.vim/bundle/vim-doge/README.md>
+" :help doge
+" `<leader>d` to generate a doc block
+" NOTE: after Vundle installation, open Vim and run once:
+"       `:call doge#install()`
+Plugin 'kkoomen/vim-doge'
+let g:doge_enable_mappings=1
+
+" vim-commentary
+" comments / uncomments lines
+" <$HOME/.vim/bundle/vim-commentary/README.markdown>
+" `gc` to comment/uncomment a line (any language)
 Plugin 'tpope/vim-commentary'
 
 Plugin 'godlygeek/tabular'
-
 Plugin 'scrooloose/syntastic'
-
-Plugin 'metakirby5/codi.vim'
-
 " ))
 " (( Markdown
-
 Plugin 'plasticboy/vim-markdown'
-
 "Plugin 'itchyny/vim-highlighturl'
-
 " ))
 " (( Taskjuggler
-
 Plugin 'kalafut/vim-taskjuggler'
-
 " ))
 " (( UML
-
 Plugin 'aklt/plantuml-syntax'
-
 " ))
 " (( Javascript + JSON
-
 Plugin 'vim-json-bundle'
-
 " ))
-" (( Ruby/Rails
-Plugin 'danchoi/ri.vim'
+" (( Ruby/RSpec/Rails
+" Rufo
 Plugin 'ruby-formatter/rufo-vim'
 
+" Folding
+
+" vim-ruby-fold
+" <$HOME/.vim/bundle/vim-ruby-fold/README.md>
+Plugin 'vim-utils/vim-ruby-fold'
+
+" vim-fold-rspec
+" <$HOME/.vim/bundle/vim-fold-rspec/README.md>
+Plugin 'rlue/vim-fold-rspec'
+
+" requires: rvm docs generate-ri
+Plugin 'danchoi/ri.vim'
+let g:ri_no_mappings=1
+nnoremap  <leader>ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap  <leader>RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  <leader>RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " ))
 " (( PHP
-
 Plugin 'stephpy/vim-php-cs-fixer'
-
-Plugin 'tqmz/php-doc.vim'
-
 Plugin 'StanAngeloff/php.vim'
-
-" ))
-" (( Twig
-
 Plugin 'beyondwords/vim-twig'
-
 " ))
 " (( Other
 Plugin 'jbmorgado/vim-pine-script'
 Plugin 'Fymyte/rasi.vim' " for rofi configuration
-
-
 " ))
 " (( Slides / Presentations
 Plugin 'sotte/presenting.vim'
@@ -180,14 +190,19 @@ set sidescrolloff=10                   " Keep 5 lines at the size
 set autoindent                         " use current line for next line's indent level (for pasting from GNOME see :help paste or use " +)
 set expandtab                          " create spaces instead of tabs, use ^V^I for real tabs
 set iskeyword+=_,$,@,%,#               " none of these are word dividers
+autocmd FileType ruby set iskeyword-=:
+autocmd FileType yaml set iskeyword-=:
 set list                               " display tabs as symbols, don't indent
 set listchars=tab:>-,trail:_           " indent tabs displayed as symbols
 set nostartofline                      " remain cursor at postion when scrolling with page up / down
-set shiftwidth=4                       " amount of characters to be represented by tabs
+set shiftwidth=2                       " amount of characters to be represented by tabs
 set showmatch                          " briefly show corresponding brace, parenthese, bracket
 set smartindent                        " guess indention level (badly indents C-Shift-V inserts)
-set softtabstop=4                      " makes the spaces feel like real tabs
-set tabstop=4                          " tab width
+set softtabstop=2                      " makes the spaces feel like real tabs
+set tabstop=2                          " tab width
+set noeol                              " prevent writing newline to last line of file
+set ff=unix                            " unix linebreaks as default
+
 " ))
 " (( SEARCH
 set hls                                " highlight search results (or not)
@@ -232,9 +247,11 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=10
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['javascript', 'json', 'php', 'rst', 'yaml', 'css', 'sh'],
-                           \ 'passive_filetypes': ['lua', 'ruby', 'python', 'xml', 'xslt', 'html', 'haml' ] }
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["ruby", "yaml", "css"],
+    \ "passive_filetypes": ["ansible", "terraform"] }
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 " let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_javascript_checker = "jshint"
@@ -306,6 +323,12 @@ nmap <silent> <A-Right> :wincmd l<CR>
 " (( XML + HTML
 let g:sparkupExecuteMapping = '<C-e>'   " Mapping used to execute sparkup.
 let g:sparkupNextMapping    = '<C-E>'   " Mapping used to jump to the next empty tag/attribute.
+" ))
+" (( QUICKFIX
+function! QuickfixWindowsClose()
+  :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
+endfunction
+noremap <silent> <leader>qd :call QuickfixWindowsClose()<CR>
 " ))
 " (( VIM SESSION + INFO (GLOBAL)
 " Save session and viminfo, quit

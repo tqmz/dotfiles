@@ -21,6 +21,7 @@ rofi_pass = { source = "rofi/rofi-pass", target = ".config/rofi-pass/config" }
 vimrc = { source = "vim/vimrc", target = ".vimrc" }
 vimrc_minimal = { source = "vim/vimrc.minimal", target = ".vimrc.minimal" }
 vimrc_template = { source = "vim/vimrc.template", target = ".vimrc.template" }
+vim_doge_yard = { source = "vim/bundle/vim-doge/yard.yml", target = ".vim/bundle/vim-doge/helper/src/ruby/docs/YARD.yaml" }
 xinitrc = { source = "xinit/xinitrc", target = ".xinitrc" }
 xmodmap = { source = "xmodmap/xmodmap", target = ".Xmodmap" }
 zsh_aliases = { source = "zsh/aliases", target = ".zsh/aliases" }

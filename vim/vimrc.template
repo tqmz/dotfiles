@@ -1,51 +1,45 @@
-" init project environment variables
+" PROJECT
 let g:proj_path=expand("`pwd`")
 let g:proj_file=expand(g:proj_path.".vimproject")
-
-" load default session, but only when not in diff mode
+" load default session when not in diff mode
 if !&diff
-    source .vimsession
+  source .vimsession
 endif
-
-" preserve buffers ... and history of commands, searches, ...
+" preserve buffers, history
 exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
+" <F10> to save & quit
+exec "nmap <silent> <F10>
+    \ :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
 
-" Save session and viminfo, quit
-exec "nmap <silent> <F10> :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
+" FIND FILES
+exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
+" for involving multiple directories, use instead:
+" command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
+" exec "nmap <silent> <leader>g :FzxFiles<CR>"
 
-" set file formats
-set ff=unix
-
-" tab options for all files
+" CODING STANDARDS
 set expandtab " do use spaces instead of tabs
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" tig integration
-noremap T :!tig status<CR>
+" Ruby
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set softtabstop=2
+autocmd FileType ruby set tabstop=2
 
-" fzf
-exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
-" for involving multiple directories, replace with:
-" command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
-" exec "nmap <silent> <leader>g :FzxFiles<CR>"
+" FILE SETTINGS
+set ff=unix
 
-" Spell check
+" SPELL LANGUAGE
 "setlocal spell spelllang=en_us
 "setlocal spell spelllang=de_de
 "set complete+=kspell
 
 " COLORSCHEME
-" dotfiles:
 " colo darkspectrum
-"
-" x.dev, x.notes:
 " colo pyte
-"
-" f:
 " colo bclear
-"
-" *:
 " colo kellys
 " colo moria
+" colo ekvoli
