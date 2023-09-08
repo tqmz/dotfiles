@@ -48,24 +48,11 @@ Plugin 'VundleVim/Vundle.vim'
 " ))
 " (( Status
 
-" Vim Powerline
-" → <$HOME/.vim/bundle/vim-powerline/README.rst>
-Plugin 'Lokaltog/vim-powerline'
-let g:Powerline_stl_path_style = 'full'
-
 " quickfixstatus
 " <$HOME/.vim/bundle/quickfixstatus/README.md>
-Plugin 'dannyob/quickfixstatus'
+" Plugin 'dannyob/quickfixstatus'
 " ))
 " (( Files, Buffer
-
-" fzf
-" → <$HOME/.vim/bundle/fzf.vim/README.md>
-set rtp+=~/.fzf "fuzzy file finder <https://github.com/justinmk/fzf>
-Plugin 'junegunn/fzf.vim'
-let g:fzf_command_prefix = 'Fz'
-exec "nmap <silent> <leader>b :FzBuffers<CR>"
-
 " <Leader>f to run ranger within Vim
 Plugin 'francoiscabrol/ranger.vim'
 " vs. https://github.com/Mizuchi/vim-ranger ?
@@ -83,7 +70,9 @@ exec "nmap <silent> <leader>t :TagbarToggle<CR>"
 " (see git status and diff when editing a commit message)
 " → <$HOME/.vim/bundle/committia.vim/README.md>
 Plugin 'rhysd/committia.vim'
-noremap T :!tig status<CR>
+noremap T :TigOpenProjectRootDir<CR>
+noremap <Leader>tc :TigOpenCurrentFile<CR>
+nnoremap <Leader>tb :TigBlame<CR>
 " ))
 " (( All Languages
 
@@ -139,27 +128,10 @@ nnoremap  <leader>ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  <leader>RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
 nnoremap  <leader>RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " ))
-" (( PHP
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'beyondwords/vim-twig'
 " ))
 " (( Other
-Plugin 'jbmorgado/vim-pine-script'
 Plugin 'Fymyte/rasi.vim' " for rofi configuration
 " ))
-" (( Slides / Presentations
-Plugin 'sotte/presenting.vim'
-" ))
-" (( Colors
-Plugin 'CSApprox'
-Plugin 'Colour-Sampler-Pack'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/Vim-Tomorrow-Theme'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'veloce/vim-aldmeris'
-Plugin 'zaki/zazen'
-Plugin 'zenesque.vim'
 " ))
 call vundle#end()
 
@@ -174,7 +146,7 @@ runtime! config/plugin/*.vim
 " (( UI
 set cursorcolumn                       " highlight the current column – disturbs autocompletetion background!
 set cursorline                         " highlight current line
-set guioptions-=T                      " no toolbar (for gvim)
+"set guioptions-=T                      " no toolbar (for gvim)
 set laststatus=2                       " always show the status line with file name
 set report=0                           " tell us when anything is changed via :...
 set ruler                              " show statusline with cursor position
@@ -214,15 +186,15 @@ set wildmenu                           " don't take first cli match (files, comm
 set wildmode=list:longest,full         " multiple matches: list all, complete longest, wildmenu with 2nd tab
 " ))
 " (( COLORS
-set t_Co=256
+"set t_Co=256
 "set background=dark
 "colo lucius
-set background=light
+"set background=light
 " colo solarized
 " colo jellybeans
-colo pyte
+" colo pyte
 " required to run solarized in terminal:
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 " ))
 " (( FOLDING
 " save folds of a file (created with `zf`)
@@ -244,20 +216,10 @@ if has("autocmd")
 endif
 " ))
 " ))
-" (( PROJECT      http://www.linupedia.org/opensuse/Vim_Plugins
-nmap <silent> <F2> <Plug>ToggleProject
-let g:proj_window_width = 50
-let g:proj_flags        = "ibmnstgT"
-" ))
 " (( KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
 ":autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
 :autocmd FileType markdown set nospell
 
-" YML
-:autocmd FileType yml set expandtab
-:autocmd FileType yml set shiftwidth=2
-:autocmd FileType yml set softtabstop=2
-:autocmd FileType yml set tabstop=2
 " ))
 " (( KEY MAPPINGS MAIL EDITING + QUOTING
 " replaces empty quoted lines and sets markdown file type
@@ -273,9 +235,6 @@ noremap <F12> :%s/\(> \)\+$//g<CR>
 " shortcuts for replacing tabs / removing trailing whitespace
 nmap <silent> <LocalLeader>ct :%s/\t/    /g<CR>:%s/\s\+$//g<CR>
 nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
-" shortcut for inserting date or timestamp
-nmap <silent> <leader>id :put = strftime('%b %d, %Y')<CR>
-nmap <silent> <leader>it :put = strftime('%c')<CR>
 " ))
 " (( POST WRITES
 " read .vimrc
@@ -300,35 +259,9 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 " ))
-" (( XML + HTML
-let g:sparkupExecuteMapping = '<C-e>'   " Mapping used to execute sparkup.
-let g:sparkupNextMapping    = '<C-E>'   " Mapping used to jump to the next empty tag/attribute.
-" ))
-" (( QUICKFIX
-function! QuickfixWindowsClose()
-  :windo if &buftype == "quickfix" || &buftype == "locationlist" | lclose | endif
-endfunction
-noremap <silent> <leader>qd :call QuickfixWindowsClose()<CR>
-" ))
 " (( VIM SESSION + INFO (GLOBAL)
-" Save session and viminfo, quit
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
-nmap <silent> <F10> :mksession! /home/t/.vim/.vimsession<CR>:wviminfo! /home/t/.vim/.viminfo<CR>:qa!<CR>
-" reload buffers ... and history of commands, searches, ... with <F9>
-" see `:help user-manual`, chapter 21.3
-nmap <silent> <F9> :source /home/t/.vim/.vimsession<CR>:set viminfo=%,'50,<1000,s100,:50,@10,/50,n/home/t/.vim/.viminfo<CR>
-" ))
-" (( UNDOFILE
-" <http://vi.stackexchange.com/a/53>
-if !isdirectory($HOME."/.vim")
-    call mkdir($HOME."/.vim", "", 0700)
-endif
-if !isdirectory($HOME."/.vim-undo-dir")
-    call mkdir($HOME."/.vim-undo-dir", "", 0700)
-endif
-set undodir=~/.vim-undo-dir
-set undofile
 " ))
 " (( GOPASS
 au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
@@ -347,7 +280,7 @@ if has("gui_running")
     set guioptions-=B
     set lines=53
     set columns=143
-    color pyte
+    " color pyte
 
     " settings for vim-indent-guides
     set ts=4 sw=4 et
@@ -355,9 +288,15 @@ if has("gui_running")
     let g:indent_guides_guide_size = 1
 endif
 
-" ))
-" (( NERDTree
-" Map NERDTreeToggle to convenient key
-nmap <leader>n :NERDTreeToggle<cr>
-" ))
+" TODO: find a better place
+" @see <https://github.com/itchyny/lightline.vim/issues/293#issuecomment-373710096>
+function! GitFileName()
+  let root = fnamemodify(get(b:, 'gitbranch_path'), ':h:h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+
 " vim: fdm=marker foldmarker=((,)) fdl=0 sts=2 ai
