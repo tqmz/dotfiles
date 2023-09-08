@@ -8,7 +8,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9
+#font pango:monospace 9
+font pango:Iosevka Term 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -51,6 +52,7 @@ tiling_drag modifier titlebar
 
 # start a terminal (with --login option for rvm)
 # bindsym $mod+Return exec i3-sensible-terminal --login
+# NOTE: i3-sensible-terminal uses $TERMINAL, otherwise just checks for common terminals
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a browser
@@ -61,24 +63,24 @@ bindsym $mod+Shift+q kill
 
 # launcher / window switcher
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-bindsym $mod+Escape exec rofi -theme solarized -show combi
+bindsym $mod+Escape exec rofi -theme DarkBlue -show combi
 # (see rofi-theme-selector for further themes)
 
 # rofi show keybindings
-bindsym $mod+Shift+Escape exec rofi -show keys
+bindsym $mod+Shift+Escape exec rofi -theme DarkBlue -show keys
 
 # dictionary (using dictd)
-bindsym $mod+d exec --no-startup-id "rofi -modes 'dict:dict' -show dict"
+bindsym $mod+d exec --no-startup-id rofi -modes 'dict:dict' -theme DarkBlue -show dict
 
 # calculator
-bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort > /dev/null"
+bindsym $mod+c exec --no-startup-id rofi -show calc -theme DarkBlue -modi calc -no-show-match -no-sort > /dev/null
 
 # emoji 
-bindsym $mod+e exec --no-startup-id "rofi -show emoji -modi emoji"
+bindsym $mod+e exec --no-startup-id rofi -show emoji -modi emoji theme DarkBlue
 
 # password manager
 #bindsym $mod+p exec rofi-pass
-bindsym $mod+p exec --no-startup-id "rofi-pass --root $HOME/.password-store/inaudito-private:$HOME/ia.passwords/:$HOME/.password-store"
+bindsym $mod+p exec --no-startup-id rofi-pass -theme DarkBlue --root $HOME/.password-store/inaudito-private:$HOME/ia.passwords/:$HOME/.password-store
 
 # change focus
 bindsym $mod+h focus left
@@ -197,10 +199,10 @@ bindsym $mod+Shift+Right move workspace to output right
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-    	mode dock # always show the dock menu
-    	position top # put the window menu at the top
-    	font pango:DejaVu Sans Mono 8
+    status_command i3status
+    mode dock # always show the dock menu
+    position top # put the window menu at the top
+    font pango:Iosevka Light 9
 }
 
 # ft:i3config
