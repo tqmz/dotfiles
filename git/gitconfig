@@ -14,20 +14,20 @@
 [core]
     excludesfile = ~/.gitignore
     fileMode = true
-    editor = vim -u ~/.vimrc.minimal -n
+    editor = nvim -u ~/.vimrc.minimal -n
     pager = less -R --chop-long-lines --no-init --quit-if-one-screen
 
 [credential]
     helper = "!gopass git-credential $@"
 
 [diff]
-    tool = vimdiff
+    tool = nvimdiff
 
 [diff "rspec"]
     xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
 
-[difftool]
-    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [init]
     defaultBranch = main

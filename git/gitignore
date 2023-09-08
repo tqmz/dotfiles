@@ -3,6 +3,7 @@
 .agignore
 .envrc
 .fdignore
+.nvimrc
 .vim*
 .~lock.*#
 tags
