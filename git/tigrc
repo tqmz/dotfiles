@@ -3,6 +3,5 @@
 # see 'man tigrc' for complete reference
 # see <https://github.com/jonas/tig/wiki/Bindings> for bind examples
 bind status + !git commit --amend
-bind diff V !git show %(commit):%(file)
-bind diff W !git show %(commit)~1:%(file)
+bind diff w :toggle wrap-lines
 bind main U !@sh -c "git url-commit %(commit) | xclip -selection c" # copy commit URL to clipboard
