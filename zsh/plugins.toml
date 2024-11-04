@@ -1,3 +1,11 @@
+# sheldon plugins for zsh
+
+# Global
+
+shell = "zsh"
+
+# Plugins
+
 [plugins.zsh-expand]
 github = 'MenkeTechnologies/zsh-expand'
 

@@ -3,4 +3,5 @@
 # Yay
 # <https://github.com/Jguer/yay>
 mkdir -p ~/Downloads && cd ~/Downloads
-sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+sudo pacman -Suy --needed --noconfirm git base-devel &&
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si

@@ -72,3 +72,7 @@ source /usr/share/z/z.sh
 # run `p10k configure` or edit ~/.p10k.zsh for customization
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# allow output on zsh init, and output quote
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+fortune 1% wisdom 99% $HOME/dotfiles/fortune

@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local lspconfig = require('lspconfig')
 lspconfig.ruby_ls.setup{}
 lspconfig.rubocop.setup{}
+lspconfig.tsserver.setup{}
 
 vim.diagnostic.config({
   float = {
@@ -132,6 +133,20 @@ plugins = {
   {
     "iberianpig/tig-explorer.vim",
     dependencies = { "rbgrouleff/bclose.vim" }
+  },
+
+  -- Live Share / Instant w/ localhost.run
+  {
+    "azratul/live-share.nvim",
+    dependencies = { "jbyuki/instant.nvim" },
+    config = function()
+      vim.g.instant_username = "Smileson"
+      require("live-share").setup({
+        port_internal = 7709,
+        max_attempts = 40, -- 10 seconds
+        service = "localhost.run"
+      })
+    end
   }
 
   -- Diff

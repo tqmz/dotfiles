@@ -45,7 +45,7 @@ keycode  94 = less greater less greater rightarrow leftarrow rightarrow leftarro
 keycode  16 = egrave 7 egrave 7 dead_grave dead_acute dead_grave dead_acute
 
 ! Dash (µ key)
-keycode  51 = asterisk endash asterisk endash threesuperior yen threesuperior yen
+keycode  51 = asterisk endash asterisk endash threesuperior emdash threesuperior emdash
 
 ! replace Print by Pause // for kupfer
 keycode 107 = Pause Break Pause Break Pause Break Pause Break

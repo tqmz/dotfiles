@@ -12,10 +12,11 @@ exec "nmap <silent> <F10>
     \ :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
 
 " FIND FILES
-exec "nmap <silent> <leader>g :FzFiles " . g:proj_path . "<CR>"
+command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . ' . g_project_path, 'sink': 'e'}, <bang>0))
+exec "nmap <silent> <leader>g :FzxFiles " . g:proj_path . "<CR>"
 " for involving multiple directories, use instead:
-" command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
-" exec "nmap <silent> <leader>g :FzxFiles<CR>"
+"   command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
+"   exec "nmap <silent> <leader>g :FzxFiles<CR>"
 
 " CODING STANDARDS
 set expandtab " do use spaces instead of tabs

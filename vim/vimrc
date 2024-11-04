@@ -73,6 +73,7 @@ Plugin 'rhysd/committia.vim'
 noremap T :TigOpenProjectRootDir<CR>
 noremap <Leader>tc :TigOpenCurrentFile<CR>
 nnoremap <Leader>tb :TigBlame<CR>
+nnoremap <Leader>tl :TigOpenCurrentFile<CR>
 " ))
 " (( All Languages
 
