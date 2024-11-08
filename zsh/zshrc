@@ -17,12 +17,11 @@ unsetopt beep
 autoload -Uz compinit
 compinit
 
+# environment (to be read before aliases)
+source ~/.zsh/environment
 
 # aliases
 source ~/.zsh/aliases
-
-# environment
-source ~/.zsh/environment
 
 # direnv
 eval "$(direnv hook zsh)"

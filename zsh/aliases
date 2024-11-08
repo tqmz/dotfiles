@@ -3,11 +3,6 @@
 # Basics
 alias l='ls -lh --color=auto'
 alias ll='ls -lah --color=auto'
-#alias ag='\ag --hidden '
-#alias fd='\fd --no-ignore-vcs ' # otherwise, run `command fd`
-
-# Development
-#alias yamllint='ruby -ryaml -e ";puts YAML.load_file(ARGV[0])" '
 
 # Docker
 alias dc='docker compose'
@@ -22,7 +17,7 @@ alias xx='xmodmap ~/.Xmodmap'
 alias XX='xdotool key Caps_Lock && xmodmap ~/.Xmodmap' # ;)
 
 # Vim
-alias viminit='cp ~/.vimrc.template .vimrc && touch .viminfo && touch .vimsession && touch tags'
+alias nviminit="cp ${DOTFILES_DIR}/vim/vimrc.template .nvimrc && touch .viminfo && touch .vimsession"
 alias vimrmswp='find . -type f -name ".*.swp" -exec rm {} \;'
 
 # vim: set ft=zsh:
