@@ -4,6 +4,7 @@
 
 # map keys
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+setxkbmap fr
 
 # start Gnome keyring
 if [ -f /usr/bin/gnome-keyring-daemon ]; then
