@@ -129,10 +129,8 @@ nnoremap  <leader>ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  <leader>RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
 nnoremap  <leader>RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 " ))
-" ))
 " (( Other
 Plugin 'Fymyte/rasi.vim' " for rofi configuration
-" ))
 " ))
 call vundle#end()
 
@@ -288,7 +286,8 @@ if has("gui_running")
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
 endif
-
+" ))
+" (( GIT
 " TODO: find a better place
 " @see <https://github.com/itchyny/lightline.vim/issues/293#issuecomment-373710096>
 function! GitFileName()
@@ -299,5 +298,22 @@ function! GitFileName()
   endif
   return expand('%')
 endfunction
+" ))
+" (( FZX
+function! FZX(directories, include_hidden = 0)
+  let l:cmd = "fd -t f --no-ignore-vcs" . (a:include_hidden ? " --hidden" : "")
+  let l:cmd .= " " . a:directories
 
+  call fzf#run(fzf#wrap({'source': l:cmd, 'sink': 'e'}) )
+endfunction
+
+if !exists('g:fzx_search_path') || g:fzx_search_path == ''
+    let g:fzx_search_path = '.'
+endif
+
+command! -bang FzxNonHidden call FZX(g:fzx_search_path, 0)
+command! -bang FzxAll call FZX(g:fzx_search_path, 1)
+exec "nmap <silent> <leader>g :FzxNonHidden<CR>"
+exec "nmap <silent> <leader>G :FzxAll<CR>"
+" ))
 " vim: fdm=marker foldmarker=((,)) fdl=0 sts=2 ai

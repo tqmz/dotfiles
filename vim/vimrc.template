@@ -1,22 +1,22 @@
 " PROJECT
-let g:proj_path=expand("`pwd`")
-let g:proj_file=expand(g:proj_path.".vimproject")
+let g:project_path = substitute(expand("`pwd`"), '/\$', '', '')
+
 " load default session when not in diff mode
 if !&diff
   source .vimsession
 endif
+
 " preserve buffers, history
-exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:proj_path . ".viminfo"
+exec "set viminfo=%,'50,<1000,s100,:50,@10,/50,n" . g:project_path . ".viminfo"
+
 " <F10> to save & quit
 exec "nmap <silent> <F10>
-    \ :mksession! " . g:proj_path . ".vimsession<CR>:wviminfo! " . g:proj_path . ".viminfo<CR>:qa!<CR>"
+    \ :mksession! " . g:project_path . ".vimsession<CR>:wviminfo! " . g:project_path . ".viminfo<CR>:qa!<CR>"
 
 " FIND FILES
-command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . ' . g_project_path, 'sink': 'e'}, <bang>0))
-exec "nmap <silent> <leader>g :FzxFiles " . g:proj_path . "<CR>"
-" for involving multiple directories, use instead:
-"   command! -bang FzxFiles call fzf#run(fzf#wrap({ 'source': 'fd . /home /var /etc', 'sink': 'e'}, <bang>0))
-"   exec "nmap <silent> <leader>g :FzxFiles<CR>"
+" multiple pathes can be included using space as delimiter
+" mapped to FZX via _g and _G
+let g:fzx_search_path = ". " . g:project_path
 
 " CODING STANDARDS
 set expandtab " do use spaces instead of tabs
@@ -38,9 +38,4 @@ set ff=unix
 "set complete+=kspell
 
 " COLORSCHEME
-" colo darkspectrum
-" colo pyte
-" colo bclear
-" colo kellys
-" colo moria
-" colo ekvoli
+" ...
