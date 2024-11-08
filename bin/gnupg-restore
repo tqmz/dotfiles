@@ -1,0 +1,45 @@
+#!/bin/bash
+
+BACKUP_DIR="$HOME/.gnupg.out"
+
+# Check if the directory exists
+if [ ! -d "$BACKUP_DIR" ]; then
+    echo "Error: Directory $BACKUP_DIR does not exist. Please ensure the GnuPG data is synced properly."
+    exit 1
+fi
+
+echo "Importing GnuPG data from $BACKUP_DIR..."
+
+# Import private keys (secret keys)
+if [ -f "$BACKUP_DIR/keys.private.asc" ]; then
+    echo "Importing secret keys..."
+    gpg --import "$BACKUP_DIR/keys.private.asc"
+else
+    echo "Warning: No private keys found to import."
+fi &&
+
+# Import public keys
+if [ -f "$BACKUP_DIR/keys.publice.asc" ]; then
+    echo "Importing public keys..."
+    gpg --import "$BACKUP_DIR/keys.public.asc"
+else
+    echo "Warning: No public keys found to import."
+fi &&
+
+# Import trust database (key trust settings)
+if [ -f "$BACKUP_DIR/ownertrust.txt" ]; then
+    echo "Importing trust database..."
+    gpg --import-ownertrust "$BACKUP_DIR/ownertrust.txt"
+else
+    echo "Warning: No trust database found to import."
+fi &&
+
+chmod 700 ${HOME}/.gnupg &&
+chmod 600 ${HOME}/.gnupg/* &&
+
+echo "GnuPG import completed successfully." &&
+exit 0
+
+# else:
+exit 23
+
