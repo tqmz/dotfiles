@@ -1,0 +1,192 @@
+aur/qotd
+    A simple RFC 865-compliant QOTD (quote of the day) daemon.
+aur/slackdump
+    Save your private and public slack messages, threads, files, and users locally
+aur/spotrec
+    Spotify desktop client recorder for PulseAudio
+aur/xlayoutdisplay
+    Detects and arranges linux display outputs, using XRandR for detection and xrandr for arrangement.
+aur/yin-yang
+    Light/dark theme switcher for Linux. Supports popular Desktops, text editors and more!
+aur/zoom
+    Video Conferencing and Web Conferencing Service
+core/openssh
+    SSH protocol implementation for remote login, command execution and file transfer
+core/sed
+    GNU stream editor
+core/sudo
+    Give certain users the ability to run some commands as root
+extra/arandr
+    Provide a simple visual front end for XRandR 1.2.
+extra/asciinema
+    Record and share terminal sessions
+extra/aws-cli
+    Universal Command Line Interface for Amazon Web Services
+extra/bat
+    Cat clone with syntax highlighting and git integration
+extra/blueman
+    GTK+ Bluetooth Manager
+extra/bluez
+    Daemons for the bluetooth protocol stack
+extra/cocogitto
+    Set of CLI tools for the conventional commit and semver specifications
+extra/ctags
+    Generates an index file of language objects found in source files
+extra/cups
+    OpenPrinting CUPS - daemon package
+extra/dex
+    Program to generate and execute DesktopEntry files of type Application
+extra/dictd
+    Online dictionary client and server
+extra/diff-so-fancy
+    Good-looking diffs with diff-highlight and more
+extra/direnv
+    A shell extension that manages your environment
+extra/docker
+    Pack, ship and run any application as a lightweight container
+extra/docker-compose
+    Fast, isolated development environments using Docker
+extra/easytag
+    Simple application for viewing and editing tags in audio files
+extra/eog
+    Eye of Gnome: An image viewing and cataloging program
+extra/evince
+    Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
+extra/fd
+    Simple, fast and user-friendly alternative to find
+extra/ffmpeg4.4
+    Complete solution to record, convert and stream audio and video
+extra/firefox
+    Fast, Private & Safe Web Browser
+extra/fortune-mod
+    The Fortune Cookie Program from BSD games
+extra/fzf
+    Command-line fuzzy finder
+extra/git
+    the fast distributed version control system
+extra/glab
+    Cli tool to help work seamlessly with GitLab from the command line
+extra/gnome-online-accounts
+    Single sign-on framework for GNOME
+extra/gopass
+    The slightly more awesome standard unix password manager for teams.
+extra/gparted
+    A Partition Magic clone, frontend to GNU Parted
+extra/graphviz
+    Graph visualization software
+extra/gthumb
+    Image browser and viewer for the GNOME Desktop
+extra/imagemagick
+    An image viewing/manipulation program
+extra/intel-ucode
+    Microcode update files for Intel CPUs
+extra/jq
+    Command-line JSON processor
+extra/keepass
+    Easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices
+extra/kodi
+    A software media player and entertainment hub for digital media (gl renderer)
+extra/kwindowsystem
+    Access to the windowing system
+extra/libreoffice-fresh
+    LibreOffice branch which contains new features and program enhancements
+extra/magic-wormhole
+    Securely transfer data between computers
+extra/menyoki
+    Screen{shot,cast} and perform ImageOps on the command line
+extra/mitmproxy
+    SSL-capable man-in-the-middle HTTP proxy
+extra/mplayer
+    Media player for Linux
+extra/neovim
+    Fork of Vim aiming to improve user experience, plugins, and GUIs
+extra/network-manager-applet
+    Applet for managing network connections
+extra/npm
+    JavaScript package manager
+extra/ntfs-3g
+    NTFS filesystem driver and utilities
+extra/ntp
+    Network Time Protocol reference implementation
+extra/parted
+    A program for creating, destroying, resizing, checking and copying partitions
+extra/pdftk
+    Command-line tool for working with PDFs
+extra/plocate
+    Alternative to locate, faster and compatible with mlocate's database.
+extra/postgresql-libs
+    Libraries for use with PostgreSQL
+extra/pulseaudio-bluetooth
+    Bluetooth support for PulseAudio
+extra/qt5-base
+    A cross-platform application and UI framework
+extra/ranger
+    Simple, vim-like file manager
+extra/recode
+    Converts files between various character sets and usages
+extra/ripgrep
+    A search tool that combines the usability of ag with the raw speed of grep
+extra/rofi
+    A window switcher, application launcher and dmenu replacement
+extra/rofi-calc
+    Do calculations in rofi
+extra/rofi-emoji
+    A Rofi plugin for selecting emojis
+extra/rofi-pass
+    bash script to handle pass storages in a convenient way
+extra/rsync
+    A fast and versatile file copying tool for remote and local files
+extra/ruby-yard
+    YARD is a Ruby Documentation tool. The Y stands for "Yay!"
+extra/seahorse
+    GNOME application for managing PGP keys.
+extra/sheldon
+    A fast and configurable shell plugin manager
+extra/sheldon-docs
+    A fast and configurable shell plugin manager (documentation)
+extra/signal-desktop
+    Signal Private Messenger for Linux
+extra/termdown
+    Countdown timer and stopwatch in your terminal
+extra/terraform
+    HashiCorp tool for building and updating infrastructure as code idempotently
+extra/the_silver_searcher
+    Code searching tool similar to Ack, but faster
+extra/tidy
+    A tool to tidy down your HTML code to a clean style
+extra/tig
+    Text-mode interface for Git.
+extra/toml-bombadil
+    Adotfile manager with templating
+extra/ttf-firacode-nerd
+    Patched font Fira (Fura) Code from nerd fonts library
+extra/wezterm
+    A GPU-accelerated cross-platform terminal emulator and multiplexer
+extra/wget
+    Network utility to retrieve files from the Web
+extra/xkeycaps
+    A graphical front-end to xmodmap
+extra/xmlstarlet
+    A set of tools to transform, query, validate, and edit XML documents
+extra/xorg-server
+    Xorg X server
+extra/xorg-xbacklight
+    RandR-based backlight control application
+extra/xorg-xev
+    Print contents of X events
+extra/xorg-xinit
+    X.Org initialisation program
+extra/xorg-xmodmap
+    Utility for modifying keymaps and button mappings
+extra/xss-lock
+    Use external locker as X screen saver
+extra/yq
+    Command-line YAML, XML, TOML processor - jq wrapper for YAML/XML/TOML documents
+extra/yt-dlp
+    A youtube-dl fork with additional features and fixes
+extra/z
+    Tracks your most used directories, based on 'frecency'
+extra/zip
+    Compressor/archiver for creating and modifying zipfiles
+extra/zsh-history-substring-search
+    ZSH port of Fish history search (up arrow)

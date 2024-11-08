@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# List of packages
+packages=(
+    "bat"
+    "ctags"
+    "dex"
+    "dictd"
+    "diff-so-fancy"
+    "direnv"
+    "docker"
+    "docker-compose"
+    "fd"
+    "firefox"
+    "fzf"
+    "git"
+    "gnome-online-accounts"
+    "gopass"
+    "intel-ucode"
+    "jq"
+    "network-manager-applet"
+    "openssh"
+    "parted"
+    "postgresql-libs"
+    "qt5-base"
+    "ranger"
+    "rofi"
+    "rofi-calc"
+    "rofi-emoji"
+    "rofi-pass"
+    "rsync"
+    "seahorse"
+    "sed"
+    "sheldon"
+    "sheldon-docs"
+    "signal-desktop"
+    "sudo"
+    "the_silver_searcher"
+    "tig"
+    "toml-bombadil"
+    "wget"
+    "xkeycaps"
+    "xorg-server"
+    "xorg-xbacklight"
+    "xorg-xev"
+    "xorg-xinit"
+    "xorg-xmodmap"
+    "xss-lock"
+    "yq"
+    "z"
+    "zsh-history-substring-search"
+)
+
+# Loop through each package
+for pkg in "${packages[@]}"; do
+    # Search for the package
+    # output=$(yay -Ss "$pkg" --noconfirm)
+    # echo $output | less
+    yay -Ss "$pkg" --noconfirm | grep -E "^(core|extra|aur)" | tail -n 1 | cut -d' ' -f 1
+
+    # # Extract the line that contains the package
+    # # Check for extra/ first, then aur/
+    # if [[ $output =~ ^([a-zA-Z0-9_\-]+/[^ ]+) ]]; then
+    #     package_name=${BASH_REMATCH[1]}
+
+    #     # Prefer extra/ packages
+    #     if [[ $package_name == extra/* ]]; then
+    #         echo "$package_name"
+    #     elif [[ $output =~ ^(aur/[^ ]+) ]]; then
+    #         echo "${BASH_REMATCH[1]}"
+    #     fi
+    # fi
+done
+

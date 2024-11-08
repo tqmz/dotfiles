@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BACKUP_DIR="$HOME/.gnupg.out"
+
+mkdir -p "$BACKUP_DIR" &&
+chmod 700 "$BACKUP_DIR" &&
+
+echo "Exporting GPG data to $BACKUP_DIR...\n\n" &&
+
+echo "Exporting secret keys..." &&
+gpg --export-secret-keys --armor > "$BACKUP_DIR/keys.private.asc" &&
+
+echo "Exporting public keys..." &&
+gpg --export --armor > "$BACKUP_DIR/keys.public.asc" &&
+
+echo "Exporting trust database..." &&
+gpg --export-ownertrust > "$BACKUP_DIR/ownertrust.txt" &&
+
+chmod 600 ${BACKUP_DIR}/* &&
+echo "GPG export completed successfully.\nData stored in $BACKUP_DIR" &&
+exit 0
+
+# else:
+exit 23
