@@ -136,8 +136,6 @@ extra/rofi-pass
     bash script to handle pass storages in a convenient way
 extra/rsync
     A fast and versatile file copying tool for remote and local files
-extra/ruby-yard
-    YARD is a Ruby Documentation tool. The Y stands for "Yay!"
 extra/seahorse
     GNOME application for managing PGP keys.
 extra/sheldon
@@ -190,3 +188,5 @@ extra/zip
     Compressor/archiver for creating and modifying zipfiles
 extra/zsh-history-substring-search
     ZSH port of Fish history search (up arrow)
+core/base-devel
+core/openssl

@@ -1,16 +1,8 @@
 #!/bin/bash
 
-# RVM post installation setup
+# RVM
 # (Ruby Version Manager)
 # <http://rvm.io/>
 
-# steps required after installation with yay
-# – additionally, zsh or bash must be started
-#   with --login option to get ruby working
-mkdir -p ~/.rvm/archives ~/.rvm/rubies ~/.rvm/src
-
-# to setup Ruby 3.1.4 as default:
-# zsh --login
-# rvm install 3.1.4
-# rvm --default use 3.1.4
-# ruby --version
+# as recommended, setup via official install script, not via aur/rvm.
+curl -L get.rvm.io | bash -s stable
