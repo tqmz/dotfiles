@@ -1,0 +1,2 @@
+event=video/brightnessup
+action=brightnessctl set +15%%

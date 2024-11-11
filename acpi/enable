@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# NOTE: check via: journalctl -u acpid -f
+sudo cp ~/dotfiles/acpi/events/* /etc/acpi/events/
+sudo systemctl restart acpid
