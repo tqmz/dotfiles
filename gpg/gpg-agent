@@ -9,12 +9,14 @@
 
 # https://wiki.archlinux.org/title/GnuPG#pinentry
 # – define how gpg agent password is requested
-# NOTE: pinentry-qt requires qt5-base
+#
+# NOTE: pinentry-qt requires qt5-base!
+#       – possibly also: kguiaddons
 # ! the line below MUST NOT contain a # comment at the end
 #pinentry-program /usr/bin/pinentry-qt
 #
 # Run `gpg-connect-agent reloadagent /bye` to reload the agent.
-pinentry-program /usr/bin/pinentry-qt
+pinentry-program /usr/bin/pinentry-rofi
 
 # remember unused keys for ... seconds
 default-cache-ttl 28800
