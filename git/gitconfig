@@ -50,4 +50,9 @@
     email = smile@friendsoft.de
     name = Tim Heinsohn
 
+[rebase]
+    # %h: hash, %an: author name, %ae: author email, %s: subject
+    # (the configured format is appended to "pick %h")
+    instructionFormat = "[%an]: %s"
+
 # vim: ft=gitconfig
