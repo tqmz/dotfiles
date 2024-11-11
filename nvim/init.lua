@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
--- PLUGINS
+-- PLUGINS via lazy
 plugins = {
   -- Projects
   -- { "folke/neoconf.nvim", cmd = "Neoconf" },
@@ -134,6 +134,28 @@ plugins = {
     "iberianpig/tig-explorer.vim",
     dependencies = { "rbgrouleff/bclose.vim" }
   },
+  -- git-conflict default keybindings:
+  --    co - Choose ours (current changes)
+  --    ct - Choose theirs (incoming changes)
+  --    cb - Choose both
+  --    c0 - Choose none
+  --    ]x - Move to next conflict
+  --    [x - Move to previous conflict
+  {
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    config = function()
+      require("git-conflict").setup({
+        default_mappings = true,
+        default_commands = true,
+        disable_diagnostics = false,
+        highlights = {
+          incoming = 'DiffText',
+          current = 'DiffAdd',
+        }
+      })
+    end
+  },
 
   -- Live Share / Instant w/ localhost.run
   {
@@ -147,12 +169,13 @@ plugins = {
         service = "localhost.run"
       })
     end
-  }
+  },
 
   -- Diff
   -- "sindrets/diffview.nvim"
 
 }
+
 require("lazy").setup(plugins)
 
 -- FINDER
