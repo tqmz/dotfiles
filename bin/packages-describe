@@ -1,0 +1,23 @@
+#!/bin/bash
+
+packages_file="packages"
+
+# Read, sort, and process the package list
+while IFS= read -r line; do
+    # Extract package name
+    pkg="${line#*/}"  # Remove the prefix (e.g., 'aur/' or 'extra/')
+
+    # Search for the package
+    output=$(yay -Ss "$pkg" --noconfirm 2>/dev/null)
+
+    # Check if output is not empty
+    if [ -n "$output" ]; then
+        # Get the last line which is the description
+        description=$(echo "$output" | tail -n 1)
+
+        # Output the full package name and the description
+        echo "$line"
+        echo "$description"  # Indent description
+        echo ""
+    fi
+done < <(sort "$packages_file")

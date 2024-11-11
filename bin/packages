@@ -188,5 +188,20 @@ extra/zip
     Compressor/archiver for creating and modifying zipfiles
 extra/zsh-history-substring-search
     ZSH port of Fish history search (up arrow)
+aur/pinentry-rofi
+aur/rvm
+aur/zsh-theme-powerlevel10k
 core/base-devel
+core/gnupg
 core/openssl
+extra/chromium
+extra/evolution
+extra/flameshot
+extra/gopass
+extra/htop
+extra/i3-wm
+extra/lua-language-server
+extra/pavucontrol
+extra/thunderbird
+extra/xterm
+extra/zsh-autosuggestions

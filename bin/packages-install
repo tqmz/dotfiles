@@ -1,0 +1,21 @@
+#!/bin/bash
+
+packages_file="packages"
+
+# Read the package list and process each line
+while IFS= read -r line; do
+    # Extract the package name from the line
+    pkg="${line%% *}"  # Get the first part before space
+    repo="${pkg%%/*}"  # Get the repository part (e.g., 'aur', 'core', 'extra')
+    pkg_name="${pkg#*/}"  # Get the actual package name (e.g., 'xlayoutdisplay')
+
+    # Install the package using yay or pacman
+    if [[ "$repo" == "aur" ]]; then
+        echo "Installing $pkg..."
+        yay -S --noconfirm "$pkg"
+    else
+        echo "Installing $pkg..."
+        sudo pacman -Suy --noconfirm "$pkg"
+    fi
+done < <(grep -E '^aur/|^core/|^extra/' "$packages_file") &&
+echo "Done."

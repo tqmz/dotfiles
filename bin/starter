@@ -1,0 +1,22 @@
+#/bin/bash
+
+DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/tqmz/dotfiles.git}
+DOTFILES_DIR=${DOTFILES_DIR:-~/dotfiles}
+
+sudo pacman -Suy --needed git &&
+git -C "${DOTFILES_DIR}" pull || git clone "${DOTFILES_REPO}" "${DOTFILES_DIR}" &&
+ln -s ${DOTFILES_DIR}/bombadil.toml ~/.config/bombadil.toml &&
+cd ${DOTFILES_DIR} &&
+./aur/yay-install &&
+./packages-install &&
+./docker/docker-group-setup &&
+./ruby/rufo-install &&
+./ruby/rvm-setup &&
+./vundle-install &&
+bombadil link &&
+sheldeon lock &&
+systemctl start docker.service &&
+systemctl enable docker.service &&
+systemctl start qotd.service &&
+systemctl enable qotd.service &&
+echo "Done."
