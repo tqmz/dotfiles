@@ -85,6 +85,10 @@ plugins = {
       })
     end
   },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+  },
 
   -- Live Share / Instant w/ localhost.run
   {
@@ -209,6 +213,12 @@ vim.g.lightline = {
     gitfilename = "GitFileName"
   }
 }
+
+-- GIT
+-- diff main
+vim.api.nvim_set_keymap('n', '<leader>dm', [[:DiffviewOpen origin/main -- %<CR>]], { noremap = true, silent = true })
+-- diff close
+vim.api.nvim_set_keymap('n', '<leader>dc', [[:DiffviewClose<CR>]], { noremap = true, silent = true })
 
 -- COLORS
 ---@see <https://github.com/rebelot/kanagawa.nvim#readme>
