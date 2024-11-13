@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Ensure ~/bin directory exists
+mkdir -p ~/bin
+
+# Loop through each file in $DOTFILES_DIR/bin
+for file in "$DOTFILES_DIR"/bin/*; do
+    # Get the base name of the file
+    filename=$(basename "$file")
+    echo "Symlinking $file in ~/bin"
+    
+    # Create symbolic link in ~/bin
+    ln -sf "$file" ~/bin/"$filename"
+done
+
+echo "Symbolic links created in ~/bin"

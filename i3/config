@@ -19,6 +19,9 @@ font pango:Iosevka Term 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Preserve keyboard layout.
+exec_always --no-startup-id setxkbmap fr
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -41,6 +44,7 @@ bindsym $mod+x exec --no-startup-id xmodmap ~/.Xmodmap
 # exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
+# NOTE: try acpi
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -206,10 +210,23 @@ bindsym $mod+Shift+Right move workspace to output right
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
+    # status_command i3status
+    status_command "/home/t/dotfiles/i3/i3status_with_hostname"
     mode dock # always show the dock menu
     position top # put the window menu at the top
     font pango:Iosevka Light 9
+    colors {
+        # Whole color settings
+        background #000000
+        statusline #ffffff
+        separator  #333333
+
+        # Type             border  background font
+        focused_workspace  #008fff #007fff #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #aa0000 #990000 #ffffff
+    }
 }
 
 # ft:i3config

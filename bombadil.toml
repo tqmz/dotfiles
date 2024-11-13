@@ -5,8 +5,8 @@
 dotfiles_dir = "dotfiles"
 
 [settings]
-prehooks = [ "cd ~/.config && mkdir -p alacritty nvim rofi rofi-pass sheldon ~/.gnupg ~/.zsh" ]
-posthooks = [ "~/dotfiles/bin/projects-setup" ]
+prehooks = [ "cd ~/.config && mkdir -p alacritty acpi/events flameshot i3status nvim rofi rofi-pass sheldon ~/.gnupg ~/.zsh" ]
+posthooks = [ "~/dotfiles/bin/projects-setup; ~/dotfiles/bin/binaries-symlink; ~/dotfiles/acpi/enable" ]
 
 [settings.dots]
 alacritty = { source = "alacritty/alacritty.yml", target = ".config/alacritty/alacritty.yml" }
@@ -17,6 +17,7 @@ gitignore = { source = "git/gitignore", target = ".gitignore" }
 gittigrc = { source = "git/tigrc", target = ".tigrc" }
 gpg_agent = { source = "gpg/gpg-agent", target = ".gnupg/gpg-agent.conf" }
 i3 = { source = "i3/config", target = ".config/i3/config" }
+i3_status = { source = "i3/i3status.conf", target = ".config/i3status/config" }
 nvim_init_lua = { source = "nvim/init.lua", target = ".config/nvim/init.lua" }
 rofi = { source = "rofi/config", target = ".config/rofi/config.rasi" }
 rofi_pass = { source = "rofi/rofi-pass", target = ".config/rofi-pass/config" }

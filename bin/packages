@@ -189,11 +189,12 @@ extra/zip
 extra/zsh-history-substring-search
     ZSH port of Fish history search (up arrow)
 aur/pinentry-rofi
-aur/rvm
 aur/zsh-theme-powerlevel10k
 core/base-devel
 core/gnupg
 core/openssl
+extra/acpid
+extra/brightnessctl
 extra/chromium
 extra/evolution
 extra/flameshot
@@ -201,7 +202,12 @@ extra/gopass
 extra/htop
 extra/i3-wm
 extra/lua-language-server
+extra/ncdu
 extra/pavucontrol
+extra/postgresql
+extra/signal-desktop
 extra/thunderbird
+extra/tldr
+extra/vlc
 extra/xterm
 extra/zsh-autosuggestions
