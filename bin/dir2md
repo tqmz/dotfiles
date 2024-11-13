@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Check if a repository path is provided
+if [ $# -eq 0 ]; then
+    echo "Please provide the path to the git repository as an argument."
+    exit 1
+fi
+
+# Set the repository path
+repo_path="$1"
+
+# Check if the provided path is a valid directory
+if [ ! -d "$repo_path" ]; then
+    echo "The provided path is not a valid directory."
+    exit 1
+fi
+
+# Change to the repository directory
+cd "$repo_path" || exit
+
+# Get the folder name
+folder_name=$(basename "$PWD")
+
+# Create or overwrite the output markdown file
+output_file="$folder_name.md"
+echo "# $folder_name" > "../$output_file"
+
+# Function to process each file
+process_file() {
+    local file="$1"
+    local relative_path="${file#./}"
+    
+    # Append file name as a second-level header
+    echo -e "\n## $relative_path\n" >> "../$output_file"
+    
+    # Append file content as a code block
+    echo '```' >> "../$output_file"
+    cat "$file" >> "../$output_file"
+    echo '```' >> "../$output_file"
+}
+
+# Traverse the repository and process each file
+find . -type f \
+    -not -path '*/node_modules/*' \
+    -not -name '*.bin' \
+    -not -name '*.gif' \
+    -not -name '*.jpg' \
+    -not -name '*.pdf' \
+    -not -name '*.png' \
+    -not -path '*.git/*' \
+    -not -path 'LICENSE*' \
+    | while read -r file; do
+        # Check if the file is ignored by .gitignore
+        if ! git check-ignore -q "$file"; then
+            process_file "$file"
+        fi
+    done
+
+echo "Repository contents have been written to $output_file"
