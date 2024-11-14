@@ -123,7 +123,7 @@ vim.api.nvim_create_autocmd("FileType", {
     }
   end,
 })
----@see <https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rubocop>
+---@see <https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md>
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
