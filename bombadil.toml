@@ -6,7 +6,7 @@ dotfiles_dir = "dotfiles"
 
 [settings]
 prehooks = [ "cd ~/.config && mkdir -p alacritty acpi/events flameshot i3status nvim rofi rofi-pass sheldon ~/.gnupg ~/.zsh" ]
-posthooks = [ "~/dotfiles/bin/projects-setup; ~/dotfiles/bin/binaries-symlink; ~/dotfiles/acpi/enable" ]
+posthooks = [ "~/dotfiles/bin/projects-setup; ~/dotfiles/bin/binaries-symlink; echo Run ~/dotfiles/acpi/enable to enable brightness control." ]
 
 [settings.dots]
 alacritty = { source = "alacritty/alacritty.yml", target = ".config/alacritty/alacritty.yml" }
