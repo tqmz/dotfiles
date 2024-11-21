@@ -190,6 +190,7 @@ extra/zsh-history-substring-search
     ZSH port of Fish history search (up arrow)
 aur/neovim-remote
 aur/pinentry-rofi
+aur/spotify
 aur/zsh-theme-powerlevel10k
 core/base-devel
 core/gnupg
@@ -206,6 +207,7 @@ extra/lua-language-server
 extra/ncdu
 extra/pavucontrol
 extra/postgresql
+extra/repgrep
 extra/signal-desktop
 extra/thunderbird
 extra/tldr
