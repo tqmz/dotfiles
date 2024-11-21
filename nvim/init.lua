@@ -104,8 +104,10 @@ plugins = {
     end
   },
 
-  -- Diff
-  -- "sindrets/diffview.nvim"
+  -- Ruby
+  {
+    "kkoomen/vim-doge"
+  }
 }
 
 require("lazy").setup(plugins)
@@ -129,6 +131,13 @@ vim.api.nvim_create_autocmd("FileType", {
 local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup{}
 lspconfig.rubocop.setup{}
+lspconfig.solargraph.setup{
+ settings = {
+    solargraph = {
+      diagnostics = true
+    }
+  }
+}
 lspconfig.ts_ls.setup{}
 
 vim.diagnostic.config({
@@ -137,6 +146,17 @@ vim.diagnostic.config({
     source = 'always',
     focusable = false,
   }
+})
+
+-- Ruby settings
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    vim.opt_local.iskeyword:remove(":")
+    vim.opt_local.iskeyword:append("?")
+    vim.opt_local.isfname:remove(".")
+    vim.opt_local.isfname:append("?")
+  end
 })
 
 -- Global mappings.
@@ -214,11 +234,19 @@ vim.g.lightline = {
   }
 }
 
+-- RUBY
+-- mapping key for generating documentation
+vim.keymap.set('n', '<leader>y', '<Plug>(doge-generate)')
+vim.g.doge_ruby_settings = {
+    include_return_type = 1,
+    include_type = 1,
+}
+
 -- GIT
 -- diff main
 vim.api.nvim_set_keymap('n', '<leader>dm', [[:DiffviewOpen origin/main -- %<CR>]], { noremap = true, silent = true })
 -- diff close
-vim.api.nvim_set_keymap('n', '<leader>dc', [[:DiffviewClose<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dc', [[:DiffviewClose<CR>:tabn -1<CR>]], { noremap = true, silent = true })
 
 -- COLORS
 ---@see <https://github.com/rebelot/kanagawa.nvim#readme>
