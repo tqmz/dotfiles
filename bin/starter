@@ -27,7 +27,8 @@ sudo usermod -aG video $USER
 # e.g. Fn+F5/F6
 systemctl start acpid &&
 systemctl enable acpid &&
-
+systemctl start bluetooth &&
+systemctl enable bluetooth &&
 systemctl start docker &&
 systemctl enable docker &&
 systemctl start qotd &&
