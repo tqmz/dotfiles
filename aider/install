@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pipx install aider-chat
+pipx runpip aider-chat install aider-chat[help]

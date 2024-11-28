@@ -10,6 +10,7 @@ export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --co
 export GTK_THEME=Adwaita:dark
 export LESS="-R --ignore-case -P ?f%f:stdin.  line %lt–%lb/%L  ?e(END):%PB\%."
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.rvm/bin"
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 if [ -f "/usr/bin/wezterm" ]; then
   export TERMINAL=/usr/bin/wezterm
@@ -17,7 +18,8 @@ fi
 if [ -f "/usr/bin/npm" ]; then
   export npm_config_prefix="$HOME/.local"
 fi
-
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+if [ -f "/usr/bin/gopass" ]; then
+  export ANTHROPIC_API_KEY=`gopass show t/ai/claude/api-key`
+fi
 
 # vim: set ft=zsh:

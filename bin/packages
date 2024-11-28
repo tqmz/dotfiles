@@ -196,6 +196,7 @@ core/base-devel
 core/gnupg
 core/openssl
 extra/acpid
+extra/aichat
 extra/brightnessctl
 extra/chromium
 extra/evolution
@@ -208,6 +209,7 @@ extra/ncdu
 extra/pavucontrol
 extra/postgresql
 extra/pv
+extra/python-pipx
 extra/repgrep
 extra/signal-desktop
 extra/thunderbird

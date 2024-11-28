@@ -7,6 +7,7 @@ sudo pacman -Suy --needed git &&
 git -C "${DOTFILES_DIR}" pull || git clone "${DOTFILES_REPO}" "${DOTFILES_DIR}" &&
 ln -s ${DOTFILES_DIR}/bombadil.toml ~/.config/bombadil.toml &&
 cd ${DOTFILES_DIR} &&
+./aider/install &&
 ./aur/yay-install &&
 ./packages-install &&
 ./docker/docker-group-setup &&
