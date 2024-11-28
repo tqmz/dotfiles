@@ -132,9 +132,12 @@ local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup{}
 lspconfig.rubocop.setup{}
 lspconfig.solargraph.setup{
- settings = {
+  cmd = { "solargraph", "stdio" },
+  filetypes = { "ruby" },
+  root_dir = require('lspconfig.util').root_pattern("Gemfile", ".git", "."),
+  settings = {
     solargraph = {
-      diagnostics = true
+     diagnostics = true
     }
   }
 }
