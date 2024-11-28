@@ -207,11 +207,13 @@ extra/lua-language-server
 extra/ncdu
 extra/pavucontrol
 extra/postgresql
+extra/pv
 extra/repgrep
 extra/signal-desktop
 extra/thunderbird
 extra/tldr
+extra/unzip
 extra/vlc
 extra/xterm
+extra/yamllint
 extra/zsh-autosuggestions
-extra/pv
