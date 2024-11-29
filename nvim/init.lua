@@ -137,7 +137,12 @@ lspconfig.solargraph.setup{
   root_dir = require('lspconfig.util').root_pattern("Gemfile", ".git", "."),
   settings = {
     solargraph = {
-     diagnostics = true
+      diagnostics = true,
+      completion = true,
+      definitions = true,
+      symbols = true,
+      rails = true,
+      rspec = true,
     }
   }
 }
@@ -206,15 +211,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- FINDER
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>')
 
+-- Aerial
 require('aerial').setup({
+  -- prefer LSP over Treesitter
+   backends = { "lsp", "treesitter", "markdown", "man" },
   -- use on_attach to set keymaps when aerial has attached to a buffer
   on_attach = function(bufnr)
-    -- Jump forwards/backwards with '{' and '}'
+    -- jump forwards/backwards with '{' and '}'
     vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
     vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
-  end
+  end,
+  -- Show box drawing characters for the tree hierarchy
+  show_guides = true,
+
 })
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+
+-- Treesitter
+require('nvim-treesitter.configs').setup({
+  ensure_installed = { "ruby" },
+  highlight = { enable = true },
+  indent = { enable = true },
+  incremental_selection = { enable = true },
+  textobjects = {
+    select = {
+      enable = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+  },
+})
 
 -- STATUSLINE
 vim.g.lightline = {
