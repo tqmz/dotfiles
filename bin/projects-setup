@@ -3,9 +3,11 @@
 # symlink project dotfiles
 find ~ -maxdepth 1 -type d -iname '*.dotfiles' | while read dotfiles
 do
+  echo "Dotfiles: ${dotfiles}"
   symlink_script="${dotfiles}/bin/symlink-dotfiles"
   if [ -f "${symlink_script}" ]; then
-    exec "${symlink_script}"
+    echo "Symlink script: $symlink_script"
+    "${symlink_script}"
   fi
 done
 
