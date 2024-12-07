@@ -1,0 +1,78 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# To download and run this script on a fresh Termux install:
+#
+# 1. On your PC, start a simple HTTP server in the directory containing this script:
+#    python3 -m http.server 8000
+#
+# 2. On your Android device in Termux, download and run the script:
+#    curl http://PC_IP_ADDRESS:8000/termux/setup | bash
+#
+# Replace PC_IP_ADDRESS with your PC's actual local IP address (e.g. 192.168.1.100)
+
+# Exit on any error
+set -e
+
+echo "Setting up Termux for SSH access..."
+
+# Update package list and upgrade existing packages
+pkg update -y
+pkg upgrade -y
+
+# Install required packages
+pkg install -y openssh net-tools rsync ranger
+
+# Generate SSH host keys if they don't exist
+if [ ! -f "$HOME/.ssh/id_rsa" ]; then
+    mkdir -p "$HOME/.ssh"
+    ssh-keygen -t rsa -b 4096 -f "$HOME/.ssh/id_rsa" -N ""
+fi
+
+# Set a random password for the Termux user
+RANDOM_PASS=$(tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' </dev/urandom | head -c 16)
+echo "Setting Termux password to: $RANDOM_PASS"
+{ echo "$RANDOM_PASS"; echo "$RANDOM_PASS"; } | passwd
+
+# Configure sshd
+mkdir -p $PREFIX/etc/ssh
+cat > $PREFIX/etc/ssh/sshd_config << EOF
+Port 8022
+PrintMotd yes
+PasswordAuthentication yes
+Subsystem sftp /data/data/com.termux/files/usr/libexec/sftp-server
+EOF
+
+# Kill any existing sshd process
+pkill sshd || true
+
+# Start sshd
+sshd
+
+# Get the device's IP address
+IP_ADDRESS=$(ifconfig 2>/dev/null | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | head -n 1)
+
+# Get username
+USERNAME=$(whoami)
+
+echo
+echo "SSH setup complete!"
+echo "----------------------------------------"
+echo "Your Termux SSH access details:"
+echo
+echo "Username: $USERNAME"
+echo "Host: $IP_ADDRESS"
+echo "Port: 8022"
+echo "Password: $RANDOM_PASS"
+echo
+echo "To connect from your PC:"
+echo "ssh -p 8022 ${USERNAME}@${IP_ADDRESS}"
+echo
+echo "SSH config snippet for your PC (~/.ssh/config):"
+echo
+echo "Host termux"
+echo "    HostName ${IP_ADDRESS}"
+echo "    User ${USERNAME}"
+echo "    Port 8022"
+echo "----------------------------------------"
+
+termux-setup-storage

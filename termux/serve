@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'socket'
+require 'webrick'
+
+def get_local_ip
+  # Get the local IP address of the machine
+  Socket.ip_address_list.detect do |addr|
+    addr.ipv4? && !addr.ipv4_loopback?
+  end&.ip_address || '127.0.0.1'
+end
+
+port = 8000
+local_ip = get_local_ip
+
+server = WEBrick::HTTPServer.new(
+  Port: port,
+  DocumentRoot: Dir.pwd
+)
+
+puts "\nServing Termux setup script at:"
+puts "http://#{local_ip}:#{port}/termux/setup"
+puts "\nOn your Android device, run:"
+puts "curl http://#{local_ip}:#{port}/termux/setup | bash"
+puts "\nPress Ctrl+C to stop the server\n"
+
+trap('INT') { server.shutdown }
+server.start
