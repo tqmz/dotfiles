@@ -201,6 +201,8 @@ extra/brightnessctl
 extra/chromium
 extra/evolution
 extra/flameshot
+extra/gcompris-qt
+extra/glab
 extra/gopass
 extra/htop
 extra/i3-wm
@@ -212,9 +214,12 @@ extra/pv
 extra/python-pipx
 extra/repgrep
 extra/signal-desktop
+extra/speech-dispatcher
 extra/thunderbird
 extra/tldr
+extra/typescript-language-server
 extra/unzip
+extra/upower
 extra/vlc
 extra/xterm
 extra/yamllint

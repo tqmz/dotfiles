@@ -16,6 +16,7 @@ cd ${DOTFILES_DIR} &&
 ./vundle-install &&
 bombadil link &&
 sheldeon lock &&
+npm install -g vscode-langservers-extracted # eslint
 
 # add user to wheel group to get sudo privileges granted, e. g. for journalctl
 # NOTE: requires "%wheel ALL=(ALL) ALL" in visudo
