@@ -116,21 +116,21 @@ require("lazy").setup(plugins)
 -- setup Rubocop as LSP server
 ---@see <https://docs.rubocop.org/rubocop/usage/lsp.html#neovim-nvim-lspconfig>
 vim.opt.signcolumn = "yes"
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ruby",
-  callback = function()
-    vim.lsp.start {
-      name = "rubocop",
-      cmd = { "rubocop", "--lsp" },
-    }
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "ruby",
+--   callback = function()
+--     vim.lsp.start {
+--       name = "rubocop",
+--       cmd = { "rubocop", "--lsp" },
+--     }
+--   end,
+-- })
 ---@see <https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md>
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup{}
-lspconfig.rubocop.setup{}
+-- lspconfig.rubocop.setup{}
 lspconfig.solargraph.setup{
   cmd = { "solargraph", "stdio" },
   filetypes = { "ruby" },
@@ -147,6 +147,15 @@ lspconfig.solargraph.setup{
   }
 }
 lspconfig.ts_ls.setup{}
+lspconfig.eslint.setup{
+  settings = {
+    eslint = {
+      enable = true,
+      packageManager = "npm",
+    }
+  }
+}
+lspconfig.lua_ls.setup{}
 
 vim.diagnostic.config({
   float = {
@@ -155,6 +164,9 @@ vim.diagnostic.config({
     focusable = false,
   }
 })
+
+-- Global settings
+vim.opt.isfname:append(".")
 
 -- Ruby settings
 vim.api.nvim_create_autocmd("FileType", {
