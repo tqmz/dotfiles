@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Create required config directories
+cd ~/.config && mkdir -p alacritty acpi/events flameshot i3status nvim rofi rofi-pass sheldon ~/.gnupg ~/.zsh

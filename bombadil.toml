@@ -5,7 +5,7 @@
 dotfiles_dir = "dotfiles"
 
 [settings]
-prehooks = [ "cd ~/.config && mkdir -p alacritty acpi/events flameshot i3status nvim rofi rofi-pass sheldon ~/.gnupg ~/.zsh" ]
+prehooks = [ "~/dotfiles/bin/prehooks" ]
 posthooks = [ "~/dotfiles/bin/posthooks" ]
 
 [settings.dots]
