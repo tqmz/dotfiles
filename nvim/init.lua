@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 -- PLUGINS via lazy
 plugins = {
   -- Projects
-  -- { "folke/neoconf.nvim", cmd = "Neoconf" },
+  -- { "
 
   -- Finder
   "junegunn/fzf",
@@ -154,6 +154,9 @@ lspconfig.eslint.setup{
       packageManager = "npm",
     }
   }
+}
+lspconfig.bashls.setup{
+  filetypes = { "bash", "sh", "zsh" }
 }
 lspconfig.lua_ls.setup{}
 
