@@ -2,4 +2,8 @@
 
 pipx install aider-chat
 pipx runpip aider-chat install aider-chat[help,playwright]
+~.local/share/pipx/venvs/aider-chat/bin/python -m playwright install --with-deps chromium
 pipx inject aider-chat boto3
+pipx upgrade aider-chat
+pipx runpip aider-chat install --upgrade aider-chat[help,playwright]
+
