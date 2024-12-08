@@ -4,7 +4,7 @@
 ~/dotfiles/bin/projects-setup
 ~/dotfiles/bin/binaries-symlink
 
-# Setup p10k.zsh symlink
+# Setup p10k.zsh symlink (bypassing bombadil validation)
 ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
 # Print reminder for brightness control
