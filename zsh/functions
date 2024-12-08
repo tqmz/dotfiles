@@ -21,4 +21,25 @@ function gpe() {
   gopass edit $(gpfzf)
 }
 
+# gopass w/ fzf
+function gpfzf() {
+  export pw=$(gopass ls -f | fzf --no-multi)
+  echo $pw
+}
+
+# tldr w/ fuzzy search
+tldr-fzf() {
+  selected=$(tldr --list | fzf \
+    --query "$1" \
+    --preview 'tldr {1} | bat --color=always --language=markdown --style=plain' \
+    --preview-window=right:70% \
+    --layout=reverse \
+    --border \
+    --height=80%)
+
+  if [ -n "$selected" ]; then
+      tldr "$selected" | bat --color=always --language=markdown --style=plain
+  fi
+}
+
 # vim: set ft=zsh:
