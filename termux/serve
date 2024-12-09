@@ -1,25 +1,22 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'socket'
 require 'webrick'
 
-def get_local_ip
-  # Get the local IP address of the machine
+def read_local_ip
   Socket.ip_address_list.detect do |addr|
     addr.ipv4? && !addr.ipv4_loopback?
   end&.ip_address || '127.0.0.1'
 end
 
 port = 8000
-local_ip = get_local_ip
-
-# Get the directory containing this script and its parent
-script_dir = File.expand_path(File.dirname(__FILE__))
-parent_dir = File.expand_path('..', script_dir)
+local_ip = read_local_ip
+document_root = File.expand_path('..', __dir__)
 
 server = WEBrick::HTTPServer.new(
   Port: port,
-  DocumentRoot: parent_dir
+  DocumentRoot: document_root
 )
 
 puts "\nServing Termux setup script at:"
