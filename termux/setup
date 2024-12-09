@@ -49,7 +49,7 @@ pkill sshd || true
 sshd
 
 # Get the device's IP address
-IP_ADDRESS=$(ifconfig 2>/dev/null | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | head -n 1)
+IP_ADDRESS=$(ifconfig 2>/dev/null | grep -A1 wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | head -n 1)
 
 # Get username
 USERNAME=$(whoami)
