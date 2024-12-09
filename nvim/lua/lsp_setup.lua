@@ -30,6 +30,7 @@ lspconfig.bashls.setup{
   filetypes = { "bash", "sh", "zsh" }
 }
 lspconfig.lua_ls.setup{}
+lspconfig.docker_compose_language_service.setup{}
 
 vim.diagnostic.config({
   float = {
