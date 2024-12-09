@@ -3,9 +3,9 @@
 vim.cmd('source ~/.vimrc')
 
 -- lazy load lazy, the plugin manager
----@see <https://raw.githubusercontent.com/folke/lazy.nvim/main/README.md>
----@see `:help lazy.nvim-lazy.nvim-usage`
----@see `:Lazy help`
+---@see lazy.nvim README https://raw.githubusercontent.com/folke/lazy.nvim/main/README.md
+---@see lazy.nvim.usage `:help lazy.nvim-lazy.nvim-usage`
+---@see lazy.help `:Lazy help`
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -115,7 +115,7 @@ require("lazy").setup(plugins)
 
 -- DIAGNOSTICS
 -- setup Rubocop as LSP server
----@see <https://docs.rubocop.org/rubocop/usage/lsp.html#neovim-nvim-lspconfig>
+---@see rubocop.lsp https://docs.rubocop.org/rubocop/usage/lsp.html#neovim-nvim-lspconfig
 vim.opt.signcolumn = "yes"
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "ruby",
@@ -126,7 +126,7 @@ vim.opt.signcolumn = "yes"
 --     }
 --   end,
 -- })
----@see <https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md>
+---@see lspconfig.configs https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
 require('lsp_setup')
 
@@ -259,11 +259,11 @@ vim.api.nvim_set_keymap('n', '<leader>dm', [[:DiffviewOpen origin/main -- %<CR>]
 vim.api.nvim_set_keymap('n', '<leader>dc', [[:DiffviewClose<CR>:tabn -1<CR>]], { noremap = true, silent = true })
 
 -- COLORS
----@see <https://github.com/rebelot/kanagawa.nvim#readme>
+---@see kanagawa.readme https://github.com/rebelot/kanagawa.nvim#readme
 require('kanagawa').setup({
     dimInactive = true,          -- dim inactive window `:h hl-NormalNC`
 })
----@see <https://github.com/folke/tokyonight.nvim>
+---@see tokyonight https://github.com/folke/tokyonight.nvim
 
 ---@todo put note into (post) install script
 ---@note to remove default color schemes from :colo completion, remove files
