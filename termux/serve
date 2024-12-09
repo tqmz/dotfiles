@@ -13,9 +13,13 @@ end
 port = 8000
 local_ip = get_local_ip
 
+# Get the directory containing this script and its parent
+script_dir = File.expand_path(File.dirname(__FILE__))
+parent_dir = File.expand_path('..', script_dir)
+
 server = WEBrick::HTTPServer.new(
   Port: port,
-  DocumentRoot: Dir.pwd
+  DocumentRoot: parent_dir
 )
 
 puts "\nServing Termux setup script at:"
