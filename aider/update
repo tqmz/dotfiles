@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pipx upgrade aider-chat
+pipx runpip aider-chat install --upgrade --upgrade-strategy only-if-needed aider-chat[help,playwright]
+pipx inject aider-chat boto3

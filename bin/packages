@@ -215,11 +215,13 @@ extra/python-pipx
 extra/repgrep
 extra/signal-desktop
 extra/speech-dispatcher
-extra/thunderbird
 extra/tealdeer
+extra/telegram-desktop
+extra/thunderbird
 extra/typescript-language-server
 extra/unzip
 extra/upower
+extra/vice
 extra/vlc
 extra/xterm
 extra/yamllint
