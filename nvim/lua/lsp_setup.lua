@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.ruby_lsp.setup{}

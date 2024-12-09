@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- source existing ~/.vimrc
 vim.cmd('source ~/.vimrc')
 
