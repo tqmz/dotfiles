@@ -1,4 +1,9 @@
 ---@diagnostic disable: undefined-global
+
+-- Set leader key before loading any keymaps
+vim.g.mapleader = "_"
+vim.g.maplocalleader = "\\"
+
 -- source existing ~/.vimrc
 vim.cmd('source ~/.vimrc')
 
@@ -19,99 +24,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- PLUGINS via lazy
-plugins = {
-  -- Projects
-  -- { "
-
-  -- Finder
-  "junegunn/fzf",
-  "junegunn/fzf.vim",
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
-  "francoiscabrol/ranger.vim", -- <Leader>f to run ranger within Vim
-  {
-    'stevearc/aerial.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = {
-       "nvim-treesitter/nvim-treesitter",
-       "nvim-tree/nvim-web-devicons"
-    },
-  },
-
-  -- Statusline
-  "itchyny/lightline.vim",
-  "itchyny/vim-gitbranch",
-  -- "nvim-lualine/lualine.nvim",
-
-  -- Diagnostics
-  "neovim/nvim-lspconfig",
-  -- "folke/neodev.nvim",
-
-  -- Colors
-  "rebelot/kanagawa.nvim",
-  "folke/tokyonight.nvim",
-  "EdenEast/nightfox.nvim",
-
-  -- Fonts
-  "nvim-tree/nvim-web-devicons",
-
-  -- Git
-  {
-    "iberianpig/tig-explorer.vim",
-    dependencies = { "rbgrouleff/bclose.vim" }
-  },
-  -- git-conflict default keybindings:
-  --    co - Choose ours (current changes)
-  --    ct - Choose theirs (incoming changes)
-  --    cb - Choose both
-  --    c0 - Choose none
-  --    ]x - Move to next conflict
-  --    [x - Move to previous conflict
-  {
-    "akinsho/git-conflict.nvim",
-    version = "*",
-    config = function()
-      require("git-conflict").setup({
-        default_mappings = true,
-        default_commands = true,
-        disable_diagnostics = false,
-        highlights = {
-          incoming = 'DiffText',
-          current = 'DiffAdd',
-        }
-      })
-    end
-  },
-  {
-    "sindrets/diffview.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-  },
-
-  -- Live Share / Instant w/ localhost.run
-  {
-    "azratul/live-share.nvim",
-    dependencies = { "jbyuki/instant.nvim" },
-    config = function()
-      vim.g.instant_username = "Smileson"
-      require("live-share").setup({
-        port_internal = 7709,
-        max_attempts = 40, -- 10 seconds
-        service = "localhost.run"
-      })
-    end
-  },
-
-  -- Ruby
-  {
-    "kkoomen/vim-doge"
-  }
-}
-
-require("lazy").setup(plugins)
+-- Load plugins
+require("lazy").setup(require("plugins"))
 
 -- DIAGNOSTICS
 -- setup Rubocop as LSP server
@@ -144,49 +58,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist)
-vim.keymap.set('n', '<leader>dh', vim.diagnostic.hide)
-vim.keymap.set('n', '<leader>ds', vim.diagnostic.show)
-vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next)
+-- Load keymaps
+require('keymaps').setup()
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+-- Enable completion triggered by <c-x><c-o>
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
   end,
 })
 
-
--- FINDER
-vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<CR>')
 
 -- Aerial
 require('aerial').setup({
@@ -200,9 +82,7 @@ require('aerial').setup({
   end,
   -- Show box drawing characters for the tree hierarchy
   show_guides = true,
-
 })
-vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
@@ -244,19 +124,6 @@ vim.g.lightline = {
   }
 }
 
--- RUBY
--- mapping key for generating documentation
-vim.keymap.set('n', '<leader>y', '<Plug>(doge-generate)')
-vim.g.doge_ruby_settings = {
-    include_return_type = 1,
-    include_type = 1,
-}
-
--- GIT
--- diff main
-vim.api.nvim_set_keymap('n', '<leader>dm', [[:DiffviewOpen origin/main -- %<CR>]], { noremap = true, silent = true })
--- diff close
-vim.api.nvim_set_keymap('n', '<leader>dc', [[:DiffviewClose<CR>:tabn -1<CR>]], { noremap = true, silent = true })
 
 -- COLORS
 ---@see kanagawa.readme https://github.com/rebelot/kanagawa.nvim#readme

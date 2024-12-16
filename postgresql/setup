@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DATA_DIR="/var/lib/postgres/data"
+
+# Check if data directory is empty or doesn't exist
+if [ ! -d "$DATA_DIR" ] || [ -z "$(ls -A $DATA_DIR)" ]; then
+    echo "Initializing PostgreSQL data directory..."
+    # login as postgres and create its data dir
+    sudo su -l postgres -c "initdb --locale=C.UTF-8 --encoding=UTF8 -D '$DATA_DIR'"
+else
+    echo "PostgreSQL data directory already initialized"
+fi

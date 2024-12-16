@@ -198,6 +198,7 @@ core/openssl
 extra/acpid
 extra/aichat
 extra/brightnessctl
+extra/caddy
 extra/chromium
 extra/evolution
 extra/flameshot
@@ -206,12 +207,15 @@ extra/glab
 extra/gopass
 extra/htop
 extra/i3-wm
+extra/lsof
 extra/lua-language-server
 extra/ncdu
 extra/pavucontrol
 extra/postgresql
 extra/pv
 extra/python-pipx
+extra/rclone
+extra/redis
 extra/repgrep
 extra/signal-desktop
 extra/speech-dispatcher

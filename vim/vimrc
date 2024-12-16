@@ -1,8 +1,5 @@
 "(( GENERAL
 
-" Set local mapleader
-let mapleader = "_"
-
 " This setting can be useful for determining how many lines of text you want
 " to
 " yank. It will display the line number column, but lines will be the distance
@@ -12,130 +9,12 @@ set relativenumber
 " Additionally, indicate current line number instead of 0.
 set number
 
-" a nice shortcut for ppl with french keyboard layout who don't write french
-" often; use `r` (replace) to type it nonetheless
-map! ç <Esc>
-
 set autochdir                          " always switch to the current file directory
 set nocompatible                       " don't imitate vi bugs and limitiations
 set exrc                               " read .vimrc within every directory
 set secure
 set novisualbell                       " don't flash
 "))
-" (( PLUGINS
-" (( Vundle
-"---------------------------------------------------------------
-" Vundle init
-filetype off | set rtp+=~/.vim/bundle/Vundle.vim | call vundle#begin()
-"Plugin 'gmarik/vundle'
-" ==> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vim.vundle <==
-Plugin 'VundleVim/Vundle.vim'
-"---------------------------------------------------------------
-" Definitions:
-" - Github: user/repo
-" - vim-scripts.org: repo
-" no comments allowed in bundle lines!
-"
-" Commands:
-" :BundleList                          - list configured bundles
-" :BundleInstall                       - install(update) bundles
-" :BundleSearch foo                    - search(or refresh cache first) for foo
-" :BundleClean                         - confirm(or auto-approve) removal of unused bundles
-"
-" Versions:
-" <https://github.com/gmarik/vundle/issues/35>
-" for specifying plugin versions / branches "---------------------------------------------------------------
-" ))
-" (( Status
-
-" quickfixstatus
-" <$HOME/.vim/bundle/quickfixstatus/README.md>
-" Plugin 'dannyob/quickfixstatus'
-" ))
-" (( Files, Buffer
-" <Leader>f to run ranger within Vim
-Plugin 'francoiscabrol/ranger.vim'
-" vs. https://github.com/Mizuchi/vim-ranger ?
-
-" requires ctags package (use Universal Ctags)
-" Vundle: `:PluginDocs` to generate `:h gutentags` files
-Plugin 'ludovicchabant/vim-gutentags'
-
-Plugin 'majutsushi/tagbar'
-exec "nmap <silent> <leader>t :TagbarToggle<CR>"
-
-" ))
-" (( Git
-" committa.vim
-" (see git status and diff when editing a commit message)
-" → <$HOME/.vim/bundle/committia.vim/README.md>
-Plugin 'rhysd/committia.vim'
-noremap T :TigOpenProjectRootDir<CR>
-noremap <Leader>tc :TigOpenCurrentFile<CR>
-nnoremap <Leader>tb :TigBlame<CR>
-nnoremap <Leader>tl :TigOpenCurrentFile<CR>
-" ))
-" (( All Languages
-
-" vim-doge
-" generates documentation blocs (_do_cumentation _ge_nerator)
-" <$HOME/.vim/bundle/vim-doge/README.md>
-" :help doge
-" `<leader>d` to generate a doc block
-" NOTE: after Vundle installation, open Vim and run once:
-"       `:call doge#install()`
-Plugin 'kkoomen/vim-doge'
-let g:doge_enable_mappings=1
-
-" vim-commentary
-" comments / uncomments lines
-" <$HOME/.vim/bundle/vim-commentary/README.markdown>
-" `gc` to comment/uncomment a line (any language)
-Plugin 'tpope/vim-commentary'
-
-Plugin 'godlygeek/tabular'
-" ))
-" (( Markdown
-Plugin 'plasticboy/vim-markdown'
-"Plugin 'itchyny/vim-highlighturl'
-" ))
-" (( Taskjuggler
-Plugin 'kalafut/vim-taskjuggler'
-" ))
-" (( UML
-Plugin 'aklt/plantuml-syntax'
-" ))
-" (( Javascript + JSON
-Plugin 'vim-json-bundle'
-" ))
-" (( Ruby/RSpec/Rails
-" Rufo
-Plugin 'ruby-formatter/rufo-vim'
-
-" Folding
-
-" vim-ruby-fold
-" <$HOME/.vim/bundle/vim-ruby-fold/README.md>
-Plugin 'vim-utils/vim-ruby-fold'
-
-" vim-fold-rspec
-" <$HOME/.vim/bundle/vim-fold-rspec/README.md>
-Plugin 'rlue/vim-fold-rspec'
-
-" requires: rvm docs generate-ri
-Plugin 'danchoi/ri.vim'
-let g:ri_no_mappings=1
-nnoremap  <leader>ri :call ri#OpenSearchPrompt(0)<cr> " horizontal split
-nnoremap  <leader>RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
-nnoremap  <leader>RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
-" ))
-" (( Other
-Plugin 'Fymyte/rasi.vim' " for rofi configuration
-" ))
-call vundle#end()
-
-filetype plugin indent on " for Vundle, may be commented out
-filetype on
 
 " ))
 " (( INCLUDES
@@ -215,26 +94,6 @@ if has("autocmd")
 endif
 " ))
 " ))
-" (( KEY MAPPINGS MARKDOWN + VARIOUS FILE TYPE COMMANDS
-":autocmd FileType markdown nmap <C-M> :w!<CR>:!pandoc -s -f markdown -t html --template $PANDOC_THEMES_DIR/pandoc-uikit/standalone.html --toc --toc-depth=3 % -o %.html<CR>
-:autocmd FileType markdown set nospell
-
-" ))
-" (( KEY MAPPINGS MAIL EDITING + QUOTING
-" replaces empty quoted lines and sets markdown file type
-" which is nice for quotations and common text highlighting
-" use `gq` and a movement command (or `V` before) to fix a
-" quoted block
-" set tw=75 or the text width you like from your mail client
-" in Evolution, configure the external editor plugin like this:
-"     gvim -f -c 'set fo=tcrq' -c 'set tw=76'
-noremap <F12> :%s/\(> \)\+$//g<CR>
-" ))
-" (( KEY MAPPINGS GENERAL
-" shortcuts for replacing tabs / removing trailing whitespace
-nmap <silent> <LocalLeader>ct :%s/\t/    /g<CR>:%s/\s\+$//g<CR>
-nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
-" ))
 " (( POST WRITES
 " read .vimrc
 " :autocmd BufWritePost ~/.vimrc   so ~/.vimrc
@@ -243,20 +102,6 @@ nmap <silent> <LocalLeader>cs :%s/\s\+$//g<CR>
 " https://unix.stackexchange.com/a/383044
 set autoread
 au CursorHold,CursorHoldI * checktime
-" ))
-" (( OPEN FILE UNDER CURSOR AS IMAGE
-:nnoremap gO :!feh <cfile> &<CR>
-" ))
-" (( WINDOWS SMART MOVE KEY COMBINATIONS
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
 " ))
 " (( VIM SESSION + INFO (GLOBAL)
 set ssop-=options    " do not store global and local values in a session
@@ -299,21 +144,5 @@ function! GitFileName()
   return expand('%')
 endfunction
 " ))
-" (( FZX
-function! FZX(directories, include_hidden = 0)
-  let l:cmd = "fd -t f --no-ignore-vcs" . (a:include_hidden ? " --hidden" : "")
-  let l:cmd .= " " . a:directories
-
-  call fzf#run(fzf#wrap({'source': l:cmd, 'sink': 'e'}) )
-endfunction
-
-if !exists('g:fzx_search_path') || g:fzx_search_path == ''
-    let g:fzx_search_path = '.'
-endif
-
-command! -bang FzxNonHidden call FZX(g:fzx_search_path, 0)
-command! -bang FzxAll call FZX(g:fzx_search_path, 1)
-exec "nmap <silent> <leader>g :FzxNonHidden<CR>"
-exec "nmap <silent> <leader>G :FzxAll<CR>"
 " ))
 " vim: fdm=marker foldmarker=((,)) fdl=0 sts=2 ai
