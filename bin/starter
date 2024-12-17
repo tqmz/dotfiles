@@ -17,6 +17,9 @@ cd ${DOTFILES_DIR} &&
 bombadil link &&
 sheldeon lock &&
 
+# ansible
+npm install -g @ansible/ansible-language-server
+
 # bash
 npm install -g bash-language-server &&
 

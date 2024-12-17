@@ -20,6 +20,7 @@ lspconfig.solargraph.setup{
   }
 }
 
+lspconfig.ansiblels.setup{}
 lspconfig.ts_ls.setup{}
 lspconfig.eslint.setup{
   settings = {

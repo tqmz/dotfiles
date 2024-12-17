@@ -73,6 +73,10 @@ function M.setup()
   -- Ruby documentation
   vim.keymap.set('n', '<leader>y', '<Plug>(doge-generate)', { desc = "Generate documentation" })
 
+  -- Session write and quit
+  vim.keymap.set('n', '<F10>', '',
+    { desc = "Save session and quit" })
+
   -- Mail editing (from vimrc)
   vim.keymap.set('n', '<F12>', ':%s/\\(> \\)\\+$//g<CR>',
     { desc = "Clean up quoted email lines" })
