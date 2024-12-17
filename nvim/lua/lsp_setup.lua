@@ -21,6 +21,13 @@ lspconfig.solargraph.setup{
 }
 
 lspconfig.ansiblels.setup{}
+-- TODO: does not work yet
+vim.filetype.add({
+  pattern = {
+    ["**/tasks/*.yaml"] = "yaml.ansible"
+  },
+})
+
 lspconfig.ts_ls.setup{}
 lspconfig.eslint.setup{
   settings = {

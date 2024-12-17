@@ -1,0 +1,11 @@
+[Unit]
+Description=Spotlight by Sentry
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/spotlight
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

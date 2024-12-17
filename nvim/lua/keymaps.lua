@@ -49,6 +49,14 @@ function M.setup()
     end, opts)
   end
 
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
+  vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist)
+  vim.keymap.set('n', '<leader>dh', vim.diagnostic.hide)
+  vim.keymap.set('n', '<leader>ds', vim.diagnostic.show)
+  vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
+  vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next)
+
   -- Set up LSP keymaps when LSP attaches
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -77,7 +85,7 @@ function M.setup()
   local function save_session_and_quit()
     local session_file
     local viminfo_file
-    
+
     if vim.g.proj_file then
       session_file = vim.g.proj_file
       viminfo_file = vim.g.proj_file .. '.viminfo'
@@ -85,14 +93,14 @@ function M.setup()
       session_file = vim.fn.expand('~/.vim/.vimsession')
       viminfo_file = vim.fn.expand('~/.vim/.viminfo')
     end
-    
+
     -- Ensure ~/.vim directory exists
     vim.fn.mkdir(vim.fn.expand('~/.vim'), 'p')
-    
+
     -- Save session and viminfo
     vim.cmd('mksession! ' .. session_file)
     vim.cmd('wviminfo! ' .. viminfo_file)
-    
+
     -- Quit
     vim.cmd('qa')
   end

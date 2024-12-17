@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+SERVICE_DIR=~/.config/systemd/user/
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
+mkdir -p $SERVICE_DIR
+ln -fs "${SCRIPT_DIR}/spotlight.service" $SERVICE_DIR
+
+systemctl --user daemon-reload
+systemctl --user enable --now spotlight
+

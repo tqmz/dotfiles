@@ -197,6 +197,8 @@ core/gnupg
 core/openssl
 extra/acpid
 extra/aichat
+extra/ansible
+extra/ansible-lint
 extra/brightnessctl
 extra/caddy
 extra/chromium
