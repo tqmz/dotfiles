@@ -74,7 +74,30 @@ function M.setup()
   vim.keymap.set('n', '<leader>y', '<Plug>(doge-generate)', { desc = "Generate documentation" })
 
   -- Session write and quit
-  vim.keymap.set('n', '<F10>', '',
+  local function save_session_and_quit()
+    local session_file
+    local viminfo_file
+    
+    if vim.g.proj_file then
+      session_file = vim.g.proj_file
+      viminfo_file = vim.g.proj_file .. '.viminfo'
+    else
+      session_file = vim.fn.expand('~/.vim/.vimsession')
+      viminfo_file = vim.fn.expand('~/.vim/.viminfo')
+    end
+    
+    -- Ensure ~/.vim directory exists
+    vim.fn.mkdir(vim.fn.expand('~/.vim'), 'p')
+    
+    -- Save session and viminfo
+    vim.cmd('mksession! ' .. session_file)
+    vim.cmd('wviminfo! ' .. viminfo_file)
+    
+    -- Quit
+    vim.cmd('qa')
+  end
+
+  vim.keymap.set('n', '<F10>', save_session_and_quit,
     { desc = "Save session and quit" })
 
   -- Mail editing (from vimrc)
