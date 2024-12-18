@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# NOTE: start Neovim using `nvr` or `neovim --listen /tmp/nvimsocket` in order
+# to be able to receive files.
+#
+# In Neovim, `:echo v:servername` must output `/tmp/nvimsocket`.
+
+# Get repo path
+repo_path=$(pwd)
+
+# Function to find the .vimsession file
+find_vimsession() {
+    local dir="$PWD"
+    for i in {0..2}; do
+        if [ -f "$dir/.vimsession" ]; then
+            echo "$dir/.vimsession"
+            return 0
+        fi
+        dir="$(dirname "$dir")"
+    done
+    return 1
+}
+
+# Find the .vimsession file
+vimsession_file=$(find_vimsession)
+
+if [ -z "$vimsession_file" ]; then
+    echo "No .vimsession file found within two parent directories"
+    exit 1
+fi
+
+# Get the directory of the .vimsession file
+vimsession_dir=$(dirname "$vimsession_file")
+
+# Change to the .vimsession directory
+cd "$vimsession_dir"
+
+# Check if NeoVim is already running and listening
+if ! nvr --serverlist | grep -q "/tmp/nvimsocket"; then
+    # If not running, start NeoVim with the session file
+    nvim -S "$vimsession_file" --listen /tmp/nvimsocket &
+    sleep 1  # Give NeoVim a moment to start up
+fi
+
+# Count number of files to be opened
+file_count=0
+
+# Read files from stdin, one per line
+while IFS= read -r file; do
+    nvr --remote-send "<C-\\><C-N>:tabnew ${repo_path}/${file}<CR>"
+    ((file_count++))
+done
+
+if [ "$file_count" -gt 0 ]; then
+    # Go to the first newly opened tab
+    nvr --remote-send "<C-\\><C-N>:tablast<CR>:tabn -${file_count}<CR>"
+fi
