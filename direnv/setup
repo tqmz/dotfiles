@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# setup Direnv Cache for Direnv
+# <https://github.com/indigoviolet/direnv-cache>
+
+REVISION=6756625d2e9766f92901efe9bcd6a409ded55786
+DIRENV_DIR=$HOME/.config/direnv
+
+mkdir -p "$DIRENV_DIR/lib"
+curl -sSL "https://raw.githubusercontent.com/indigoviolet/direnv-cache/$REVISION/cache.sh" -o "$DIRENV_DIR/lib/05-cache.sh"
