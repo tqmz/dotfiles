@@ -212,6 +212,7 @@ extra/i3-wm
 extra/lsof
 extra/lua-language-server
 extra/ncdu
+extra/p7zip
 extra/pavucontrol
 extra/postgresql
 extra/pv
@@ -229,6 +230,7 @@ extra/unzip
 extra/upower
 extra/vice
 extra/vlc
+extra/xorg-xkill
 extra/xterm
 extra/yamllint
 extra/zsh-autosuggestions
