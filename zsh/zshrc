@@ -77,4 +77,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # allow output on zsh init, and output quote
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-fortune 1% wisdom 99% $HOME/dotfiles/goodies/fortune
+[ "$PWD" = "$HOME" ] && fortune 1% wisdom 99% $HOME/dotfiles/goodies/fortune
