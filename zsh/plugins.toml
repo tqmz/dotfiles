@@ -1,13 +1,18 @@
 # sheldon plugins for zsh
 
 # Global
-
 shell = "zsh"
 
 # Plugins
-
 [plugins.zsh-expand]
 github = 'MenkeTechnologies/zsh-expand'
 
 [plugins.fz]
 github = 'changyuheng/fz.sh'
+
+# <https://github.com/zsh-users/zsh-completions/tree/master/src>
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+dir = "src"
+use = ["_rails", "_rspec"]
+apply = ["fpath"]

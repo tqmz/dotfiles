@@ -14,6 +14,7 @@ unsetopt beep
 # (must be available before most other stuff)
 # (compdef error occurred with rvm ruby enabled
 #  when this section was further below)
+fpath=(~/.local/share/sheldon/repos/github.com/zsh-users/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit
 
@@ -44,6 +45,7 @@ eval "$(sheldon source)" # sheldon
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
 
 # history
 # see </usr/share/doc/zsh-history-substring-search/README.md>
