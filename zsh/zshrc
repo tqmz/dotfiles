@@ -76,5 +76,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # allow output on zsh init, and output quote
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-[ "$PWD" = "$HOME" ] && fortune 1% wisdom 99% $HOME/dotfiles/goodies/fortune
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# [ "$PWD" = "$HOME" ] && {
+#    # Wait for instant prompt to finish
+#    [[ ! -v POWERLEVEL9K_INSTANT_PROMPT ]] || (( ! ${+POWERLEVEL9K_INSTANT_PROMPT_LOADED:-0} )) || return
+#    fortune 1% wisdom 99% $HOME/dotfiles/goodies/fortune
+# }
