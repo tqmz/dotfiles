@@ -199,6 +199,7 @@ extra/acpid
 extra/aichat
 extra/ansible
 extra/ansible-lint
+extra/bluez-utils
 extra/brightnessctl
 extra/caddy
 extra/chromium
