@@ -1,0 +1,7 @@
+# ~/.railsrc
+
+--skip-docker
+--skip-kamal
+--skip-test
+--css=tailwind
+--template=~/dotfiles/rails/template.rb

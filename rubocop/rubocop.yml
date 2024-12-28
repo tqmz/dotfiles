@@ -1,0 +1,172 @@
+# Rubocop:
+# <https://raw.githubusercontent.com/rubocop/rubocop/master/config/default.yml>
+---
+require:
+  - rubocop-factory_bot
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rspec_rails
+AllCops:
+  NewCops: enable
+  DisplayStyleGuide: true
+Naming/VariableNumber:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 20
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 250 lines of code.'
+  Max: 250
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 20 lines of code.'
+  Max: 20
+
+# Rufo:
+# <https://raw.githubusercontent.com/xinminlabs/rubocop-config-rufo/master/rubocop.yml>
+# (disable Rubocop defaults to prevent conflicts)
+Layout/CaseIndentation:
+  Enabled: false
+Layout/CommentIndentation:
+  Enabled: false
+Layout/ElseAlignment:
+  Enabled: false
+Layout/EndAlignment:
+  Enabled: false
+Layout/FirstArrayElementIndentation:
+  Enabled: false
+Layout/FirstHashElementIndentation:
+  Enabled: false
+Layout/IndentationWidth:
+  Enabled: false
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/SpaceAroundOperators:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+# Brakeman (cannot handle latest ruby style):
+Naming/BlockForwarding:
+  Enabled: false
+
+# Rails:
+# <https://raw.githubusercontent.com/rubocop/rubocop-rails/master/config/default.yml>
+# – add Engines support:
+Rails/ActionFilter:
+  Include:
+    - app/controllers/**/*.rb
+    - app/mailers/**/*.rb
+    - engines/*/app/controllers/**/*.rb
+    - engines/*/app/mailers/**/*.rb
+Rails/ActionOrder:
+  Enabled: true # pending upstream
+  Include:
+    - app/controllers/**/*.rb
+    - engines/*/app/controllers/**/*.rb
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true # pending upstream
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/ActiveRecordOverride:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/AttributeDefaultBlockValue:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/EnumHash:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/EnumUniqueness:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/Exit:
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - lib/**/*.rb
+    - engines/*/app/**/*.rb
+    - engines/*/config/**/*.rb
+    - engines/*/lib/**/*.rb
+  Exclude:
+    - lib/**/*.rake
+    - engines/*/lib/**/*.rake
+Rails/HasAndBelongsToMany:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/HasManyOrHasOneDependent:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/HelperInstanceVariable:
+  Include:
+    - app/helpers/**/*.rb
+    - engines/*/app/helpers/**/*.rb
+Rails/HttpPositionalArguments:
+  Include:
+    - spec/**/*
+    - engines/*/spec/**/*
+Rails/I18nLazyLookup:
+  Enabled: true # pending upstream
+  Include:
+    - app/controllers/**/*.rb
+    - engines/*/app/controllers/**/*.rb
+Rails/IgnoredSkipActionFilterOption:
+  Include:
+    - app/controllers/**/*.rb
+    - app/mailers/**/*.rb
+    - engines/*/app/controllers/**/*.rb
+    - engines/*/app/mailers/**/*.rb
+Rails/InverseOf:
+  Include:
+    - app/models/**/*.rb
+    - engines/*/app/models/**/*.rb
+Rails/LexicallyScopedActionFilter:
+  Include:
+    - app/controllers/**/*.rb
+    - app/mailers/**/*.rb
+    - engines/*/app/controllers/**/*.rb
+    - engines/*/app/mailers/**/*.rb
+Rails/MatchRoute:
+  Include:
+    - config/routes.rb
+    - config/routes/**/*.rb
+    - engines/*/config/routes.rb
+    - engines/*/config/routes/**/*.rb
+Rails/Output:
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - db/**/*.rb
+    - lib/**/*.rb
+    - engines/*/app/**/*.rb
+    - engines/*/config/**/*.rb
+    - engines/*/db/**/*.rb
+    - engines/*/lib/**/*.rb
+
+# RSpec:
+# <https://raw.githubusercontent.com/rubocop/rubocop-rspec/master/config/default.yml>
+#
+# NOTE: rules defined here are less restrictive than default rules from rubocop/rubocop-rspec
+#       which allows more complex specs and reduces rubocop noise in current core implementation
+#       – goal is to first only let rubocop alert warnings on most complex methods (biggest pain)
+#       – later on, rules shall be aligend back to defaults
+RSpec/MultipleMemoizedHelpers:
+  Max: 8
+RSpec/NestedGroups:
+  Max: 8
