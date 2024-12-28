@@ -29,6 +29,8 @@ fi
 if [ -f "/usr/bin/gopass" ]; then
   ANTHROPIC_API_KEY=$(gopass show t/ai/claude/api-key)
   export ANTHROPIC_API_KEY
+  DEEPSEEK_API_KEY=$(gopass show t/ai/deepseek/api-key)
+  export DEEPSEEK_API_KEY
 fi
 
 export REDIS_URL=redis://localhost:6379
